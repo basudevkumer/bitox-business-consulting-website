@@ -1,9 +1,10 @@
-import React from 'react'
+import NavbarTwo from "@/components/layout/NavbarTwo";
 
-const layout = () => {
+export default function Layout({ children }) {
   return (
-    <div>layout</div>
-  )
+    <>
+      <NavbarTwo />
+      {children}
+    </>
+  );
 }
-
-export default layout

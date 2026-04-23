@@ -1,11 +1,11 @@
 import React from 'react'
-import HomeTwo from '@/components/homeTwo/HomeTwo'
+import Herotwo from '@/components/homeTwo/Herotwo'
 
 const page = () => {
   return (
-    <div>
-      <HomeTwo />
-    </div>
+    <>
+    <Herotwo/>
+    </>
   )
 }
 

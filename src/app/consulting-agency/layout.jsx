@@ -4,7 +4,7 @@ export default function Layout({ children }) {
   return (
     <>
       <NavbarTwo />
-      {children}
+      <main className="pt-25">{children}</main>
     </>
   );
 }

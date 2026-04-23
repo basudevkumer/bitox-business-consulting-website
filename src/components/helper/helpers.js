@@ -1,0 +1,208 @@
+import { ChevronDown } from "lucide-react";
+import Link from "next/link";
+
+// ─── Utils ────────────────────────────────────────────────────────────────────
+
+export function isActiveLink(href, pathname) {
+  if (href === "/") return pathname === "/";
+  return pathname.startsWith(href);
+}
+
+export function hasActiveChild(children, pathname) {
+  return children?.some((child) => isActiveLink(child.href, pathname));
+}
+
+// ─── Nav Data ─────────────────────────────────────────────────────────────────
+
+export const NAV_LINKS = [
+  {
+    label: "Home",
+    children: [
+      { label: "Business Consultant", href: "/" },
+      { label: "Consulting Agency", href: "/consulting-agency" },
+    ],
+  },
+  {
+    label: "About Us",
+    href: "/about",
+  },
+  {
+    label: "Services",
+    children: [
+      { label: "Services", href: "/services" },
+      { label: "Service Details", href: "/services/details" },
+    ],
+  },
+  {
+    label: "Projects",
+    children: [
+      { label: "Projects", href: "/projects" },
+      { label: "Project Details", href: "/projects/details" },
+    ],
+  },
+  {
+    label: "Pages",
+    children: [
+      { label: "Team", href: "/team" },
+      { label: "Blog", href: "/blog" },
+      { label: "Blog Details", href: "/blog/details" },
+      { label: "Pricing", href: "/pricing" },
+      { label: "FAQ", href: "/faq" },
+    ],
+  },
+  {
+    label: "Contact",
+    href: "/contact",
+  },
+];
+
+// ─── Nav Components ───────────────────────────────────────────────────────────
+
+export function DropdownMenu({ children, isOpen, onClose, pathname, style = "rounded" }) {
+  const base = `absolute top-full left-0 w-52 bg-white py-2 z-50 transition-all duration-200 ${
+    isOpen
+      ? "opacity-100 translate-y-0 pointer-events-auto"
+      : "opacity-0 -translate-y-2 pointer-events-none"
+  }`;
+
+  const styles = {
+    rounded: "mt-3 rounded-xl shadow-xl border border-black/5",
+    flat: "mt-0 shadow-xl border-t-2 border-secondary",
+  };
+
+  return (
+    <div className={`${base} ${styles[style]}`}>
+      {children.map((child) => (
+        <Link
+          key={child.href}
+          href={child.href}
+          onClick={onClose}
+          className={`block px-5 py-2.5 text-sm transition-colors duration-200 ${
+            isActiveLink(child.href, pathname)
+              ? "text-secondary font-medium bg-secondary/5"
+              : "text-primary hover:text-secondary hover:bg-secondary/5"
+          }`}
+        >
+          {child.label}
+        </Link>
+      ))}
+    </div>
+  );
+}
+
+export function DesktopNavItem({
+  link,
+  openDropdown,
+  onEnter,
+  onLeave,
+  pathname,
+  dropdownStyle = "rounded",
+  height = "auto",
+}) {
+  const isActive = link.children
+    ? hasActiveChild(link.children, pathname)
+    : isActiveLink(link.href, pathname);
+
+  const activeClass = isActive ? "text-secondary" : "text-primary hover:text-secondary";
+  const heightClass = height === "full" ? "h-[100px] flex items-center" : "";
+
+  if (link.children) {
+    return (
+      <div
+        className={`relative ${heightClass}`}
+        onMouseEnter={() => onEnter(link.label)}
+        onMouseLeave={onLeave}
+      >
+        <button
+          className={`flex items-center gap-1 text-sm font-medium transition-colors duration-200 cursor-pointer ${activeClass}`}
+        >
+          {link.label}
+          <ChevronDown
+            size={13}
+            className={`transition-transform duration-200 ${
+              openDropdown === link.label ? "rotate-180" : ""
+            }`}
+          />
+        </button>
+
+        <DropdownMenu
+          children={link.children}
+          isOpen={openDropdown === link.label}
+          onClose={onLeave}
+          pathname={pathname}
+          style={dropdownStyle}
+        />
+      </div>
+    );
+  }
+
+  return (
+    <div className={heightClass}>
+      <Link
+        href={link.href}
+        className={`text-sm font-medium transition-colors duration-200 ${activeClass}`}
+      >
+        {link.label}
+      </Link>
+    </div>
+  );
+}
+
+export function MobileNavItem({ link, openDropdown, onToggle, onClose, pathname }) {
+  const isActive = link.children
+    ? hasActiveChild(link.children, pathname)
+    : isActiveLink(link.href, pathname);
+
+  const activeClass = isActive ? "text-secondary" : "text-primary hover:text-secondary";
+
+  if (link.children) {
+    const isOpen = openDropdown === link.label;
+    return (
+      <div>
+        <button
+          onClick={() => onToggle(link.label)}
+          className={`flex items-center justify-between w-full py-3.5 border-b border-primary/10 transition-colors duration-200 ${activeClass}`}
+        >
+          <span className="text-base font-heading font-medium">{link.label}</span>
+          <ChevronDown
+            size={16}
+            className={`transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
+          />
+        </button>
+
+        <div
+          className={`overflow-hidden transition-all duration-300 ${
+            isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+          }`}
+        >
+          <div className="pl-4 py-2 flex flex-col gap-1">
+            {link.children.map((child) => (
+              <Link
+                key={child.href}
+                href={child.href}
+                onClick={onClose}
+                className={`py-2 text-sm transition-colors duration-200 ${
+                  isActiveLink(child.href, pathname)
+                    ? "text-secondary font-medium"
+                    : "text-primary/70 hover:text-secondary"
+                }`}
+              >
+                {child.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <Link
+      href={link.href}
+      onClick={onClose}
+      className={`py-3.5 text-base font-heading font-medium border-b border-primary/10 block transition-colors duration-200 ${activeClass}`}
+    >
+      {link.label}
+    </Link>
+  );
+}

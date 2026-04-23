@@ -1,4 +1,4 @@
-import Footer from "@/components/common/Footer";
+import FooterOne from "@/components/layout/FooterOne";
 import NavbarOne from "@/components/layout/NavbarOne";
 import React from "react";
 
@@ -7,7 +7,7 @@ const layout = ({ children }) => {
     <>
       <NavbarOne/>
       {children}
-      <Footer />
+      <FooterOne />
     </>
   );
 };

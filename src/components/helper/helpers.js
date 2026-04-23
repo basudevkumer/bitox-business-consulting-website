@@ -1,6 +1,28 @@
 import { ChevronDown } from "lucide-react";
 import Link from "next/link";
 
+// ─── Footer One Data ──────────────────────────────────────────────────────────
+
+export const FOOTER_ONE_DATA = {
+  email: "infocon@example.com",
+  phone: "(+00685689696)",
+  address: "2400 Market Street, Suite 1200 Philadelphia, PA 19103, United States",
+  copyright: "Copyright © 2026 Bitox, All Rights Reserved.",
+  socials: [
+    { label: "Instagram", href: "#" },
+    { label: "Behance", href: "#" },
+    { label: "Dribbble", href: "#" },
+    { label: "LinkedIn", href: "#" },
+    { label: "Facebook", href: "#" },
+    { label: "You Tube", href: "#" },
+  ],
+  bottomLinks: [
+    { label: "Privacy Policy", href: "/privacy-policy" },
+    { label: "Terms and Conditions", href: "/terms" },
+    { label: "Support", href: "/support" },
+  ],
+};
+
 // ─── Utils ────────────────────────────────────────────────────────────────────
 
 export function isActiveLink(href, pathname) {

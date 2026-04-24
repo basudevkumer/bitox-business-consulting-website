@@ -10,8 +10,10 @@
   --font-heading: var(--font-heading);
   --font-paragraph: var(--font-paragraph);
    --font-display: var(--font-display);
-}
 
+  /* for custom responsive break point */
+  --breakpoint-laptop: 1180px;
+}
 
 @layer base {
   h1,
@@ -88,6 +90,23 @@
   }
 }
 
-.cc{
+/* for animation */
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 20s linear infinite;
+}
+
+.cc {
   color: #0000001a;
 }

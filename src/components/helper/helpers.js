@@ -6,7 +6,8 @@ import Link from "next/link";
 export const FOOTER_ONE_DATA = {
   email: "infocon@example.com",
   phone: "(+00685689696)",
-  address: "2400 Market Street, Suite 1200 Philadelphia, PA 19103, United States",
+  address:
+    "2400 Market Street, Suite 1200 Philadelphia, PA 19103, United States",
   copyright: "Copyright © 2026 Bitox, All Rights Reserved.",
   socials: [
     { label: "Instagram", href: "#" },
@@ -80,7 +81,13 @@ export const NAV_LINKS = [
 
 // ─── Nav Components
 
-export function DropdownMenu({ children, isOpen, onClose, pathname, style = "rounded" }) {
+export function DropdownMenu({
+  children,
+  isOpen,
+  onClose,
+  pathname,
+  style = "rounded",
+}) {
   const base = `absolute top-full left-0 w-52 bg-white py-2 z-50 transition-all duration-200 ${
     isOpen
       ? "opacity-100 translate-y-0 pointer-events-auto"
@@ -125,7 +132,9 @@ export function DesktopNavItem({
     ? hasActiveChild(link.children, pathname)
     : isActiveLink(link.href, pathname);
 
-  const activeClass = isActive ? "text-secondary" : "text-primary hover:text-secondary";
+  const activeClass = isActive
+    ? "text-secondary"
+    : "text-primary hover:text-secondary";
   const heightClass = height === "full" ? "h-[100px] flex items-center" : "";
 
   if (link.children) {
@@ -170,12 +179,20 @@ export function DesktopNavItem({
   );
 }
 
-export function MobileNavItem({ link, openDropdown, onToggle, onClose, pathname }) {
+export function MobileNavItem({
+  link,
+  openDropdown,
+  onToggle,
+  onClose,
+  pathname,
+}) {
   const isActive = link.children
     ? hasActiveChild(link.children, pathname)
     : isActiveLink(link.href, pathname);
 
-  const activeClass = isActive ? "text-secondary" : "text-primary hover:text-secondary";
+  const activeClass = isActive
+    ? "text-secondary"
+    : "text-primary hover:text-secondary";
 
   if (link.children) {
     const isOpen = openDropdown === link.label;
@@ -185,6 +202,9 @@ export function MobileNavItem({ link, openDropdown, onToggle, onClose, pathname 
           onClick={() => onToggle(link.label)}
           className={`flex items-center justify-between w-full py-3.5 border-b border-primary/10 transition-colors duration-200 ${activeClass}`}
         >
+          <span className="text-base font-heading font-medium">
+            {link.label}
+          </span>
           <span className="text-[16px] font-heading font-medium">{link.label}</span>
           <ChevronDown
             size={16}
@@ -228,6 +248,35 @@ export function MobileNavItem({ link, openDropdown, onToggle, onClose, pathname 
     </Link>
   );
 }
+
+// hero section arry object
+export const heroSections = [
+  {
+    id: 1,
+    title: "Financial Planning",
+    slug: "financial-planning",
+  },
+  {
+    id: 2,
+    title: "Human Resource",
+    slug: "human-resource",
+  },
+  {
+    id: 3,
+    title: "Organisations",
+    slug: "organisations",
+  },
+  {
+    id: 4,
+    title: "Research & Analysis",
+    slug: "research-analysis",
+  },
+  {
+    id: 5,
+    title: "Risk Management",
+    slug: "risk-management",
+  },
+];
 //==============================================
 // Hometwo - Our Clients
 //==============================================

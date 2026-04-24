@@ -11,6 +11,7 @@
   --font-paragraph: var(--font-paragraph);
 }
 
+
 @layer base {
   h1,
   h2,
@@ -84,4 +85,8 @@
   .para-TwoXl {
     @apply text-[clamp(18px,2vw,24px)]/[clamp(26px,2.6vw,32px)];
   }
+}
+
+.cc{
+  color: #0000001a;
 }

@@ -1,7 +1,7 @@
 import { ChevronDown } from "lucide-react";
 import Link from "next/link";
 
-// ─── Footer One Data ──────────────────────────────────────────────────────────
+// ─── Footer One Data
 
 export const FOOTER_ONE_DATA = {
   email: "infocon@example.com",
@@ -24,7 +24,7 @@ export const FOOTER_ONE_DATA = {
   ],
 };
 
-// ─── Utils ────────────────────────────────────────────────────────────────────
+// ─── Utils 
 
 export function isActiveLink(href, pathname) {
   if (href === "/") return pathname === "/";
@@ -35,7 +35,7 @@ export function hasActiveChild(children, pathname) {
   return children?.some((child) => isActiveLink(child.href, pathname));
 }
 
-// ─── Nav Data ─────────────────────────────────────────────────────────────────
+// ─── Nav Data 
 
 export const NAV_LINKS = [
   {
@@ -79,7 +79,7 @@ export const NAV_LINKS = [
   },
 ];
 
-// ─── Nav Components ───────────────────────────────────────────────────────────
+// ─── Nav Components
 
 export function DropdownMenu({
   children,
@@ -106,7 +106,7 @@ export function DropdownMenu({
           key={child.href}
           href={child.href}
           onClick={onClose}
-          className={`block px-5 py-2.5 text-sm transition-colors duration-200 ${
+          className={`block px-5 py-2.5 text-[16px] transition-colors duration-200 ${
             isActiveLink(child.href, pathname)
               ? "text-secondary font-medium bg-secondary/5"
               : "text-primary hover:text-secondary hover:bg-secondary/5"
@@ -145,7 +145,7 @@ export function DesktopNavItem({
         onMouseLeave={onLeave}
       >
         <button
-          className={`flex items-center gap-1 text-sm font-medium transition-colors duration-200 cursor-pointer ${activeClass}`}
+          className={`flex items-center gap-1 text-[16px] font-bold transition-colors duration-200 cursor-pointer ${activeClass}`}
         >
           {link.label}
           <ChevronDown
@@ -171,7 +171,7 @@ export function DesktopNavItem({
     <div className={heightClass}>
       <Link
         href={link.href}
-        className={`text-sm font-medium transition-colors duration-200 ${activeClass}`}
+        className={`text-[16px] font-bold transition-colors duration-200 ${activeClass}`}
       >
         {link.label}
       </Link>
@@ -205,6 +205,7 @@ export function MobileNavItem({
           <span className="text-base font-heading font-medium">
             {link.label}
           </span>
+          <span className="text-[16px] font-heading font-medium">{link.label}</span>
           <ChevronDown
             size={16}
             className={`transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
@@ -222,7 +223,7 @@ export function MobileNavItem({
                 key={child.href}
                 href={child.href}
                 onClick={onClose}
-                className={`py-2 text-sm transition-colors duration-200 ${
+                className={`py-2 text-[16px] transition-colors duration-200 ${
                   isActiveLink(child.href, pathname)
                     ? "text-secondary font-medium"
                     : "text-primary/70 hover:text-secondary"
@@ -241,7 +242,7 @@ export function MobileNavItem({
     <Link
       href={link.href}
       onClick={onClose}
-      className={`py-3.5 text-base font-heading font-medium border-b border-primary/10 block transition-colors duration-200 ${activeClass}`}
+      className={`py-3.5 text-[16px] font-heading font-medium border-b border-primary/10 block transition-colors duration-200 ${activeClass}`}
     >
       {link.label}
     </Link>
@@ -274,5 +275,52 @@ export const heroSections = [
     id: 5,
     title: "Risk Management",
     slug: "risk-management",
+  },
+];
+//==============================================
+// Hometwo - Our Clients
+//==============================================
+export const CLIENTS = [
+  {
+    id: "01",
+    name: "Loreipsum",
+    description: "Lorem ipsum dolor sit amet, consectetur.",
+    logo: "/images/home2_Client/client1.png",
+  },
+  {
+    id: "02",
+    name: "Loreipsum",
+    description: "Lorem ipsum dolor sit amet, consectetur.",
+    logo: "/images/home2_Client/client2.png",
+  },
+  {
+    id: "03",
+    name: "Loreipsum",
+    description: "Lorem ipsum dolor sit amet, consectetur.",
+    logo: "/images/home2_Client/client3.png",
+  },
+  {
+    id: "04",
+    name: "Loreipsum",
+    description: "Lorem ipsum dolor sit amet, consectetur.",
+    logo: "/images/home2_Client/client4.png",
+  },
+  {
+    id: "05",
+    name: "Loreipsum",
+    description: "Lorem ipsum dolor sit amet, consectetur.",
+    logo: "/images/home2_Client/client5.png",
+  },
+  {
+    id: "06",
+    name: "Loreipsum",
+    description: "Lorem ipsum dolor sit amet, consectetur.",
+    logo: "/images/home2_Client/client6.png",
+  },
+  {
+    id: "07",
+    name: "Loreipsum",
+    description: "Lorem ipsum dolor sit amet, consectetur.",
+    logo: "/images/home2_Client/client7.png",
   },
 ];

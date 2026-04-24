@@ -1,5 +1,6 @@
 
 // ─── Design Tokens ────────────────────────────────────────────────────────────
+// ─── Design Tokens
 const tokens = {
   gap: {
     none: "0px",
@@ -17,29 +18,29 @@ const tokens = {
   },
 };
 
-// ─── Grid ─────────────────────────────────────────────────────────────────────
+// ─── Grid 
 /**
  * Responsive.Grid — তিনটা mode
  *
  * ┌─────────────────────────────────────────────────────────────┐
  * │ MODE 1: AUTO-FIT                                            │
  * │ cols prop নেই, min দাও                                      │
- * │ সব device এ automatically কাজ করে                           │
+ * │ সব device এ automatically কাজ করে                         │
  * │                                                             │
  * │ <Responsive.Grid min="280px" gap="lg">                      │
  * │   <Card /> <Card /> <Card />                                │
  * │ </Responsive.Grid>                                          │
  * ├─────────────────────────────────────────────────────────────┤
- * │ MODE 2: BREAKPOINT COLS (সবচেয়ে professional)              │
- * │ cols={{ base: 1, sm: 2, md: 3, lg: 4 }}                    │
- * │ প্রতিটা breakpoint এ আলাদা column count                    │
+ * │ MODE 2: BREAKPOINT COLS (সবচেয়ে professional)               │
+ * │ cols={{ base: 1, sm: 2, md: 3, lg: 4 }}                     │
+ * │ প্রতিটা breakpoint এ আলাদা column count                      │
  * │                                                             │
- * │ <Responsive.Grid cols={{ base: 1, md: 2, lg: 3 }}>         │
+ * │ <Responsive.Grid cols={{ base: 1, md: 2, lg: 3 }}>          │
  * │   <Card /> <Card /> <Card />                                │
  * │ </Responsive.Grid>                                          │
  * ├─────────────────────────────────────────────────────────────┤
  * │ MODE 3: CUSTOM STRING (Figma pixel perfect)                 │
- * │ cols="443px_1fr" | cols="40%_60%" | cols="1fr_2fr"         │
+ * │ cols="443px_1fr" | cols="40%_60%" | cols="1fr_2fr"          │
  * │ underscore = space                                          │
  * │ mobile এ auto single column হয়                             │
  * │                                                             │
@@ -60,6 +61,8 @@ function Grid({
   style = {},
 }) {
   // ── MODE 2: cols object ───────────────────────────────────────────────────
+
+  // ── MODE 2: cols object
   if (cols && typeof cols === "object") {
     // Tailwind এর fixed class গুলো hardcode করতে হয় 
     // dynamic string থেকে Tailwind class generate হয় না
@@ -105,7 +108,7 @@ function Grid({
     );
   }
 
-  // ── MODE 3: custom string ─────────────────────────────────────────────────
+  // ── MODE 3: custom string
   if (cols && typeof cols === "string") {
     // "443px_1fr"  →  "443px 1fr"
     // "40%_60%"    →  "40% 60%"
@@ -129,7 +132,7 @@ function Grid({
     );
   }
 
-  // ── MODE 1: auto-fit ──────────────────────────────────────────────────────
+  // ── MODE 1: auto-fit
   // column কখনো min এর ছোট হবে না — জায়গা না হলে নিচে নামবে
   // সব device এ automatically কাজ করে, কোনো breakpoint লাগে না
   return (
@@ -149,7 +152,7 @@ function Grid({
   );
 }
 
-// ─── Flex ──────────────────────────────────────────────────────────────────
+// ─── Flex
 /**
  * Responsive.Flex
  *
@@ -201,7 +204,7 @@ function Flex({
   );
 }
 
-// ─── Stack ─────────────────────────────────────────────────────────────────
+// ─── Stack
 /**
  * Responsive.Stack
  *
@@ -249,6 +252,7 @@ function Stack({
   );
 }
 
-// ─── Compound export ───────────────────────────────────────────────────────
+// ─── Compound export
 const Responsive = { Grid, Flex, Stack };
 export default Responsive;
+export { Grid, Flex, Stack };

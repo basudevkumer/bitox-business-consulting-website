@@ -1,18 +1,20 @@
+
+// ─── Design Tokens ────────────────────────────────────────────────────────────
 // ─── Design Tokens
 const tokens = {
   gap: {
     none: "0px",
-    xs:   "clamp(0.25rem, 1vw, 0.5rem)",
-    sm:   "clamp(0.5rem,  1.5vw, 0.75rem)",
-    md:   "clamp(0.75rem, 2vw,   1.25rem)",
-    lg:   "clamp(1rem,    2.5vw, 2rem)",
-    xl:   "clamp(1.5rem,  3vw,   3rem)",
+    xs: "clamp(0.25rem, 1vw, 0.5rem)",
+    sm: "clamp(0.5rem,  1.5vw, 0.75rem)",
+    md: "clamp(0.75rem, 2vw,   1.25rem)",
+    lg: "clamp(1rem,    2.5vw, 2rem)",
+    xl: "clamp(1.5rem,  3vw,   3rem)",
   },
   padding: {
-    none:  "0",
+    none: "0",
     tight: "0 clamp(0.5rem, 2vw, 1.5rem)",
-    base:  "0 clamp(1rem,   4vw, 3rem)",
-    wide:  "0 clamp(2rem,   6vw, 6rem)",
+    base: "0 clamp(1rem,   4vw, 3rem)",
+    wide: "0 clamp(2rem,   6vw, 6rem)",
   },
 };
 
@@ -58,34 +60,34 @@ function Grid({
   className = "",
   style = {},
 }) {
+  // ── MODE 2: cols object ───────────────────────────────────────────────────
 
   // ── MODE 2: cols object
   if (cols && typeof cols === "object") {
-
-    // Tailwind এর fixed class গুলো hardcode করতে হয়
+    // Tailwind এর fixed class গুলো hardcode করতে হয় 
     // dynamic string থেকে Tailwind class generate হয় না
     const map = {
-      1:  "grid-cols-1",
-      2:  "grid-cols-2",
-      3:  "grid-cols-3",
-      4:  "grid-cols-4",
-      5:  "grid-cols-5",
-      6:  "grid-cols-6",
-      7:  "grid-cols-7",
-      8:  "grid-cols-8",
-      9:  "grid-cols-9",
+      1: "grid-cols-1",
+      2: "grid-cols-2",
+      3: "grid-cols-3",
+      4: "grid-cols-4",
+      5: "grid-cols-5",
+      6: "grid-cols-6",
+      7: "grid-cols-7",
+      8: "grid-cols-8",
+      9: "grid-cols-9",
       10: "grid-cols-10",
       11: "grid-cols-11",
       12: "grid-cols-12",
     };
 
     const classes = [
-      cols.base          && map[cols.base],
-      cols.sm            && `sm:${map[cols.sm]}`,
-      cols.md            && `md:${map[cols.md]}`,
-      cols.lg            && `lg:${map[cols.lg]}`,
-      cols.xl            && `xl:${map[cols.xl]}`,
-      cols["2xl"]        && `2xl:${map[cols["2xl"]]}`,
+      cols.base && map[cols.base],
+      cols.sm && `sm:${map[cols.sm]}`,
+      cols.md && `md:${map[cols.md]}`,
+      cols.lg && `lg:${map[cols.lg]}`,
+      cols.xl && `xl:${map[cols.xl]}`,
+      cols["2xl"] && `2xl:${map[cols["2xl"]]}`,
     ]
       .filter(Boolean)
       .join(" ");
@@ -94,10 +96,10 @@ function Grid({
       <Tag
         className={`grid w-full ${classes} ${className}`}
         style={{
-          gap:        tokens.gap[gap]         ?? gap,
-          padding:    tokens.padding[padding] ?? padding,
+          gap: tokens.gap[gap] ?? gap,
+          padding: tokens.padding[padding] ?? padding,
           alignItems: align,
-          boxSizing:  "border-box",
+          boxSizing: "border-box",
           ...style,
         }}
       >
@@ -117,11 +119,11 @@ function Grid({
       <Tag
         className={`grid w-full grid-cols-1 md:[grid-template-columns:var(--gcols)] ${className}`}
         style={{
-          "--gcols":  templateColumns,         // CSS variable দিয়ে pass
-          gap:        tokens.gap[gap]         ?? gap,
-          padding:    tokens.padding[padding] ?? padding,
+          "--gcols": templateColumns, // CSS variable দিয়ে pass
+          gap: tokens.gap[gap] ?? gap,
+          padding: tokens.padding[padding] ?? padding,
           alignItems: align,
-          boxSizing:  "border-box",
+          boxSizing: "border-box",
           ...style,
         }}
       >
@@ -138,10 +140,10 @@ function Grid({
       className={`grid w-full ${className}`}
       style={{
         gridTemplateColumns: `repeat(auto-fit, minmax(min(${min}, 100%), 1fr))`,
-        gap:        tokens.gap[gap]         ?? gap,
-        padding:    tokens.padding[padding] ?? padding,
+        gap: tokens.gap[gap] ?? gap,
+        padding: tokens.padding[padding] ?? padding,
         alignItems: align,
-        boxSizing:  "border-box",
+        boxSizing: "border-box",
         ...style,
       }}
     >
@@ -189,11 +191,11 @@ function Flex({
     <Tag
       className={`flex w-full ${wrap ? "flex-wrap" : "flex-nowrap"} ${className}`}
       style={{
-        gap:            tokens.gap[gap]         ?? gap,
-        padding:        tokens.padding[padding] ?? padding,
-        alignItems:     align,
+        gap: tokens.gap[gap] ?? gap,
+        padding: tokens.padding[padding] ?? padding,
+        alignItems: align,
         justifyContent: justify,
-        boxSizing:      "border-box",
+        boxSizing: "border-box",
         ...style,
       }}
     >
@@ -238,10 +240,10 @@ function Stack({
     <Tag
       className={`flex flex-col w-full ${className}`}
       style={{
-        gap:        tokens.gap[gap]         ?? gap,
-        padding:    tokens.padding[padding] ?? padding,
+        gap: tokens.gap[gap] ?? gap,
+        padding: tokens.padding[padding] ?? padding,
         alignItems: align,
-        boxSizing:  "border-box",
+        boxSizing: "border-box",
         ...style,
       }}
     >

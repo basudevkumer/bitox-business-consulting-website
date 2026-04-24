@@ -31,7 +31,7 @@ const HeroSection = () => {
         
       </Container>
       <div className="mt-[90px] mb-[20px]">
-          <Image src={heroBanner} />
+          <Image src={heroBanner} alt="Hero banner" />
         </div>
     </section>
   );

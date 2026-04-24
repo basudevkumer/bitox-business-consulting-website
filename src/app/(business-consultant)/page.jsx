@@ -2,6 +2,7 @@
 
 
 import AboutSectionHO from '@/components/homeOne/AboutSectionHO'
+import BrandLogos from '@/components/homeOne/BrandLogos'
 import FeaturesRound from '@/components/homeOne/FeaturesRound'
 import HeroSection from '@/components/homeOne/HeroSection'
 import React from 'react'
@@ -12,6 +13,7 @@ const Home1 = () => {
     <HeroSection/>  
     <FeaturesRound/>
     <AboutSectionHO/>
+    <BrandLogos/> 
     </>
   )
 }

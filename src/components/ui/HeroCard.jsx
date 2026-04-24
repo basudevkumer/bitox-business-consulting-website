@@ -35,3 +35,4 @@ const HeroCard = () => {
 };
 
 export default HeroCard;
+

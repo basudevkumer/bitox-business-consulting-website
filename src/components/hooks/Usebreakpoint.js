@@ -1,4 +1,8 @@
-"use client";
+
+
+
+  
+  "use client";
 
 import { useEffect, useState } from "react";
 
@@ -53,3 +57,6 @@ export function useIsMobile() {
   const bp = useBreakpoint();
   return bp === "xs" || bp === "sm";
 }
+
+
+

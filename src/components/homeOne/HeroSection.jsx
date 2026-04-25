@@ -14,7 +14,7 @@ const HeroSection = () => {
   const { heroBanner } = allImages;
 
   return (
-    <section className="pt-[180px] pb-[120px] bg-bg-secondaryOne">
+    <section className="pt-[180px] pb-[120px] ">
       <Container size="2xl">
         <div className="relative">
           <h1 className="font-heading headingOne  uppercase tracking-tight ">

@@ -10,6 +10,7 @@ import HomeBrandThree from "../../../public/images/home01/brand/brand3.png";
 import HomeBrandFour from "../../../public/images/home01/brand/brand4.png";
 import HomeBrandFive from "../../../public/images/home01/brand/brand5.png";
 import HomeBrandSix from "../../../public/images/home01/brand/brand6.png";
+import Plus from "../../../public/images/home01/services/plus.png";
 
 const allImages = {
   heroIocns: HeroImage,
@@ -30,6 +31,7 @@ const allImages = {
     { id: 5, img: HomeBrandFive },
     { id: 6, img: HomeBrandSix },
   ],
+  plus: Plus
 };
 
 export default allImages;

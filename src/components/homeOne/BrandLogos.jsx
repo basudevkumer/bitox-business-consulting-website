@@ -7,7 +7,7 @@ import Image from "next/image";
 const BrandLogos = () => {
   const { homeOneBrand } = allImages;
   return (
-    <section className="bg-bg-secondaryOne pt-[60px] pb-[120px]">
+    <section className=" pt-[60px] pb-[120px]">
       <Container size="2xl">
         <Responsive.Flex as="ul" justify="space-between">
           {homeOneBrand.map((items, index) => {

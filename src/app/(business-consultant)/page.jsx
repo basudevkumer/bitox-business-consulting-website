@@ -1,19 +1,22 @@
-
-
-
-import AboutSectionHO from '@/components/homeOne/AboutSectionHO'
-import FeaturesRound from '@/components/homeOne/FeaturesRound'
-import HeroSection from '@/components/homeOne/HeroSection'
-import React from 'react'
+import AboutSectionHO from "@/components/homeOne/AboutSectionHO";
+import BrandLogos from "@/components/homeOne/BrandLogos";
+import FeaturesRound from "@/components/homeOne/FeaturesRound";
+import HeroSection from "@/components/homeOne/HeroSection";
+import ServicesSection from "@/components/homeOne/ServicesSection";
+import VideoShowcase from "@/components/homeOne/VideoShowcase";
+import React from "react";
 
 const Home1 = () => {
   return (
     <>
-    <HeroSection/>  
-    <FeaturesRound/>
-    <AboutSectionHO/>
+      <HeroSection />
+      <FeaturesRound />
+      <AboutSectionHO />
+      <BrandLogos />
+      <ServicesSection />
+      <VideoShowcase />
     </>
-  )
-}
+  );
+};
 
-export default Home1
+export default Home1;

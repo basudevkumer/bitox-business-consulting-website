@@ -7,7 +7,7 @@ const FeaturesRound = () => {
   const { featureRound } = allImages;
 
   return (
-    <section className="bg-bg-secondaryOne overflow-hidden py-[120px] ">
+    <section className=" overflow-hidden py-[120px] ">
       <div className="relative  max-w-[932px]  mx-auto">
         <Image
           src={featureRound[1].img}

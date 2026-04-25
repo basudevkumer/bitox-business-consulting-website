@@ -42,6 +42,9 @@ const PortfolioSection = () => {
             })}
           </Responsive.Grid>
         </div>
+        <div>
+          <button className="w-full cursor-pointer text-center py-5  text-primary font-medium text-base border border-[#0000001a] rounded-[6px  ]">See all case studies</button>
+        </div>
       </Container>
     </section>
   );

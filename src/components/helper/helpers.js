@@ -332,3 +332,20 @@ export const features = [
       "Enterprise partnerships, built on clarity and craft, are the foundation of sustainable and long-term success.",
   },
 ];
+//===============================
+// HomeTwo - Footer Two
+//===============================
+ export const companyLinks = [
+    "Who We Are?",
+    "Our Services",
+    "Latest Blog",
+    "Meet Our Team",
+    "Contact Us",
+  ];
+  export const serviceLinks = [
+    "Corporate Growth",
+    "Culture & Change",
+    "Finance Advisor",
+    "Digital Marketing",
+    "Consulting Network",
+  ];

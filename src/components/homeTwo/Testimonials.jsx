@@ -1,143 +1,113 @@
-"use client";
-import { useEffect, useRef, useState, useCallback } from "react";
-import { getTestimonials } from "../helper/helpers";
+import React from "react";
+import { FaStar } from "react-icons/fa";
+import { BsPlayCircleFill } from "react-icons/bs";
+import Image from "next/image";
 import Container from "../ui/Container";
-import { ArrowButton, TextCard, VideoCard } from "../ui/TestimonialsTwo";
+import { testimonials } from "../helper/helpers";
 
-const GAP = 20;
 
-// ─── Hook: visible slide count based on breakpoint ────────────────────────────
-function useVisibleCount() {
-  const [count, setCount] = useState(1);
-  useEffect(() => {
-    const update = () => {
-      if (window.innerWidth >= 1024) setCount(3);
-      else if (window.innerWidth >= 768) setCount(2);
-      else setCount(1);
-    };
-    update();
-    window.addEventListener("resize", update);
-    return () => window.removeEventListener("resize", update);
-  }, []);
-  return count;
+
+function StarRating({ count = 5 }) {
+  return (
+    <div className="flex items-center gap-1">
+      {Array.from({ length: count }).map((_, i) => (
+        <FaStar key={i} className="text-yellow-400 text-base" />
+      ))}
+    </div>
+  );
 }
 
-// ─── Main Section ─────────────────────────────────────────────────────────────
-export default function TestimonialsSection() {
-  const testimonials = getTestimonials();
-  const visibleCount = useVisibleCount();
-  const trackRef = useRef(null);
-  const autoRef = useRef(null);
-  const [current, setCurrent] = useState(0);
-  const [slideW, setSlideW] = useState(0);
-
-  const maxIndex = Math.max(0, testimonials.length - visibleCount);
-
-  // Recalculate slide width on resize or visibleCount change
-  useEffect(() => {
-    const calc = () => {
-      if (!trackRef.current) return;
-      const trackW = trackRef.current.offsetWidth;
-      setSlideW((trackW - GAP * (visibleCount - 1)) / visibleCount);
-    };
-    calc();
-    window.addEventListener("resize", calc);
-    return () => window.removeEventListener("resize", calc);
-  }, [visibleCount]);
-
-  // Clamp current index when visibleCount changes
-  useEffect(() => {
-    setCurrent((c) => Math.min(c, maxIndex));
-  }, [maxIndex]);
-
-  const goTo = useCallback(
-    (idx) => setCurrent(Math.max(0, Math.min(idx, maxIndex))),
-    [maxIndex]
-  );
-
-  const next = useCallback(
-    () => setCurrent((c) => (c >= maxIndex ? 0 : c + 1)),
-    [maxIndex]
-  );
-
-  const prev = useCallback(
-    () => setCurrent((c) => (c <= 0 ? maxIndex : c - 1)),
-    [maxIndex]
-  );
-
-  const startAuto = useCallback(() => {
-    clearInterval(autoRef.current);
-    autoRef.current = setInterval(next, 4000);
-  }, [next]);
-
-  useEffect(() => {
-    startAuto();
-    return () => clearInterval(autoRef.current);
-  }, [startAuto]);
-
-  const offset = current * (slideW + GAP);
-
-  return (
-    <section className="bg-[#F5F0E8] py-16 font-serif">
-      {/* Heading */}
-      <Container size="lg">
-        <div className="text-center mb-10">
-          <span className="inline-block border border-gray-400 rounded-full text-[10px] tracking-widest uppercase px-4 py-1 text-gray-500 font-sans mb-4">
-            Testimonials
-          </span>
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-gray-900 underline underline-offset-[6px]">
-            Clients Feedback &amp; Testimonials
-          </h2>
-        </div>
-      </Container>
-
-      {/* Slider */}
-      <div className="px-4 sm:px-6 md:px-10 lg:px-16 2xl:px-20 max-w-[1600px] mx-auto">
-        <div className="relative px-12">
-          <ArrowButton direction="prev" onClick={() => { prev(); startAuto(); }} />
-
-          {/* Track */}
-          <div className="overflow-hidden" ref={trackRef}>
-            <div
-              className="flex"
-              style={{
-                gap: `${GAP}px`,
-                transform: `translateX(-${offset}px)`,
-                transition: "transform 0.5s cubic-bezier(.4,0,.2,1)",
-              }}
-            >
-              {testimonials.map((item, i) => (
-                <div
-                  key={i}
-                  style={{ width: slideW || undefined, flexShrink: 0, maxWidth: 513 }}
-                >
-                  {item.type === "video" ? (
-                    <VideoCard {...item} />
-                  ) : (
-                    <TextCard {...item} />
-                  )}
-                </div>
-              ))}
-            </div>
+function TestimonialCard({ item }) {
+  if (item.type === "video") {
+    return (
+      <div className="bg-white rounded-[6px] p-7 lg:py-[46px]  lg:px-[30px] overflow-hidden shadow-sm border border-white flex flex-col">
+        {/* Video Thumbnail */}
+        <div className="relative w-full h-[200px] mb-5">
+          <Image
+            src={item.videoThumbnail}
+            alt="Video thumbnail"
+            fill
+            className="object-cover"
+          />
+          {/* Play Button Overlay */}
+          <div className="absolute inset-0 flex items-center justify-center bg-black/20">
+            <BsPlayCircleFill className="text-white text-5xl drop-shadow-lg cursor-pointer hover:scale-110 transition-transform duration-200" />
           </div>
-
-          <ArrowButton direction="next" onClick={() => { next(); startAuto(); }} />
         </div>
-
-        {/* Dots */}
-        <div className="flex justify-center gap-1.5 mt-7">
-          {testimonials.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => { goTo(i); startAuto(); }}
-              aria-label={`Go to slide ${i + 1}`}
-              className={`w-2 h-2 rounded-full transition-all duration-200 ${
-                i === current ? "bg-gray-900 scale-110" : "bg-gray-300"
-              }`}
+        {/* Author */}
+        <div className="flex items-center gap-3">
+          <div className="relative w-12 h-12 rounded-[6px] overflow-hidden shrink-0">
+            <Image
+              src={item.authorImg}
+              alt={item.authorName}
+              fill
+              className="object-cover"
             />
-          ))}
+          </div>
+          <div>
+            <p className="font-bold text-primary text-sm leading-tight">
+              {item.authorName}
+            </p>
+            <p className="text-tarnary text-xs">{item.authorRole}</p>
+          </div>
         </div>
       </div>
+    );
+  }
+
+  return (
+    <div className="bg-white rounded-[6px] py-[46px] px-[30px] shadow-sm border border-gray-100 flex flex-col gap-4">
+      <StarRating count={item.rating} />
+      <h3 className="font-bold text-primary text-[24px] leading-[34px] underline underline-offset-2 pr-7">
+        {item.title}
+      </h3>
+      <p className="text-tarnary text-[15px] leading-[20px]">
+        {item.description}
+      </p>
+      {/* Author */}
+      <div className="flex items-center gap-3 pt-2">
+        <div className="relative w-12 h-12 rounded-[6px] overflow-hidden shrink-0">
+          <Image
+            src={item.authorImg}
+            alt={item.authorName}
+            fill
+            className="object-cover"
+          />
+        </div>
+        <div>
+          <p className="font-bold text-primary text-sm leading-tight">
+            {item.authorName}
+          </p>
+          <p className="text-tarnary text-xs">{item.authorRole}</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function Testimonials() {
+  return (
+    <section className="py-10 lg:py-[120px] bg-bg-secondaryOne">
+      <Container size="lg">
+        {/* Header */}
+        <div className="text-center mb-12">
+          <span className="inline-flex items-center border border-black/10 rounded-[4px] py-1 px-[15px] text-xs font-bold uppercase tracking-widest mb-5">
+            Testimonials
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold text-primary underline underline-offset-4">
+            Clients Feedback & Testimonials
+          </h2>
+        </div>
+
+        {/* Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {testimonials.map((item) => (
+            <TestimonialCard key={item.id} item={item} />
+          ))}
+        </div>
+      </Container>
     </section>
   );
 }
+
+export default Testimonials;

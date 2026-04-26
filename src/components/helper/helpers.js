@@ -2,8 +2,7 @@ import { ChevronDown } from "lucide-react";
 import { FaDribbble, FaFacebook, FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import Link from "next/link";
-import allImages from "./imageProvider";
-
+import imageProvider from "@/components/helper/imageProvider";
 //============================
 // Utils
 //============================
@@ -314,47 +313,35 @@ export const EmailIcon = () => (
 //=================================
 // HomeTwo — Testimonials
 //=================================
- // আপনার সঠিক path দিন
-
-export function getTestimonials() {
-  return [
-    {
-      type: "text",
-      stars: 5,
-      title: "Remarkable Growth and Results",
-      body: "We are dedicated to guiding you on your financial journey with expertise integrity, & a personalized business non-stop solution with true professional from Consult agency.",
-      author: "Sophia Rahman",
-      role: "BrightEdge",
-      avatar: allImages.home2Testimonials[0].img, // Sophia_Rahman.png
-      initials: "SR",
-    },
-    {
-      type: "video",
-      videoThumb: allImages.home2Testimonials[1].img, // videoimg.png
-      author: "Michael Torres",
-      role: "CEO, TechNova",
-      avatar: allImages.home2Testimonials[2].img, // Michael_Torres.png
-      initials: "MT",
-    },
-    {
-      type: "text",
-      stars: 5,
-      title: "Creative Strategies That Stand Out",
-      body: "We are dedicated to guiding you on your financial journey with expertise integrity, & a personalized business non-stop solution with true professional from Consult agency.",
-      author: "Michael Hayes",
-      role: "CEO, TechNova",
-      avatar: allImages.home2Testimonials[3].img, // Michael_Hayes.png
-      initials: "MH",
-    },
-    {
-      type: "text",
-      stars: 5,
-      title: "Remarkable Growth and Results",
-      body: "We are dedicated to guiding you on your financial journey with expertise integrity, & a personalized business non-stop solution with true professional from Consult agency.",
-      author: "Sophia Rahman",
-      role: "BrightEdge",
-      avatar: allImages.home2Testimonials[0].img, // Sophia_Rahman.png (আবার)
-      initials: "SR",
-    },
-  ];
-}
+export const testimonials = [
+  {
+    id: 1,
+    type: "text",
+    rating: 5,
+    title: "Remarkable Growth and Results",
+    description:
+      "We are dedicated to guiding you on your financial journey with expertise integrity, & a personalized business non-stop solution with true professional from Consult agency.",
+    authorImg: imageProvider.home2Testimonials[0].img,
+    authorName: "Sophia Rahman,",
+    authorRole: "BrightEdge",
+  },
+  {
+    id: 2,
+    type: "video",
+    authorImg: imageProvider.home2Testimonials[2].img,
+    authorName: "Michael Torres,",
+    authorRole: "CEO, TechNova",
+    videoThumbnail: imageProvider.home2Testimonials[1].img,
+  },
+  {
+    id: 3,
+    type: "text",
+    rating: 5,
+    title: "Creative Strategies That Stand Out",
+    description:
+      "We are dedicated to guiding you on your financial journey with expertise integrity, & a personalized business non-stop solution with true professional from Consult agency.",
+    authorImg: imageProvider.home2Testimonials[3].img,
+    authorName: "Michael Hayes,",
+    authorRole: "CEO, TechNova",
+  },
+];

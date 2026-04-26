@@ -11,7 +11,7 @@ const HeroCard = () => {
       <h4 className="headingFour font-bold ">
         Building the right foundation of your business
       </h4>
-      <p className="pt-[30px] pb-[174px] para-lg text-tarnary">
+      <p className="pt-[30px] pb-[50px] md:pb-[100px] lg:pb-[174px] para-lg text-tarnary">
         We are <span className="font-bold">dedicated to guiding</span> you on
         your financial journey with expertise integrity and a personalized
         approach, always.

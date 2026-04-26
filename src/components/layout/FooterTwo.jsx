@@ -236,7 +236,7 @@ function FooterDark() {
 // ─── Main Export
 export default function BusinessFooterSection() {
   return (
-    <section className="w-full bg-bg-secondaryTwo overflow-hidden">
+    <section className="w-full bg-bg-secondaryTwo overflow-hidden pt-10 lg:pt-[120px]">
       <MarqueeHeading />
       <HeroCTA />
 

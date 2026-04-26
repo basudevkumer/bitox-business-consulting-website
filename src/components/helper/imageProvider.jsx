@@ -92,7 +92,7 @@ const allImages = {
   ],
   plusImages: PlusWhite,
   processImage: ProcessOne,
-  contactImage: ContactImage
+  contactImage: ContactImage,
   home2Testimonials: [
     { id: 1, img: Home2Testimonials1 },
     { id: 2, img: Home2Testimonials2 },

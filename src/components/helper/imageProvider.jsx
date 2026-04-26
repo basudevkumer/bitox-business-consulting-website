@@ -21,7 +21,6 @@ import projectFive from "../../../public/images/home01/portfolioSection/portfoli
 import PlusWhite from "../../../public/images/home01/services/plusWhite.png";
 import ProcessOne from "../../../public/images/home01/processStep/process-step-1.png";
 import ContactImage from "../../../public/images/home01/contact/contact-img.png";
-
 import Home2Testimonials1 from "../../../public/images/home2_Testimonials/Sophia_Rahman.png";
 import Home2Testimonials2 from "../../../public/images/home2_Testimonials/videoimg.png";
 import Home2Testimonials3 from "../../../public/images/home2_Testimonials/Michael_Torres.png";
@@ -30,6 +29,10 @@ import Home2OurExperts1 from "../../../public/images/home2_ourexperts/experts1.p
 import Home2OurExperts2 from "../../../public/images/home2_ourexperts/experts2.png";
 import Home2OurExperts3 from "../../../public/images/home2_ourexperts/experts3.png";
 import ourteam from "../../../public/images/home2_ourteam/our_team.png";
+import Home2Blog1 from "../../../public/images/home2_blog/blog1.png";
+import Home2Blog2 from "../../../public/images/home2_blog/blog2.png";
+import Home2Blog3 from "../../../public/images/home2_blog/blog3.png";
+import Home2Blog4 from "../../../public/images/home2_blog/blog4.png";
 const allImages = {
   heroIocns: HeroImage,
   heroBanner: HeroBanner,
@@ -106,13 +109,18 @@ const allImages = {
     { id: 3, img: Home2Testimonials3 },
     { id: 4, img: Home2Testimonials4 },
   ],
-
   home2OurExperts: [
     { id: 1, img: Home2OurExperts1 },
     { id: 2, img: Home2OurExperts2 },
     { id: 3, img: Home2OurExperts3 },
   ],
   home2ourteam : ourteam,
+  home2blog: [
+    { id: 1, img: Home2Blog1 },
+    { id: 2, img: Home2Blog2 },
+    { id: 3, img: Home2Blog3 },
+    { id: 4, img: Home2Blog4 },
+  ],
 };
 
 export default allImages;

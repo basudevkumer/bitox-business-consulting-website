@@ -7,6 +7,7 @@ import TestimonialsClient from '@/components/homeTwo/TestimonialsClient'
 import PricingPlan from '@/components/homeTwo/PricingPlan'
 import OurExperts from '@/components/homeTwo/OurExperts'
 import OurTeam from '@/components/homeTwo/OurTeam'
+import BlogInsight from '@/components/homeTwo/BlogInsight'
 
 const page = () => {
   return (
@@ -19,6 +20,7 @@ const page = () => {
       <PricingPlan/>
       <OurExperts/>
       <OurTeam/>
+      <BlogInsight/>
     </>
   )
 }

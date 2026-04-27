@@ -1,103 +1,41 @@
 "use client";
-
 import Image from "next/image";
 import Link from "next/link";
 import allImages from "../helper/imageProvider";
 import Container from "../ui/Container";
 import { Grid } from "../ui/Responsive";
-
-const blogPosts = [
-  {
-    id: 1,
-    img: null, // allImages.home2blog[0].img — circle clip
-    clipShape: "circle",
-    readTime: "6 min read",
-    date: "Mar 12, 2026",
-    title: "5 smart ways to improve your business cash flow",
-    excerpt:
-      "Enterprise partnerships, built on clarity craft, are the foundation of sustainable and long-term success.",
-    isUnderlined: false,
-  },
-  {
-    id: 2,
-    img: null, // allImages.home2blog[1].img — triangle clip
-    clipShape: "triangle",
-    readTime: "6 min read",
-    date: "Mar 12, 2026",
-    title: "Smart strategies to grow your business faster",
-    excerpt:
-      "Enterprise partnerships, built on clarity craft, are the foundation of sustainable and long-term success.",
-    isUnderlined: false,
-  },
-  {
-    id: 3,
-    img: null, // allImages.home2blog[2].img — rectangle (no clip)
-    clipShape: "rectangle",
-    readTime: "6 min read",
-    date: "Mar 12, 2026",
-    title: "Simple ways to improve your business cash flow",
-    excerpt:
-      "Enterprise partnerships, built on clarity craft, are the foundation of sustainable and long-term success.",
-    isUnderlined: true,
-  },
-  {
-    id: 4,
-    img: null, // allImages.home2blog[3].img — star clip
-    clipShape: "star",
-    readTime: "6 min read",
-    date: "Mar 12, 2026",
-    title: "Building a strong financial foundation for business",
-    excerpt:
-      "Enterprise partnerships, built on clarity craft, are the foundation of sustainable and long-term success.",
-    isUnderlined: false,
-  },
-];
-
-const clipStyles = {
-  circle: {
-    
-    width: "160px",
-    height: "160px",
-    objectFit: "cover",
-  },
-  triangle: {
-    
-    width: "160px",
-    height: "160px",
-    objectFit: "cover",
-  },
-  rectangle: {
-    borderRadius: "6px",
-    width: "100%",
-    height: "180px",
-    objectFit: "cover",
-  },
-  star: {
-    width: "160px",
-    height: "160px",
-    objectFit: "cover",
-  },
-};
-
+import { blogPosts, clipStyles } from "../helper/helpers";
 const BlogInsight = () => {
   return (
-    <section className="py-10 lg:py-[100px] bg-[#F5F0E8]">
+    <section className="py-10 lg:py-30 bg-bg-secondaryOne">
       <Container size="lg">
         {/* Header */}
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-10 gap-4">
           <div>
-            <span className="inline-block border border-black text-[11px] font-semibold tracking-widest uppercase px-3 py-1 mb-4">
+            <span className="inline-block text-primary border border-black/10 text-[14px] font-bold tracking-widest uppercase px-3 py-1 mb-4">
               Blog Insight
             </span>
-            <h2 className="text-4xl lg:text-5xl font-bold underline underline-offset-4 leading-tight max-w-xl">
+            <h2 className="max-w-[749px] text-[30px] lg:text-[45px] font-bold underline underline-offset-4 lg:leading-14.5">
               Valuable insights to change your startup idea
             </h2>
           </div>
           <Link
             href="/blog"
-            className="flex items-center gap-2 text-sm font-medium whitespace-nowrap hover:opacity-70 transition-opacity"
+            className="flex items-center gap-2 text-[18px] underline underline-offset-6 font-medium whitespace-nowrap hover:opacity-70 transition-opacity"
           >
-            Read all blog posts <span>&#9658;</span>
+            Read all blog posts
+            <svg
+              width="9"
+              height="11"
+              viewBox="0 0 9 11"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1.5547 0.16928C0.890146 -0.273757 0 0.202634 0 1.00133V9.2643C0 10.063 0.890145 10.5394 1.5547 10.0963L7.75192 5.96486C8.34566 5.56904 8.34566 4.69658 7.75192 4.30076L1.5547 0.16928Z"
+                fill="#02090F"
+              />
+            </svg>
           </Link>
         </div>
 
@@ -110,42 +48,48 @@ const BlogInsight = () => {
             return (
               <div
                 key={post.id}
-                className="bg-white rounded-sm p-5 flex flex-col items-center text-center gap-3"
+                className={`bg-white rounded-md flex flex-col items-center text-center gap-3 ${
+                  isRectangle ? "overflow-hidden" : "px-9 py-7.5"
+                }`}
               >
                 {/* Image with clip shape */}
                 <div
                   className="flex items-center justify-center w-full overflow-hidden"
-                  style={{ minHeight: "180px" }}
+                  style={isRectangle ? {} : { minHeight: "180px" }}
                 >
                   {imgSrc && (
                     <Image
                       src={imgSrc}
                       alt={post.title}
-                      width={isRectangle ? 400 : 160}
-                      height={isRectangle ? 180 : 160}
-                      style={clipStyles[post.clipShape]}
+                      width={isRectangle ? 377 : 160}
+                      height={isRectangle ? 250 : 160}
+                      style={
+                        isRectangle
+                          ? {
+                              width: "377px",
+                              height: "200px",
+                              objectFit: "cover",
+                            }
+                          : clipStyles[post.clipShape]
+                      }
                     />
                   )}
                 </div>
 
-                {/* Meta */}
-                <p className="text-xs text-gray-400">
-                  {post.readTime} &bull; {post.date}
-                </p>
-
-                {/* Title */}
-                <h3
-                  className={`text-[15px] font-bold leading-snug ${
-                    post.isUnderlined ? "underline underline-offset-2" : ""
-                  }`}
+                {/* nicer content e rectangle hole alda padding */}
+                <div
+                  className={`flex flex-col items-center gap-3 ${isRectangle ? "px-9 pb-7.5" : "w-full"}`}
                 >
-                  {post.title}
-                </h3>
-
-                {/* Excerpt */}
-                <p className="text-xs text-gray-500 leading-relaxed">
-                  {post.excerpt}
-                </p>
+                  <p className="text-sm text-primary font-medium">
+                    {post.readTime} &bull; {post.date}
+                  </p>
+                  <h3 className="text-[19px] font-bold underline underline-offset-2 md:no-underline md:hover:underline">
+                    {post.title}
+                  </h3>
+                  <p className="text-sm text-tarnary font-normal">
+                    {post.excerpt}
+                  </p>
+                </div>
               </div>
             );
           })}

@@ -400,3 +400,73 @@ export const featuresteam = [
       "Enterprise partnerships, built on clarity and craft, are the sustainable and long-term success.",
   },
 ];
+//=================================
+// HomeTwo — Blog Insight
+//=================================
+export const blogPosts = [
+  {
+    id: 1,
+    img: null, // allImages.home2blog[0].img — circle clip
+    clipShape: "circle",
+    readTime: "6 min read",
+    date: "Mar 12, 2026",
+    title: "5 smart ways to improve your business cash flow",
+    excerpt:
+      "Enterprise partnerships, built on clarity craft, are the foundation of sustainable and long-term success.",
+  },
+  {
+    id: 2,
+    img: null, // allImages.home2blog[1].img — triangle clip
+    clipShape: "triangle",
+    readTime: "6 min read",
+    date: "Mar 12, 2026",
+    title: "Smart strategies to grow your business faster",
+    excerpt:
+      "Enterprise partnerships, built on clarity craft, are the foundation of sustainable and long-term success.",
+  },
+  {
+    id: 3,
+    img: null, // allImages.home2blog[2].img — rectangle (no clip)
+    clipShape: "rectangle",
+    readTime: "6 min read",
+    date: "Mar 12, 2026",
+    title: "Simple ways to improve your business cash flow",
+    excerpt:
+      "Enterprise partnerships, built on clarity craft, are the foundation of sustainable and long-term success.",
+  },
+  {
+    id: 4,
+    img: null, // allImages.home2blog[3].img — star clip
+    clipShape: "star",
+    readTime: "6 min read",
+    date: "Mar 12, 2026",
+    title: "Building a strong financial foundation for business",
+    excerpt:
+      "Enterprise partnerships, built on clarity craft, are the foundation of sustainable and long-term success.",
+  },
+];
+
+export const clipStyles = {
+  circle: {
+    width: "160px",
+    height: "160px",
+    objectFit: "cover",
+  },
+  triangle: {
+    clipPath: "polygon(50% 0%, 0% 100%, 100% 100%)",
+    width: "160px",
+    height: "160px",
+    objectFit: "cover",
+  },
+  rectangle: {
+    borderRadius: "6px",
+    width: "100%",
+    height: "180px",
+    objectFit: "cover",
+  },
+  star: {
+    width: "160px",
+    height: "160px",
+    objectFit: "cover",
+  },
+};

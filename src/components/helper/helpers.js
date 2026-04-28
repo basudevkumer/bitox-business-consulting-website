@@ -1,9 +1,8 @@
-import { ChevronDown } from "lucide-react";
+import { BarChart2, Bug, ChevronDown, FlaskConical, Headphones, ShieldCheck } from "lucide-react";
 import { FaDribbble, FaFacebook, FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import Link from "next/link";
-import allImages from "./imageProvider";
-
+import imageProvider from "@/components/helper/imageProvider";
 //============================
 // Utils
 //============================
@@ -314,47 +313,193 @@ export const EmailIcon = () => (
 //=================================
 // HomeTwo — Testimonials
 //=================================
- // আপনার সঠিক path দিন
+export const testimonials = [
+  {
+    id: 1,
+    type: "text",
+    rating: 5,
+    title: "Remarkable Growth and Results",
+    description:
+      "We are dedicated to guiding you on your financial journey with expertise integrity, & a personalized business non-stop solution with true professional from Consult agency.",
+    authorImg: imageProvider.home2Testimonials[0].img,
+    authorName: "Sophia Rahman,",
+    authorRole: "BrightEdge",
+  },
+  {
+    id: 2,
+    type: "video",
+    authorImg: imageProvider.home2Testimonials[2].img,
+    authorName: "Michael Torres,",
+    authorRole: "CEO, TechNova",
+    videoThumbnail: imageProvider.home2Testimonials[1].img,
+  },
+  {
+    id: 3,
+    type: "text",
+    rating: 5,
+    title: "Creative Strategies That Stand Out",
+    description:
+      "We are dedicated to guiding you on your financial journey with expertise integrity, & a personalized business non-stop solution with true professional from Consult agency.",
+    authorImg: imageProvider.home2Testimonials[3].img,
+    authorName: "Michael Hayes,",
+    authorRole: "CEO, TechNova",
+  },
+];
+//=================================
+// HomeTwo — Pricing Plans
+//=================================
+export const PLANS = [
+  {
+    id: "pay-per-project",
+    label: "Pay Per project",
+    price: "$3,399+",
+    perMonth: false,
+    variant: "light",
+    features: [
+      { icon: BarChart2, text: "All Analytics Features" },
+      { icon: ShieldCheck, text: "Upgrade Anytime Protection" },
+      { icon: FlaskConical, text: "40 Days Product Testing" },
+      { icon: Bug, text: "500 Malware Removal" },
+      { icon: Headphones, text: "24/7 Live Assistance" },
+    ],
+    tagline: "Ideal for clear, scoped design needs",
+  },
+  {
+    id: "monthly-retainer",
+    label: "Monthly Retainer",
+    price: "$4,399",
+    perMonth: true,
+    variant: "dark",
+    features: [
+      { icon: BarChart2, text: "All Analytics Features" },
+      { icon: ShieldCheck, text: "Upgrade Anytime Protection" },
+      { icon: FlaskConical, text: "40 Days Product Testing" },
+      { icon: Bug, text: "500 Malware Removal" },
+      { icon: Headphones, text: "24/7 Live Assistance" },
+    ],
+    tagline: "Ideal for clear, scoped design needs",
+  },
+];
+//=================================
+// HomeTwo — Our Team
+//=================================
+export const featuresteam = [
+  {
+    title: "Visual project management",
+    description:
+      "Enterprise partnerships, built on clarity and craft, are the sustainable and long-term success.",
+  },
+  {
+    title: "Team collaboration",
+    description:
+      "Enterprise partnerships, built on clarity and craft, are the sustainable and long-term success.",
+  },
+  {
+    title: "Connection to company",
+    description:
+      "Enterprise partnerships, built on clarity and craft, are the sustainable and long-term success.",
+  },
+];
+//=================================
+// HomeTwo — Blog Insight
+//=================================
+export const blogPosts = [
+  {
+    id: 1,
+    img: null, // allImages.home2blog[0].img — circle clip
+    clipShape: "circle",
+    readTime: "6 min read",
+    date: "Mar 12, 2026",
+    title: "5 smart ways to improve your business cash flow",
+    excerpt:
+      "Enterprise partnerships, built on clarity craft, are the foundation of sustainable and long-term success.",
+  },
+  {
+    id: 2,
+    img: null, // allImages.home2blog[1].img — triangle clip
+    clipShape: "triangle",
+    readTime: "6 min read",
+    date: "Mar 12, 2026",
+    title: "Smart strategies to grow your business faster",
+    excerpt:
+      "Enterprise partnerships, built on clarity craft, are the foundation of sustainable and long-term success.",
+  },
+  {
+    id: 3,
+    img: null, // allImages.home2blog[2].img — rectangle (no clip)
+    clipShape: "rectangle",
+    readTime: "6 min read",
+    date: "Mar 12, 2026",
+    title: "Simple ways to improve your business cash flow",
+    excerpt:
+      "Enterprise partnerships, built on clarity craft, are the foundation of sustainable and long-term success.",
+  },
+  {
+    id: 4,
+    img: null, // allImages.home2blog[3].img — star clip
+    clipShape: "star",
+    readTime: "6 min read",
+    date: "Mar 12, 2026",
+    title: "Building a strong financial foundation for business",
+    excerpt:
+      "Enterprise partnerships, built on clarity craft, are the foundation of sustainable and long-term success.",
+  },
+];
 
-export function getTestimonials() {
-  return [
-    {
-      type: "text",
-      stars: 5,
-      title: "Remarkable Growth and Results",
-      body: "We are dedicated to guiding you on your financial journey with expertise integrity, & a personalized business non-stop solution with true professional from Consult agency.",
-      author: "Sophia Rahman",
-      role: "BrightEdge",
-      avatar: allImages.home2Testimonials[0].img, // Sophia_Rahman.png
-      initials: "SR",
-    },
-    {
-      type: "video",
-      videoThumb: allImages.home2Testimonials[1].img, // videoimg.png
-      author: "Michael Torres",
-      role: "CEO, TechNova",
-      avatar: allImages.home2Testimonials[2].img, // Michael_Torres.png
-      initials: "MT",
-    },
-    {
-      type: "text",
-      stars: 5,
-      title: "Creative Strategies That Stand Out",
-      body: "We are dedicated to guiding you on your financial journey with expertise integrity, & a personalized business non-stop solution with true professional from Consult agency.",
-      author: "Michael Hayes",
-      role: "CEO, TechNova",
-      avatar: allImages.home2Testimonials[3].img, // Michael_Hayes.png
-      initials: "MH",
-    },
-    {
-      type: "text",
-      stars: 5,
-      title: "Remarkable Growth and Results",
-      body: "We are dedicated to guiding you on your financial journey with expertise integrity, & a personalized business non-stop solution with true professional from Consult agency.",
-      author: "Sophia Rahman",
-      role: "BrightEdge",
-      avatar: allImages.home2Testimonials[0].img, // Sophia_Rahman.png (আবার)
-      initials: "SR",
-    },
-  ];
-}
+export const clipStyles = {
+  circle: {
+    width: "160px",
+    height: "160px",
+    objectFit: "cover",
+  },
+  triangle: {
+    clipPath: "polygon(50% 0%, 0% 100%, 100% 100%)",
+    width: "160px",
+    height: "160px",
+    objectFit: "cover",
+  },
+  rectangle: {
+    borderRadius: "6px",
+    width: "100%",
+    height: "180px",
+    objectFit: "cover",
+  },
+  star: {
+    width: "160px",
+    height: "160px",
+    objectFit: "cover",
+  },
+};
+//=================================
+// HomeTwo — Services
+//=================================
+export const services = [
+  {
+    number: "01",
+    category: "Consultancy",
+    title: "Business Consultancy",
+    description:
+      "Developing smarts, data-driven strategies & practical business plans that turn ideas into profitable scalable outcomes worldwide.",
+    features: ["Integrity & Support", "Data Entry", "Growth forecasting"],
+  },
+  {
+    number: "02",
+    category: "Planning",
+    title: "Financial Planning",
+    description:
+      "Developing smarts, data-driven strategies & practical business plans that turn ideas into profitable scalable outcomes worldwide.",
+    features: [
+      "Investment planning",
+      "Education planning",
+      "Growth forecasting",
+    ],
+  },
+  {
+    number: "03",
+    category: "Tax & Vat",
+    title: "Vat & Tax Consultancy",
+    description:
+      "Developing smarts, data-driven strategies & practical business plans that turn ideas into profitable scalable outcomes worldwide.",
+    features: ["Integrity & Support", "Data Entry", "Growth forecasting"],
+  },
+];

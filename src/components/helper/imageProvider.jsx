@@ -18,6 +18,8 @@ import projectTwo from "../../../public/images/home01/portfolioSection/portfolio
 import ProjetctThree from "../../../public/images/home01/portfolioSection/portfolio3.png";
 import projectFour from "../../../public/images/home01/portfolioSection/portfolio4.png";
 import projectFive from "../../../public/images/home01/portfolioSection/portfolio5.png";
+import projectSix from "../../../public/images/home01/portfolioSection/portfolio6.png";
+import projectSeven from "../../../public/images/home01/portfolioSection/portfolio7.png";
 import PlusWhite from "../../../public/images/home01/services/plusWhite.png";
 import ProcessOne from "../../../public/images/home01/processStep/process-step-1.png";
 import ContactImage from "../../../public/images/home01/contact/contact-img.png";
@@ -27,7 +29,6 @@ import Home2Testimonials2 from "../../../public/images/home2_Testimonials/videoi
 import Home2Testimonials3 from "../../../public/images/home2_Testimonials/Michael_Torres.png";
 import Home2Testimonials4 from "../../../public/images/home2_Testimonials/Michael_Hayes.png";
 import CommonHeroImages from "../../../public/images/common_images/common-hero-banner.png";
-
 import Home2OurExperts1 from "../../../public/images/home2_ourexperts/experts1.png";
 import Home2OurExperts2 from "../../../public/images/home2_ourexperts/experts2.png";
 import Home2OurExperts3 from "../../../public/images/home2_ourexperts/experts3.png";
@@ -105,6 +106,22 @@ const allImages = {
         subtitleTwo: "(2025)",
       },
     ],
+    [
+      {
+        id: 1,
+        img: projectSix,
+        title: "Business Strategy",
+        subtitleOne: "Consulting",
+        subtitleTwo: "(2025)",
+      },
+      {
+        id: 2,
+        img: projectSeven,
+        title: "Financial Planning",
+        subtitleOne: "Finance",
+        subtitleTwo: "(2025)",
+      },
+    ],
   ],
   plusImages: PlusWhite,
   processImage: ProcessOne,
@@ -122,7 +139,7 @@ const allImages = {
     { id: 2, img: Home2OurExperts2 },
     { id: 3, img: Home2OurExperts3 },
   ],
-  home2ourteam : ourteam,
+  home2ourteam: ourteam,
   home2blog: [
     { id: 1, img: Home2Blog1 },
     { id: 2, img: Home2Blog2 },

@@ -74,6 +74,7 @@ const allImages = {
         title: "Brand Identity",
         subtitleOne: "Branding",
         subtitleTwo: "(2024)",
+        slug: "brand-identity",
       },
       {
         id: 2,
@@ -81,6 +82,7 @@ const allImages = {
         title: "E-Commerce Platform",
         subtitleOne: "Web Design",
         subtitleTwo: "(2024)",
+        slug: "e-commerce-platform",
       },
     ],
     [
@@ -90,6 +92,7 @@ const allImages = {
         title: "Social Media Campaign",
         subtitleOne: "Marketing",
         subtitleTwo: "(2023)",
+        slug: "social-media-campaign",
       },
       {
         id: 2,
@@ -97,6 +100,7 @@ const allImages = {
         title: "Mobile App UI",
         subtitleOne: "UI/UX",
         subtitleTwo: "(2025)",
+        slug: "mobile-app-ui",
       },
       {
         id: 3,
@@ -104,6 +108,7 @@ const allImages = {
         title: "SEO Strategy",
         subtitleOne: "Digital Marketing",
         subtitleTwo: "(2025)",
+        slug: "seo-strategy",
       },
     ],
     [
@@ -113,6 +118,7 @@ const allImages = {
         title: "Business Strategy",
         subtitleOne: "Consulting",
         subtitleTwo: "(2025)",
+        slug: "business-strategy",
       },
       {
         id: 2,
@@ -120,6 +126,7 @@ const allImages = {
         title: "Financial Planning",
         subtitleOne: "Finance",
         subtitleTwo: "(2025)",
+        slug: "financial-planning",
       },
     ],
   ],

@@ -5,6 +5,7 @@ import Container from "@/components/ui/Container";
 import ProjectCard from "@/components/ui/ProjectCard";
 import Responsive from "@/components/ui/Responsive";
 import allImages from "@/components/helper/imageProvider";
+import Link from "next/link";
 
 const ProjectsPage = () => {
   const { projectImages } = allImages;
@@ -26,28 +27,32 @@ const ProjectsPage = () => {
             {/* Row 1 — 2-col (homeOne er same 2 ta image) */}
             <Responsive.Grid cols={{ base: 1, lg: 2 }} gap="lg">
               {projectImages[0].map((item, index) => (
-                <ProjectCard
-                  key={index}
-                  image={item.img}
-                  mainClass={"w-full !h-[400px] md:!h-[510px]"}
-                  title={item.title}
-                  subtitleOne={item.subtitleOne}
-                  subtitleTwo={item.subtitleTwo}
-                />
+                <Link key={index} href={`/projects/${item.slug}`}>
+                  {" "}
+                  <ProjectCard
+                    image={item.img}
+                    mainClass={"w-full !h-[400px] md:!h-[510px]"}
+                    title={item.title}
+                    subtitleOne={item.subtitleOne}
+                    subtitleTwo={item.subtitleTwo}
+                  />
+                </Link>
               ))}
             </Responsive.Grid>
 
             {/* Row 2 — 3-col (homeOne er same 3 ta image) */}
             <Responsive.Grid cols={{ base: 1, lg: 3 }} gap="lg">
               {projectImages[1].map((item, index) => (
-                <ProjectCard
-                  key={index}
-                  image={item.img}
-                  mainClass={"w-full !h-[400px] md:!h-[510px]"}
-                  title={item.title}
-                  subtitleOne={item.subtitleOne}
-                  subtitleTwo={item.subtitleTwo}
-                />
+                <Link key={index} href={`/projects/${item.slug}`}>
+                  {" "}
+                  <ProjectCard
+                    image={item.img}
+                    mainClass={"w-full !h-[400px] md:!h-[510px]"}
+                    title={item.title}
+                    subtitleOne={item.subtitleOne}
+                    subtitleTwo={item.subtitleTwo}
+                  />
+                </Link>
               ))}
             </Responsive.Grid>
 
@@ -55,14 +60,16 @@ const ProjectsPage = () => {
             {extraImages.length > 0 && (
               <Responsive.Grid cols={{ base: 1, lg: 2 }} gap="lg">
                 {extraImages.map((item, index) => (
-                  <ProjectCard
-                    key={index}
-                    image={item.img}
-                    mainClass={"w-full !h-[400px] md:!h-[510px]"}
-                    title={item.title}
-                    subtitleOne={item.subtitleOne}
-                    subtitleTwo={item.subtitleTwo}
-                  />
+                  <Link key={index} href={`/projects/${item.slug}`}>
+                    {" "}
+                    <ProjectCard
+                      image={item.img}
+                      mainClass={"w-full !h-[400px] md:!h-[510px]"}
+                      title={item.title}
+                      subtitleOne={item.subtitleOne}
+                      subtitleTwo={item.subtitleTwo}
+                    />
+                  </Link>
                 ))}
               </Responsive.Grid>
             )}

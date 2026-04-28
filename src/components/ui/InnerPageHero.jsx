@@ -7,6 +7,7 @@ import Link from "next/link";
 const InnerPageHero = ({
   title = "Empowering Growth & Success",
   subtitle = "A reputed consultant agency we've spent 13+ year's",
+  hasOffset = false,
 }) => {
   const { commonHeroImages } = allImages;
 
@@ -21,7 +22,7 @@ const InnerPageHero = ({
       ?.replace(/\b\w/g, (c) => c.toUpperCase()) || "Home";
 
   return (
-    <section>
+    <section  className={hasOffset ? "pt-[100px]" : ""}>
       {/* 
         Height breakdown:
         320px  → h-[320px]

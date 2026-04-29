@@ -1,41 +1,111 @@
-import ButtonThree from "./ButtonThree";
+"use client";
+import contact_bg from "../../../public/images/contact/contact-bg.png";
+import { useState } from "react";
+import Button from "./Button";
 
 const ContactForm = () => {
+  const [form, setForm] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(form);
+  };
+
   return (
-    <div className=" lg:h-[620px] w-full lg:max-w-[478px] bg-bg-secondaryTwo rounded-[6px] p-[35px] flex flex-col gap-[48px] ">
-      <div className="flex flex-col gap-[25px]">
-        <h2 className="headingFour font-bold text-primary">
-          Start your project with bitox growth partners
-        </h2>
-        <p className="para-lg font-normal text-tarnary">
-          Regular updates ensure that readers have access to fresh perspectives,
-          making Poster a must-read.
-        </p>
-      </div>
+    <>
+      <div
+        style={{
+          backgroundImage: `url(${contact_bg.src})`,
+        }}
+      >
+        <div className="w-[1583px] mx-auto my-30">
+          <div className="flex justify-between">
+            <h2 className=" w-103.75  text-[50px] leading-14.5 font-bold text-primary underline">
+              Reach out for inquiries, collaborations, or just to say
+              hello.We're eager to connect!
+            </h2>
+            <div>
+              <form className="bg-white py-8 px-8 rounded-[15px]">
+                <div className="flex gap-[30px] mb-4">
+                  <input
+                    type="text"
+                    name="firstName"
+                    placeholder="First Name*"
+                    value={form.firstName}
+                    onChange={handleChange}
+                    className="w-[458px] h-[60px] px-4 bg-gray-100 rounded-[10px] border-none outline-none text-[15px] text-gray-500 box-border"
+                  />
+                  <input
+                    type="text"
+                    name="lastName"
+                    placeholder="Last Name*"
+                    value={form.lastName}
+                    onChange={handleChange}
+                    className="w-[458px] h-[60px] px-4 bg-gray-100 rounded-[10px] border-none outline-none text-[15px] text-gray-500 box-border"
+                  />
+                </div>
 
-      <form className="flex flex-col gap-x-[14px] gap-y-[10px] ">
-        <div className="flex items-center gap-[14px]">
-          <input
-            type="text"
-            placeholder="Name"
-            className="w-full px-5 py-[15px] rounded-[6px] border border-[#0000001b] text-sm text-color-primary placeholder:text-color-tarnary outline-none focus:border-color-primary transition-colors duration-200 bg-transparent"
-          />
-          <input
-            type="email"
-            placeholder="Email"
-            className="w-full  px-5 py-[15px] rounded-[6px] border border-[#0000001b] text-sm text-color-primary placeholder:text-color-tarnary outline-none focus:border-color-primary transition-colors duration-200 bg-transparent"
-          />
+                <div className="flex gap-[30px] mb-4">
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Your Email ID"
+                    value={form.email}
+                    onChange={handleChange}
+                    className="w-[458px] h-[60px] px-4 bg-gray-100 rounded-[10px] border-none outline-none text-[15px] text-gray-500 box-border"
+                  />
+                  <input
+                    type="text"
+                    name="phone"
+                    placeholder="Phone Number"
+                    value={form.phone}
+                    onChange={handleChange}
+                    className="w-[458px] h-[60px] px-4 bg-gray-100 rounded-[10px] border-none outline-none text-[15px] text-gray-500 box-border"
+                  />
+                </div>
+
+                <textarea
+                  name="message"
+                  placeholder="Write your message"
+                  value={form.message}
+                  onChange={handleChange}
+                  className="w-[946px] h-[176px] p-4 mb-6 bg-gray-100 rounded-[10px] border-none outline-none text-[15px] text-gray-500 resize-none box-border block"
+                />
+
+                <div className="flex justify-center">
+                  <Button
+                    label="Submit message"
+                    bgColor="#f97316"
+                    textColor="#ffffff"
+                    showIcon={true}
+                  />
+                </div>
+              </form>
+            </div>
+          </div>
+          <div></div>
         </div>
-
-        <textarea
-          placeholder="Write your message"
-          rows={5}
-          className="w-full h-[118px] px-5 py-4 mb-1 rounded-[6px] border border-[#0000001b] text-base text-primary placeholder:text-tarnary outline-none focus:border-color-primary transition-colors duration-200 bg-transparent resize-none"
-        />
-
-        <ButtonThree frontText={"Send message"} />
-      </form>
-    </div>
+        <div className="mx-auto w-400 h-[690px] bg-amber-300 mb-30">
+          {/* <GoogleMapsEmbed
+      apiKey="YOUR_API_KEY"
+      height={400}
+      width="100%"
+      mode="place"
+      q="Brooklyn+Bridge,New+York,NY"
+    /> */}
+        </div>
+      </div>
+    </>
   );
 };
 

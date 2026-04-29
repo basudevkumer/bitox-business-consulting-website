@@ -1,12 +1,12 @@
 import InnerPageHero from "@/components/ui/InnerPageHero";
 import PricingPlan from "@/components/homeTwo/PricingPlan";
-  
-import React from "react";
+import ProcessSteps from "@/components/homeOne/ProcessSteps";
 
 const Services = () => {
   return (
     <>
       <InnerPageHero title="Trusted High Quality Services" />
+      <ProcessSteps />
       <PricingPlan />
     </>
   );

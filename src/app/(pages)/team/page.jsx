@@ -1,4 +1,5 @@
 import TeamGrid from "@/components/teamMember/TeamGrid";
+import TeamWorkspace from "@/components/teamMember/TeamWorkspace";
 import InnerPageHero from "@/components/ui/InnerPageHero";
 import React from "react";
 
@@ -10,6 +11,7 @@ const Team = () => {
         titleWidth={"lg:!max-w-[650px]"}
       />
       <TeamGrid/>
+      <TeamWorkspace/>  
     </>
   );
 };

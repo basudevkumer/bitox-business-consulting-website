@@ -1,9 +1,8 @@
-import React from 'react'
+import React from "react";
+import WhyChooseUs from "../homeTwo/WhyChooseUs";
 
 const TeamWorkspace = () => {
-  return (
-    <div>TeamWorkspace</div>
-  )
-}
+  return <WhyChooseUs />;
+};
 
-export default TeamWorkspace
+export default TeamWorkspace;

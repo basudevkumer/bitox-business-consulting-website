@@ -4,9 +4,10 @@ import Link from "next/link";
 import Container from "../ui/Container";
 import BlogCard from "../ui/BlogCard";
 import Responsive from "../ui/Responsive";
-import { allBlogData } from "../helper/homeOnehelper";
+import { allBlogData } from "../helper/blogpagehelper";
 
 const BlogCardPage = () => {
+  console.log(allBlogData);
   return (
     <section className="py-[70px] lg:py-[120px]">
       <Container size={"lg"}>

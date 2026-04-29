@@ -44,9 +44,13 @@ import FAQSection1 from "../../../public/images/faq/laptop.png";
 import FAQSection2 from "../../../public/images/faq/discuss.png";
 import FAQSection3 from "../../../public/images/faq/faq_bg.png";
 import FAQSection4 from "../../../public/images/faq/faq_full_bg.png";
+import FooterLogo from "../../../public/images/footer_one/footer_logo.png";
+
+
 const allImages = {
   heroIocns: HeroImage,
   heroBanner: HeroBanner,
+  footerLogo: FooterLogo,
   featureRound: [
     { id: 1, img: FeatureRoundOne },
     { id: 2, img: FeatureRoundTwo },

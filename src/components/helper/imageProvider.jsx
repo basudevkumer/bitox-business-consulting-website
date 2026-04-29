@@ -48,6 +48,8 @@ import FAQSection4 from "../../../public/images/faq/faq_full_bg.png";
 import AboutUsBanner from "../../../public/images/aboutUs/aboutVideo.png"
 // for aboutUsVideo pages images
 import AboutUsVideo from "../../../public/images/aboutVideo/aboutvideo-Image.png"
+// for aboutUsVideo pages images
+import AboutTeamBorder from "../../../public/images/aboutTeam/team-page-border.png"
 
 
 
@@ -180,6 +182,8 @@ FaqSection: {
   aboutUsBanner: AboutUsBanner,
    // about us video pages images 
   aboutUsVideo: AboutUsVideo,
+   // about  team pages images 
+  aboutTeamBorder: AboutTeamBorder,
 };
 
 export default allImages;

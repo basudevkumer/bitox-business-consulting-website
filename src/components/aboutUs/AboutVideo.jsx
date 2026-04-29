@@ -30,7 +30,7 @@ const AboutVideo = () => {
             strategic goals & thoughtful executionscan create meaningful
             collaborations that drives innovation
           </p>
-          <Button  label={"Get started now"}  showIcon={true} />
+          <Button label={"Get started now"} showIcon={true} />
         </div>
       </div>
     </section>

@@ -46,7 +46,6 @@ import FAQSection3 from "../../../public/images/faq/faq_bg.png";
 import FAQSection4 from "../../../public/images/faq/faq_full_bg.png";
 import FooterLogo from "../../../public/images/footer_one/footer_logo.png";
 
-
 const allImages = {
   heroIocns: HeroImage,
   heroBanner: HeroBanner,
@@ -139,12 +138,12 @@ const allImages = {
     ],
   ],
   //FAQ Section Images
-FaqSection: {
-  headerImg: FAQSection1,
-  bottomImg: FAQSection2,
-  faq_bg:    FAQSection3,
-  faq_full_bg: FAQSection4,
-},
+  FaqSection: {
+    headerImg: FAQSection1,
+    bottomImg: FAQSection2,
+    faq_bg: FAQSection3,
+    faq_full_bg: FAQSection4,
+  },
   plusImages: PlusWhite,
   processImage: ProcessOne,
   contactImage: ContactImage,

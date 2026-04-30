@@ -1,3 +1,10 @@
+//Blog Page Pagination :
+export const btnBase =
+  "w-15 h-15 flex items-center justify-center rounded-full border border-[#0000001a] shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] transition-colors";
+export const pageBtn = `${btnBase} text-primary para-TwoXl font-bold bg-bg-secondaryOne hover:bg-primary hover:text-white cursor-pointer`;
+export const arrowBtn = `${btnBase} text-white text-[24px] bg-secondary hover:bg-primary cursor-pointer`;
+// Page numbers array
+export const pages = [1, 2];
 export const allBlogData = [
   {
     id: 1,
@@ -63,6 +70,7 @@ export const allBlogDetailsData = [
     heroImage: "/images/home01/blog/blogdetails1.png",
     author: "Harry Jilson",
     authorRole: "Tech Editor",
+    authorImage: "/images/home01/blog/Ellipse 20.png",
     dateText: "March 14, 2025",
     itmeText: "Harry Jilson",
     title: "Building a profitable and sustainable business model",
@@ -112,21 +120,8 @@ export const allBlogDetailsData = [
       {
         heading: "Control Costs and Optimize Operations",
         content:
-          "Profitability isn't just about increasing revenue — it's equally about managing costs effectively. Review your operational expenses regularly to identify inefficiencies. Invest in automation tools that reduce manual labor, streamline workflows, and improve accuracy. Cloud-based solutions, for instance, can significantly cut infrastructure costs while enhancing collaboration across teams.",
-        bullets: [
-          {
-            text: "Implement lean operations to eliminate unnecessary waste and redundancy.",
-          },
-          {
-            text: "Use data analytics to forecast demand accurately and reduce overproduction.",
-          },
-          {
-            text: "Negotiate better terms with suppliers and consolidate vendor relationships.",
-          },
-          {
-            text: "Invest in employee training to improve productivity and reduce turnover costs.",
-          },
-        ],
+          "Turning ideas into tangible results is both an art and a science. At our agency, we believe that a vision is only as strong as the steps taken to realize it. how we transform creative concepts into impactful outcomes for our clients. Every successful project starts with a deep understanding of your goals, values, & audience. We take the time to listen, ask questions, and explore your ideas in detail. By identifying the core objectives & expectations, we ensure that the final result aligns perfectly with your vision This phase allows us to set a strong foundation for the entire project, avoiding guesswork and ensuring clarity",
+        
       },
       {
         heading: "Focus on Long-Term Customer Relationships",
@@ -183,6 +178,7 @@ export const allBlogDetailsData = [
     heroImage: "/images/home01/blog/blog2.png",
     author: "Sara Miller",
     authorRole: "Marketing Strategist",
+    authorImage: "/images/home01/blog/Ellipse 20.png",
     dateText: "April 02, 2025",
     itmeText: "Sara Miller",
     title: "How to identify your target audience effectively",
@@ -227,8 +223,12 @@ export const allBlogDetailsData = [
           "Not all audience segments are equally valuable. Once you've identified your audience groups, prioritize them based on revenue potential, ease of reach, and alignment with your offerings.",
         bullets: [
           { text: "Create 2–3 detailed buyer personas for your top segments." },
-          { text: "Map each persona's customer journey from awareness to purchase." },
-          { text: "Tailor messaging and channels for each persona separately." },
+          {
+            text: "Map each persona's customer journey from awareness to purchase.",
+          },
+          {
+            text: "Tailor messaging and channels for each persona separately.",
+          },
           { text: "Test and refine based on campaign performance data." },
         ],
       },
@@ -269,6 +269,7 @@ export const allBlogDetailsData = [
     heroImage: "/images/home01/blog/blog3.png",
     author: "John Carter",
     authorRole: "Digital Strategist",
+    authorImage: "/images/home01/blog/Ellipse 20.png",
     dateText: "April 18, 2025",
     itmeText: "John Carter",
     title: "Top strategies for digital growth in 2025",
@@ -308,7 +309,9 @@ export const allBlogDetailsData = [
           "Paid ads have their place, but sustainable digital growth depends on strong organic foundations. SEO, content marketing, and community building create compounding returns over time.",
         bullets: [
           { text: "Optimize for search intent, not just keywords." },
-          { text: "Build topical authority through consistent, in-depth content." },
+          {
+            text: "Build topical authority through consistent, in-depth content.",
+          },
           { text: "Focus on Core Web Vitals for better rankings and UX." },
           { text: "Leverage video and short-form content for broader reach." },
         ],
@@ -350,6 +353,7 @@ export const allBlogDetailsData = [
     heroImage: "/images/home01/blog/blog4.png",
     author: "Emily Rose",
     authorRole: "Brand Consultant",
+    authorImage: "/images/home01/blog/Ellipse 20.png",
     dateText: "February 28, 2025",
     itmeText: "Emily Rose",
     title: "Understanding brand identity and voice",
@@ -389,8 +393,12 @@ export const allBlogDetailsData = [
           "Your brand voice should remain consistent whether you're writing a tweet, a product description, or a formal proposal. Start by defining 3–5 voice attributes that reflect your brand personality.",
         bullets: [
           { text: "Document your voice guidelines in a brand style guide." },
-          { text: "Train all team members who create content on voice standards." },
-          { text: "Audit existing content to ensure consistency across channels." },
+          {
+            text: "Train all team members who create content on voice standards.",
+          },
+          {
+            text: "Audit existing content to ensure consistency across channels.",
+          },
           { text: "Adapt tone contextually while keeping core voice intact." },
         ],
       },
@@ -431,6 +439,7 @@ export const allBlogDetailsData = [
     heroImage: "/images/home01/blog/blog5.png",
     author: "Mark Twain",
     authorRole: "Startup Advisor",
+    authorImage: "/images/home01/blog/Ellipse 20.png",
     dateText: "January 10, 2025",
     itmeText: "Mark Twain",
     title: "Scaling your startup with limited resources",
@@ -469,10 +478,18 @@ export const allBlogDetailsData = [
         content:
           "When resources are limited, every hour and every dollar must be tied to revenue generation or retention. Cut anything that doesn't directly contribute to growth or customer satisfaction.",
         bullets: [
-          { text: "Focus sales efforts on highest-value customer segments first." },
-          { text: "Use content marketing for low-cost organic customer acquisition." },
-          { text: "Build strategic partnerships to expand reach without added cost." },
-          { text: "Reinvest early revenue immediately into your highest-ROI channels." },
+          {
+            text: "Focus sales efforts on highest-value customer segments first.",
+          },
+          {
+            text: "Use content marketing for low-cost organic customer acquisition.",
+          },
+          {
+            text: "Build strategic partnerships to expand reach without added cost.",
+          },
+          {
+            text: "Reinvest early revenue immediately into your highest-ROI channels.",
+          },
         ],
       },
     ],
@@ -512,6 +529,7 @@ export const allBlogDetailsData = [
     heroImage: "/images/home01/blog/blog6.png",
     author: "Lisa Brown",
     authorRole: "Content Marketing Lead",
+    authorImage: "/images/home01/blog/Ellipse 20.png",
     dateText: "March 30, 2025",
     itmeText: "Lisa Brown",
     title: "The power of content marketing for B2B businesses",
@@ -551,9 +569,15 @@ export const allBlogDetailsData = [
           "Effective B2B content isn't created randomly — it's strategically planned around buyer personas, funnel stages, and business goals. Start with a clear content plan and distribution strategy.",
         bullets: [
           { text: "Map content types to each stage of your buyer's journey." },
-          { text: "Repurpose long-form content into multiple formats (videos, infographics, social posts)." },
-          { text: "Use gated content like whitepapers to capture qualified leads." },
-          { text: "Measure content ROI through pipeline influence and conversion metrics." },
+          {
+            text: "Repurpose long-form content into multiple formats (videos, infographics, social posts).",
+          },
+          {
+            text: "Use gated content like whitepapers to capture qualified leads.",
+          },
+          {
+            text: "Measure content ROI through pipeline influence and conversion metrics.",
+          },
         ],
       },
     ],

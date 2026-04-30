@@ -70,6 +70,7 @@ export const allBlogDetailsData = [
     heroImage: "/images/home01/blog/blogdetails1.png",
     author: "Harry Jilson",
     authorRole: "Tech Editor",
+    authorImage: "/images/home01/blog/Ellipse 20.png",
     dateText: "March 14, 2025",
     itmeText: "Harry Jilson",
     title: "Building a profitable and sustainable business model",
@@ -119,21 +120,8 @@ export const allBlogDetailsData = [
       {
         heading: "Control Costs and Optimize Operations",
         content:
-          "Profitability isn't just about increasing revenue — it's equally about managing costs effectively. Review your operational expenses regularly to identify inefficiencies. Invest in automation tools that reduce manual labor, streamline workflows, and improve accuracy. Cloud-based solutions, for instance, can significantly cut infrastructure costs while enhancing collaboration across teams.",
-        bullets: [
-          {
-            text: "Implement lean operations to eliminate unnecessary waste and redundancy.",
-          },
-          {
-            text: "Use data analytics to forecast demand accurately and reduce overproduction.",
-          },
-          {
-            text: "Negotiate better terms with suppliers and consolidate vendor relationships.",
-          },
-          {
-            text: "Invest in employee training to improve productivity and reduce turnover costs.",
-          },
-        ],
+          "Turning ideas into tangible results is both an art and a science. At our agency, we believe that a vision is only as strong as the steps taken to realize it. how we transform creative concepts into impactful outcomes for our clients. Every successful project starts with a deep understanding of your goals, values, & audience. We take the time to listen, ask questions, and explore your ideas in detail. By identifying the core objectives & expectations, we ensure that the final result aligns perfectly with your vision This phase allows us to set a strong foundation for the entire project, avoiding guesswork and ensuring clarity",
+        
       },
       {
         heading: "Focus on Long-Term Customer Relationships",
@@ -190,6 +178,7 @@ export const allBlogDetailsData = [
     heroImage: "/images/home01/blog/blog2.png",
     author: "Sara Miller",
     authorRole: "Marketing Strategist",
+    authorImage: "/images/home01/blog/Ellipse 20.png",
     dateText: "April 02, 2025",
     itmeText: "Sara Miller",
     title: "How to identify your target audience effectively",
@@ -280,6 +269,7 @@ export const allBlogDetailsData = [
     heroImage: "/images/home01/blog/blog3.png",
     author: "John Carter",
     authorRole: "Digital Strategist",
+    authorImage: "/images/home01/blog/Ellipse 20.png",
     dateText: "April 18, 2025",
     itmeText: "John Carter",
     title: "Top strategies for digital growth in 2025",
@@ -363,6 +353,7 @@ export const allBlogDetailsData = [
     heroImage: "/images/home01/blog/blog4.png",
     author: "Emily Rose",
     authorRole: "Brand Consultant",
+    authorImage: "/images/home01/blog/Ellipse 20.png",
     dateText: "February 28, 2025",
     itmeText: "Emily Rose",
     title: "Understanding brand identity and voice",
@@ -448,6 +439,7 @@ export const allBlogDetailsData = [
     heroImage: "/images/home01/blog/blog5.png",
     author: "Mark Twain",
     authorRole: "Startup Advisor",
+    authorImage: "/images/home01/blog/Ellipse 20.png",
     dateText: "January 10, 2025",
     itmeText: "Mark Twain",
     title: "Scaling your startup with limited resources",
@@ -537,6 +529,7 @@ export const allBlogDetailsData = [
     heroImage: "/images/home01/blog/blog6.png",
     author: "Lisa Brown",
     authorRole: "Content Marketing Lead",
+    authorImage: "/images/home01/blog/Ellipse 20.png",
     dateText: "March 30, 2025",
     itmeText: "Lisa Brown",
     title: "The power of content marketing for B2B businesses",

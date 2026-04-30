@@ -3,12 +3,14 @@ import Image from "next/image";
 import Link from "next/link";
 import Container from "../ui/Container";
 import BlogCard from "../ui/BlogCard";
+import { FaFacebook, FaLinkedinIn } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 const BlogDetailsPage = ({ blog }) => {
   if (!blog) return null;
 
   return (
-    <div className="bg-white">
+    <div className="bg-bg-secondaryOne">
       {/* ── Breadcrumb ── */}
       <div className="border-b border-[#0000001a]">
         <Container size={"lg"}>
@@ -28,63 +30,97 @@ const BlogDetailsPage = ({ blog }) => {
         </Container>
       </div>
 
-      <section className="py-[70px] lg:py-[100px]">
+      <section className="py-17.5 lg:py-25">
+        {/* ── Title & Author (inside Container) ── */}
         <Container size={"lg"}>
           <div className="max-w-[860px] mx-auto">
+            {/* ── Meta Row (static, always same) ── */}
+            <div className="flex items-center justify-center gap-2 flex-wrap mb-7.5">
+              {["4 min read", "Creative Agency", "20 September 2025"].map(
+                (item) => (
+                  <span
+                    key={item}
+                    className="flex items-center gap-2.5 border border-black/10 rounded-full px-4 py-1 text-sm text-primary"
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary inline-block" />
+                    {item}
+                  </span>
+                ),
+              )}
+            </div>
+
             {/* ── Title ── */}
-            <h1 className="text-center font-bold text-primary headingTwo mb-6">
+            <h1 className="text-center font-bold text-primary headingTwo mb-7.5">
               {blog.title}
             </h1>
 
-            {/* ── Author & Date ── */}
-            <div className="flex items-center justify-center gap-x-3 mb-10">
-              <div className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center">
-                <span className="text-xs font-bold text-primary">
-                  {blog.author?.charAt(0)}
-                </span>
-              </div>
-              <div>
-                <p className="text-sm font-semibold text-primary leading-tight">
-                  {blog.author}
-                </p>
-                <p className="text-xs text-primary/50">{blog.authorRole}</p>
+            {/* ── Author Card ── */}
+            <div className="flex justify-center mb-10">
+              <div className="flex items-center gap-x-3 border border-black/10 bg-white rounded-[90px] pr-5 lg:pr-9.5 pl-1.5 py-1.5">
+                {/* Avatar — image thakle image, na thakle letter */}
+                <div className="w-15 h-15 rounded-full overflow-hidden bg-primary/10 flex items-center justify-center shrink-0">
+                  {blog.authorImage ? (
+                    <Image
+                      src={blog.authorImage}
+                      alt={blog.author}
+                      width={36}
+                      height={36}
+                      className="object-cover w-full h-full"
+                    />
+                  ) : (
+                    <span className="text-xs font-bold text-primary">
+                      {blog.author?.charAt(0)}
+                    </span>
+                  )}
+                </div>
+
+                <div>
+                  <p className="text-xs text-primary/50 leading-tight">
+                    Author
+                  </p>
+                  <p className="text-sm font-semibold text-primary leading-tight">
+                    {blog.author}
+                  </p>
+                </div>
               </div>
             </div>
+          </div>
+        </Container>
 
-            {/* ── Hero Image ── */}
-            <div className="relative w-full h-[360px] sm:h-[480px] mb-10 rounded-[10px] overflow-hidden">
-              <Image
-                fill
-                src={blog.heroImage}
-                alt={blog.title}
-                className="object-cover"
-              />
-            </div>
+        {/* ── Hero Image (full-width, outside Container) ── */}
+        <div className="relative w-full h-[360px] sm:h-[480px] lg:h-[600px] 2xl:[800px] mb-15 overflow-hidden">
+          <Image
+            fill
+            src={blog.heroImage}
+            alt={blog.title}
+            className="object-cover"
+          />
+        </div>
 
+        {/* ── Main Content (inside Container) ── */}
+        <Container size={"lg"}>
+          <div className="">
             {/* ── Intro Paragraph ── */}
-            <p className="text-base leading-[1.85] text-primary/70 mb-10">
+            <p className="text-[18px] leading-6.5 text-tarnary mb-10">
               {blog.intro}
             </p>
 
             {/* ── Sections ── */}
             {blog.sections?.map((section, i) => (
               <div key={i} className="mb-10">
-                <h2 className="text-[22px] sm:text-[26px] font-bold text-primary mb-4">
+                <h2 className="text-[22px] sm:text-[26px] font-bold text-primary underline underline-offset-4 mb-4">
                   {section.heading}
                 </h2>
-                <p className="text-base leading-[1.85] text-primary/70 mb-5">
+                <p className="text-[18px] leading-6.5 text-tarnary mb-5">
                   {section.content}
                 </p>
 
-                {/* Bullet list with title */}
                 {section.bullets?.map((bullet, j) => (
-                  <div
-                    key={j}
-                    className="mb-5 pl-4 border-l-2 border-primary/20"
-                  >
+                  <div key={j} className="mb-5 border-primary/20">
                     {bullet.title && (
-                      <p className="font-semibold text-primary mb-1">
-                        ➔ {bullet.title}
+                      <p className="font-bold text-primary mb-1">
+                        <span className="w-2 h-2 rounded-full bg-primary mr-2 inline-block align-middle" />
+                        {bullet.title}
                       </p>
                     )}
                     <p className="text-base leading-[1.85] text-primary/70">
@@ -97,8 +133,8 @@ const BlogDetailsPage = ({ blog }) => {
 
             {/* ── Quote Block ── */}
             {blog.quote && (
-              <blockquote className="my-12 px-8 py-8 bg-[#f5f3ee] rounded-[10px] border-l-4 border-primary">
-                <p className="text-base sm:text-lg leading-[1.9] text-primary font-medium italic">
+              <blockquote className="my-12 px-8 py-8.5 bg-white rounded-[10px] border-primary">
+                <p className="text-base sm:text-lg lg:text-[24px] leading-6 xl:leading-8.5 text-primary font-medium">
                   {blog.quote}
                 </p>
               </blockquote>
@@ -106,30 +142,30 @@ const BlogDetailsPage = ({ blog }) => {
 
             {/* ── Middle Images (2-column grid) ── */}
             {blog.middleImages?.length > 0 && (
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 my-10">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-7.5 my-10">
                 {blog.middleImages.map((img, i) => (
                   <div
                     key={i}
-                    className="relative w-full h-[220px] sm:h-[260px] rounded-[10px] overflow-hidden"
+                    className="relative w-full aspect-4/3 sm:aspect-3/4 lg:aspect-4/3 xl:aspect-square overflow-hidden"
                   >
                     <Image
                       fill
                       src={img}
                       alt={`blog-detail-img-${i + 1}`}
-                      className="object-cover"
+                      className="object-cover object-top"
                     />
                   </div>
                 ))}
               </div>
             )}
 
-            {/* ── Sections 2 (with simple bullet points) ── */}
+            {/* ── Sections 2 ── */}
             {blog.sections2?.map((section, i) => (
               <div key={i} className="mb-10">
-                <h2 className="text-[22px] sm:text-[26px] font-bold text-primary mb-4">
+                <h2 className="text-[22px] sm:text-[26px] font-bold text-primary underline underline-offset-5 mb-4">
                   {section.heading}
                 </h2>
-                <p className="text-base leading-[1.85] text-primary/70 mb-5">
+                <p className="text-[18px] leading-6.5 text-tarnary mb-5">
                   {section.content}
                 </p>
                 {section.bullets?.length > 0 && (
@@ -137,9 +173,22 @@ const BlogDetailsPage = ({ blog }) => {
                     {section.bullets.map((b, j) => (
                       <li
                         key={j}
-                        className="flex items-start gap-x-3 text-base text-primary/70 leading-[1.8]"
+                        className="flex items-start gap-x-3 text-[18px] text-tarnary leading-6.5"
                       >
-                        <span className="mt-[6px] w-2 h-2 rounded-full bg-primary shrink-0" />
+                        <span className="mt-0.75 shrink-0 bg-[#FFD8C5] w-8 h-8 flex items-center justify-center rounded-[90px] p-2">
+                          <svg
+                            width="16"
+                            height="15"
+                            viewBox="0 0 16 15"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M0 7.34068C2.40119 9.86113 4.72936 12.1302 6.96734 15C9.4005 10.3052 11.8909 5.59398 16 0.492012L14.8928 0C11.4231 3.56978 8.72743 6.94889 6.38513 10.9647C4.75628 9.54118 2.12389 7.52677 0.516585 6.49182L0 7.34068Z"
+                              fill="#FF5101"
+                            />
+                          </svg>
+                        </span>
                         {b.text}
                       </li>
                     ))}
@@ -150,19 +199,45 @@ const BlogDetailsPage = ({ blog }) => {
 
             {/* ── Tags ── */}
             {blog.tags?.length > 0 && (
-              <div className="mt-12 pt-8 border-t border-[#0000001a]">
-                <p className="text-sm font-semibold text-primary/50 uppercase tracking-widest mb-4">
-                  Tags
-                </p>
-                <div className="flex flex-wrap gap-2">
+              <div className="mt-12 pb-8 pt-8 border-t border-b border-black/10 flex flex-wrap items-center justify-between gap-4">
+                {/* Tags Section */}
+                <div className="flex items-center gap-3 flex-wrap">
+                  <span className="text-[20px] font-bold text-primary">
+                    Tags:
+                  </span>
                   {blog.tags.map((tag, i) => (
                     <span
                       key={i}
-                      className="px-4 py-[6px] rounded-full border border-[#0000001a] text-sm font-medium text-primary hover:bg-primary hover:text-white transition-colors cursor-pointer"
+                      className="px-4 py-1.5 rounded-full border border-black/10 text-sm font-medium text-primary hover:bg-primary hover:text-white bg-white transition-colors cursor-pointer"
                     >
                       {tag}
                     </span>
                   ))}
+                </div>
+
+                {/* Share Section */}
+                <div className="flex items-center gap-3">
+                  <span className="text-[20px] font-bold text-primary">
+                    Share:
+                  </span>
+                  <a
+                    href="#"
+                    className="w-9 h-9 rounded-full bg-white flex items-center justify-center text-primary border border-black/10 hover:bg-secondary hover:text-white hover:opacity-80 transition-opacity"
+                  >
+                    <FaFacebook size={16} />
+                  </a>
+                  <a
+                    href="#"
+                    className="w-9 h-9 rounded-full bg-white flex items-center justify-center text-primary border border-black/10 hover:bg-secondary hover:text-white hover:opacity-80 transition-opacity"
+                  >
+                    <FaXTwitter size={16} />
+                  </a>
+                  <a
+                    href="#"
+                    className="w-9 h-9 rounded-full bg-white flex items-center justify-center text-primary border border-black/10 hover:bg-secondary hover:text-white hover:opacity-80 transition-opacity"
+                  >
+                    <FaLinkedinIn size={16} />
+                  </a>
                 </div>
               </div>
             )}

@@ -91,7 +91,7 @@ const BlogDetailsPage = ({ blog }) => {
         </Container>
 
         {/* ── Hero Image (full-width, outside Container) ── */}
-        <div className="relative w-full h-[360px] sm:h-[480px] lg:h-[600px] 2xl:[800px] mb-15 overflow-hidden">
+        <div className="relative w-full h-90 sm:h-120 lg:h-150 xl:[800px] mb-15 overflow-hidden">
           <Image
             fill
             src={blog.heroImage}
@@ -136,8 +136,67 @@ const BlogDetailsPage = ({ blog }) => {
 
             {/* ── Quote Block ── */}
             {blog.quote && (
-              <blockquote className="my-12 px-8 py-8.5 bg-white rounded-[10px] border-primary">
-                <p className="text-base sm:text-lg lg:text-[24px] leading-6 xl:leading-8.5 text-primary font-medium">
+              <blockquote className="relative my-12 px-8 py-8 bg-white rounded-[10px]">
+                {/* Dashed double border - left side */}
+                <svg
+                  style={{
+                    position: "absolute",
+                    top: 25,
+                    left: 10,
+                    width: "6px",
+                    height: "75%",
+                    pointerEvents: "none",
+                  }}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <line
+                    x1="1"
+                    y1="0"
+                    x2="1"
+                    y2="100%"
+                    stroke="#02090F"
+                    strokeOpacity="0.2"
+                    strokeDasharray="2 2"
+                  />
+                  <line
+                    x1="5"
+                    y1="0"
+                    x2="5"
+                    y2="100%"
+                    stroke="#02090F"
+                    strokeOpacity="0.2"
+                    strokeDasharray="2 2"
+                  />
+                </svg>
+
+                {/* SVG Quote Icon */}
+                <div className="absolute top-6 left-6">
+                  <svg
+                    width="36"
+                    height="29"
+                    viewBox="0 0 70 56"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g clipPath="url(#clip0_quote)">
+                      <path
+                        d="M54 55.5H69.5V23.5H47.5L69.5 0H58L37 23.5L54 55.5Z"
+                        fill="#FF5101"
+                      />
+                      <path
+                        d="M17 55.5H32.5V23.5H10.5L32.5 0H21L0 23.5L17 55.5Z"
+                        fill="#FF5101"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_quote">
+                        <rect width="70" height="56" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </div>
+
+                <p className="mt-10 text-base sm:text-lg lg:text-[24px] leading-6 xl:leading-8.5 text-primary font-medium">
                   {blog.quote}
                 </p>
               </blockquote>

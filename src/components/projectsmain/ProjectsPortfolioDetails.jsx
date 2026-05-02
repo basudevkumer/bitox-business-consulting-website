@@ -64,7 +64,7 @@ const ProjectsPortfolioDetails = ({ slug }) => {
         </div>
 
         {/* Meta Bar */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-5 border-t border-b border-black/10 py-6 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-20 xl:gap-[150px] bg-white border-black/10 py-7.5 px-8 mb-12">
           {/* CHANGE 7: detail → safeDetail sob jaigai */}
           <MetaItem label="Service" value={safeDetail.service} />
           <MetaItem label="Client" value={safeDetail.client} />

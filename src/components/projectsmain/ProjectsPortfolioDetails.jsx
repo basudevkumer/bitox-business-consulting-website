@@ -71,65 +71,73 @@ const ProjectsPortfolioDetails = ({ slug }) => {
           <MetaItem label="Date" value={safeDetail.date} />
           <MetaItem label="Location" value={safeDetail.location} />
         </div>
-        </Container>
-        <Container size={"md"}>
+      </Container>
+      <Container size={"md"}>
         {/* Intro */}
         <div className="mb-14">
-          <h2 className="headingTwo text-primary font-bold mb-6 max-w-[820px]">
+          <h2 className="headingFive text-primary font-bold pb-7.5 underline max-w-[820px]">
             {safeDetail.title}
           </h2>
-          <p className="text-base text-primary/70 leading-relaxed max-w-[900px]">
-            {safeDetail.intro}
-          </p>
+          <p className="para-lg text-tarnary pb-7.5 ">{safeDetail.intro}</p>
+          <p className="para-lg text-tarnary">{safeDetail.introtwo}</p>
         </div>
 
         {/* Process */}
         <div className="mb-14">
-          <h3 className="headingThree text-primary font-bold mb-4">
+          <h3 className="headingFive text-primary font-bold underline pb-4">
             {safeDetail.process.title}
           </h3>
-          <p className="text-base text-primary/70 leading-relaxed mb-8 max-w-[900px]">
+          <p className="para-lg text-tarnary pb-7.5">
             {safeDetail.process.description}
           </p>
           <div className="space-y-6">
             {safeDetail.process.steps.map((step, i) => (
-              <div key={i} className="pl-5 border-l-2 border-black/10">
-                <h4 className="text-base font-bold text-primary mb-1">
+              <div key={i} className="border-black/10">
+                <h4 className="para-xl font-bold text-primary pb-5">
+                  <span className="w-2 h-2 rounded-full bg-primary mr-2 inline-block align-middle" />
                   {step.title}
                 </h4>
-                <p className="text-sm text-primary/70 leading-relaxed">
-                  {step.description}
-                </p>
+                <p className="para-lg text-tarnary">{step.description}</p>
               </div>
             ))}
           </div>
         </div>
 
         {/* Solution */}
-        <div className="mb-14">
-          <h3 className="headingThree text-primary font-bold mb-4">
+        <div className="pb-14">
+          <h3 className="headingFive text-primary font-bold underline pb-7.5">
             {safeDetail.solution.title}
           </h3>
-          <p className="text-base text-primary/70 leading-relaxed max-w-[900px]">
+          <p className="para-lg text-tarnary">
             {safeDetail.solution.description}
           </p>
         </div>
 
         {/* Results */}
         <div>
-          <h3 className="headingThree text-primary font-bold mb-4">
+          <h3 className="headingFive text-primary font-bold pb-4">
             {safeDetail.results.title}
           </h3>
-          <p className="text-base text-primary/70 leading-relaxed mb-6 max-w-[900px]">
+          <p className="para-lg text-tarnary pb-6">
             {safeDetail.results.description}
           </p>
-          <ul className="space-y-3">
+          <ul className="space-y-5">
             {safeDetail.results.points.map((point, i) => (
-              <li
-                key={i}
-                className="flex items-start gap-3 text-sm text-primary/80"
-              >
-                <span className="mt-1.5 h-2 w-2 min-w-[8px] rounded-full bg-primary inline-block" />
+              <li key={i} className="para-lg text-tarnary flex items-start gap-x-5 max-w-[710px]">
+                <span className="mt-0.75 shrink-0 bg-[#FFD8C5] w-8 h-8 flex items-center justify-center rounded-[90px] p-2">
+                  <svg
+                    width="16"
+                    height="15"
+                    viewBox="0 0 16 15"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0 7.34068C2.40119 9.86113 4.72936 12.1302 6.96734 15C9.4005 10.3052 11.8909 5.59398 16 0.492012L14.8928 0C11.4231 3.56978 8.72743 6.94889 6.38513 10.9647C4.75628 9.54118 2.12389 7.52677 0.516585 6.49182L0 7.34068Z"
+                      fill="#FF5101"
+                    />
+                  </svg>
+                </span>
                 {point}
               </li>
             ))}
@@ -142,8 +150,8 @@ const ProjectsPortfolioDetails = ({ slug }) => {
 
 const MetaItem = ({ label, value }) => (
   <div>
-    <p className="text-xs font-bold uppercase text-primary/40 mb-1">{label}</p>
-    <p className="text-sm font-medium text-primary">{value}</p>
+    <p className="para-xl font-normal uppercase text-tarnary mb-2">{label}</p>
+    <p className="text-[17px] font-medium text-primary">{value}</p>
   </div>
 );
 

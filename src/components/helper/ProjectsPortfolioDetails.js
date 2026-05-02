@@ -6,43 +6,45 @@ export const projectDetails = {
     location: "787 Ocean Drive, FL 32909",
     title: "Innovative Digital Business Strategies for Modern Growth",
     intro:
-      "Our financial planning process is designed to help individuals and businesses achieve long-term financial stability and growth. We begin by understanding your current financial situation, goals, and risk tolerance. Based on this analysis, we develop a customised strategy that includes personalised investment planning, savings management and risk assessment.",
+      "Our financial planning process is designed to help individuals and businesses achieve long-term financial stability and growth. We begin by conducting a thorough assessment of your current financial situation, goals, and risk tolerance to build a clear picture of where you stand. From there, we craft a fully customised strategy that covers personalised investment planning, smart savings management, and comprehensive risk assessment. Every plan we create is built to evolve with you — adapting to life changes, market shifts, and new opportunities along the way",
+      introtwo:
+      "Turning ideas into tangible results is both an art and a science. At our agency, we believe that a vision is only as strong as the steps taken to realize it. how we transform creative concepts into impactful outcomes for our clients. Every successful project starts with a deep understanding of your goals, values, & audience. We take the time to listen, ask questions, and explore your ideas in detail. By identifying the core objectives & expectations, we ensure that the final result aligns perfectly with your vision This phase allows us to set a strong foundation for the entire project, avoiding guesswork and ensuring clarity",
     process: {
       title: "Our Digital Strategy Implementation Process",
       description:
-        "Our financial planning process is designed to help individuals and businesses achieve long-term financial stability and growth. We begin by understanding your current financial situation, goals, and risk tolerance.",
+        "Our financial planning process is designed to help individuals and businesses achieve long-term financial stability and growth. We begin by understanding your current financial position, goals, and risk tolerance. Based on this analysis, our experts develop a personalized strategy that includes investment planning, savings managementand risk assessment. We focus creating sustainable financial solutions that align with your future objectives.",
       steps: [
         {
           title: "Business & Digital Assessment",
           description:
-            "We believe that effective financial planning requires continuous monitoring and adjustment. As market conditions and personal circumstances change, we regularly review and refine your financial plan.",
+            "We believe that effective financial planning requires continuous monitoring and adjustment. As market conditions and personal circums change, we regularly review and refine your financial plan to ensure it remains aligned with your goals.",
         },
         {
           title: "Strategic Digital Planning",
           description:
-            "We believe that effective financial planning requires continuous monitoring and adjustment. As market conditions and personal circumstances change, we regularly review and refine your financial plan.",
+            "We believe that effective financial planning requires continuous monitoring and adjustment. As market conditions and personal circums change, we regularly review and refine your financial plan to ensure it remains aligned with your goals.",
         },
         {
           title: "Technology Integration & Execution",
           description:
-            "We believe that effective financial planning requires continuous monitoring and adjustment. As market conditions and personal circumstances change, we regularly review and refine your financial plan.",
+            "We believe that effective financial planning requires continuous monitoring and adjustment. As market conditions and personal circums change, we regularly review and refine your financial plan to ensure it remains aligned with your goals.",
         },
         {
           title: "Monitoring, Optimization & Results",
           description:
-            "We believe that effective financial planning requires continuous monitoring and adjustment. As market conditions and personal circumstances change, we regularly review and refine your financial plan.",
+            "We believe that effective financial planning requires continuous monitoring and adjustment. As market conditions and personal circums change, we regularly review and refine your financial plan to ensure it remains aligned with your goals.",
         },
       ],
     },
     solution: {
       title: "Our Solution",
       description:
-        "Turning ideas into tangible results starts with a clear vision. At our agency, we believe that a vision is only as strong as the action taken to realize it. We take the time to listen, ask questions, and explore your situation. By identifying the core objectives & opportunities, we ensure that the final result aligns perfectly with your vision.",
+        "Turning ideas into tangible results is both an art and a science. At our agency, we believe that a vision is only as strong as the steps taken to realize it. how we transform creative concepts into impactful outcomes for our clients. Every successful project starts with a deep understanding of your goals, values, & audience. We take the time to listen, ask questions, and explore your ideas in detail. By identifying the core objectives & expectations, we ensure that the final result aligns perfectly with your vision This phase allows us to set a strong foundation for the entire project, avoiding guesswork and ensuring clarity",
     },
     results: {
       title: "Measurable Results",
       description:
-        "Our financial planning process is designed to help individuals and businesses achieve long-term financial stability and growth. We begin by understanding your current financial situation, goals, and risk tolerance.",
+        "Our financial planning process is designed to help individuals and businesses achieve long-term financial stability and growth. We begin by understanding your current financial position, goals, and risk tolerance. Based on this analysis our experts develop a personalized strategy that includes investment planning, savings managementand risk assessment. We focus creating sustainable financial solutions that align with your future objectives. Based on this in-depth analysis, our experienced financial experts develop a personalized strategy tailored specifically to your needs.",
       points: [
         "Our agency helped the business develop a compelling brand story that resonated with customers and increased brand visibility.",
         "We built technology-driven online personal tools that increased growth catalytic and to technology uplift.",
@@ -57,47 +59,49 @@ export const projectDetails = {
     location: "123 Commerce Ave, NY 10001",
     title: "Seamless E-Commerce Experience for Next-Gen Shoppers",
     intro:
-      "We crafted a fully responsive, conversion-optimised e-commerce platform that puts the product first. From intuitive navigation to frictionless checkout, every detail was designed to maximise engagement and revenue.",
+      "We crafted a fully responsive, conversion-optimised e-commerce platform that puts the product front and centre at every touchpoint. From intuitive navigation and smart filtering to a seamless, frictionless checkout experience, every detail was deliberately designed with the end user in mind. Our team focused on reducing drop-off rates, improving page load performance, and creating a visually compelling storefront that builds trust and drives purchasing decisions. The result is a high-performing platform that not only looks exceptional but consistently turns visitors into loyal, repeat customers.",
+      introtwo:
+      "Turning ideas into tangible results is both an art and a science. At our agency, we believe that a vision is only as strong as the steps taken to realize it. how we transform creative concepts into impactful outcomes for our clients. Every successful project starts with a deep understanding of your goals, values, & audience. We take the time to listen, ask questions, and explore your ideas in detail. By identifying the core objectives & expectations, we ensure that the final result aligns perfectly with your vision This phase allows us to set a strong foundation for the entire project, avoiding guesswork and ensuring clarity",
     process: {
       title: "Our E-Commerce Build Process",
       description:
-        "We start with a deep dive into user behaviour and competitive landscape, then architect a scalable solution that grows with the business.",
+        "We start with a deep dive into user behaviour, purchase psychology, and competitive landscape — building a complete picture of where opportunities lie and where existing experiences fall short. From there, we architect a scalable, future-proof solution designed not just for today's traffic but built to grow seamlessly alongside the business.",
       steps: [
         {
           title: "Discovery & Research",
           description:
-            "Mapping user journeys and identifying friction points in the existing flow.",
+            "We map every user journey in detail — analysing how real customers browse, decide, and drop off — to pinpoint exactly where friction, confusion, and lost revenue are hiding in the existing flow. This research phase forms the strategic backbone of everything that follows",
         },
         {
           title: "UX Architecture",
           description:
-            "Wire-framing information hierarchy and checkout flows for maximum conversion.",
+            "We wire-frame the full information hierarchy, product discovery flows, and end-to-end checkout experience with a singular focus on conversion. Every structural decision is validated against user behaviour data before we move a single pixel forward.",
         },
         {
           title: "Design & Prototype",
           description:
-            "High-fidelity mockups reviewed with stakeholders before a single line of code is written.",
+            "We translate strategy into high-fidelity, pixel-perfect mockups that bring the full user experience to life — covering every screen, state, and interaction. Stakeholders review and sign off on the complete design before a single line of code is written, eliminating costly revisions down the line.",
         },
         {
           title: "Build, Test & Launch",
           description:
-            "Agile sprints, QA across devices, performance tuning, and a smooth go-live.",
+            "We build in focused agile sprints, maintaining full transparency at every stage with regular demos and progress updates. Rigorous QA is conducted across all major devices, browsers, and network conditions — followed by thorough performance tuning — before a carefully managed, zero-disruption go-live.",
         },
       ],
     },
     solution: {
       title: "Our Solution",
       description:
-        "A headless Next.js storefront backed by a robust CMS, delivering sub-second page loads and a checkout completion rate 40% above industry average.",
+        "We delivered a cutting-edge headless Next.js storefront powered by a flexible, content-rich CMS — giving the client full creative control without sacrificing a single millisecond of performance. The architecture was engineered from the ground up for speed, scalability, and conversion, producing sub-second page loads and a checkout completion rate that outperforms the industry average by an impressive 40%.",
     },
     results: {
       title: "Measurable Results",
       description:
-        "Within 90 days of launch the client saw significant uplifts across all key metrics.",
+        "Within just 90 days of launch, the impact was clear and measurable across every key performance indicator the client cared about. Mobile conversions surged by 62%, reflecting a dramatically improved experience for the majority of shoppers. Cart abandonment dropped by 28% thanks to a streamlined, confidence-inspiring checkout flow. And page load time was slashed to under 1.2 seconds even on 3G connections — ensuring no customer was left waiting, regardless of their device or network.",
       points: [
-        "62% uplift in mobile conversions.",
-        "28% reduction in cart abandonment.",
-        "Page load time reduced to under 1.2s on 3G.",
+        "Delivered a 62% uplift in mobile conversions, reflecting a dramatically smoother and more confidence-inspiring shopping experience.",
+        "Reduced cart abandonment by 28% through a streamlined, distraction-free checkout flow that kept customers moving forward rather than dropping off.",
+        "Cut page load time to under 1.2 seconds even on 3G connections, ensuring a fast, frustration-free experience for every user regardless of network.",
       ],
     },
   },
@@ -108,47 +112,49 @@ export const projectDetails = {
     location: "456 Media Blvd, CA 90210",
     title: "Viral Social Campaigns That Drive Real Engagement",
     intro:
-      "We developed a multi-platform social media strategy that turned passive followers into active brand advocates.",
+      "We developed a multi-platform social media strategy that transformed passive followers into active, passionate brand advocates who genuinely championed the message. By combining data-driven content planning, platform-specific storytelling, and consistent community engagement, we built an audience that didn't just scroll — they shared, commented, and converted. Every post, campaign, and interaction was crafted with a clear purpose: to deepen brand loyalty, spark meaningful conversations, and drive measurable business results.",
+      introtwo:
+      "Turning ideas into tangible results is both an art and a science. At our agency, we believe that a vision is only as strong as the steps taken to realize it. how we transform creative concepts into impactful outcomes for our clients. Every successful project starts with a deep understanding of your goals, values, & audience. We take the time to listen, ask questions, and explore your ideas in detail. By identifying the core objectives & expectations, we ensure that the final result aligns perfectly with your vision This phase allows us to set a strong foundation for the entire project, avoiding guesswork and ensuring clarity",
     process: {
       title: "Our Campaign Strategy Process",
       description:
-        "Audience research, content calendar creation, creative production, and real-time optimisation.",
+        "Our campaign strategy process is built on four interconnected pillars — deep audience research, a structured content calendar, high-quality creative production, and continuous real-time optimisation. Every stage feeds into the next, ensuring that each piece of content we put into the world is purposeful, platform-appropriate, and consistently pushing performance forward.",
       steps: [
         {
           title: "Audience Analysis",
           description:
-            "Deep-dive into demographics, psychographics, and platform behaviour.",
+            "We go far beyond basic demographics, conducting a thorough analysis of psychographics, lifestyle behaviours, platform habits, and content consumption patterns to build a precise, three-dimensional picture of who we're speaking to. This deep understanding becomes the foundation for every creative and strategic decision made throughout the campaign.",
         },
         {
           title: "Content Strategy",
           description:
-            "Building a 90-day editorial calendar aligned with business goals.",
+            "We build a comprehensive 90-day editorial calendar that maps every post, campaign moment, and content theme directly to the client's wider business objectives and seasonal opportunities. Each piece of planned content has a clear purpose — whether that's driving awareness, building community trust, or pushing audiences toward a specific conversion action.",
         },
         {
           title: "Creative Production",
           description:
-            "Short-form video, static graphics, and copy crafted for each platform.",
+            "Our in-house creative team produces a full suite of platform-native content — from punchy short-form videos and scroll-stopping static graphics to sharp, on-brand copy that speaks the language of each platform's unique audience. Nothing is repurposed lazily; every asset is crafted specifically for the format, context, and community it's designed to reach.",
         },
         {
           title: "Optimise & Scale",
           description:
-            "A/B testing creatives and doubling down on what performs.",
+            "We treat every piece of content as a live experiment — continuously running A/B tests on creatives, captions, formats, and posting times to identify exactly what resonates and what falls flat. The moment a winning formula emerges, we double down with increased budget, broader distribution, and scaled production to maximise its impact.",
         },
       ],
     },
     solution: {
       title: "Our Solution",
       description:
-        "A unified brand voice across Instagram, TikTok, and LinkedIn with platform-native content that drove organic reach.",
+        "We built a unified, consistent brand voice that translated seamlessly across Instagram, TikTok, and LinkedIn — maintaining a coherent identity while adapting tone, format, and style to feel truly native on each platform. The result was an organic content engine that didn't just reach audiences but genuinely connected with them, earning attention rather than interrupting it.",
     },
     results: {
       title: "Measurable Results",
       description:
-        "The campaign generated 2.4M impressions in the first month with a 5.8% engagement rate — 3× the industry benchmark.",
+        "The campaign exceeded every benchmark set at the outset, delivering 2.4 million organic impressions within the very first month and proving that the right content, in the right format, on the right platform is a powerful growth engine in its own right. The 5.8% engagement rate — three times the industry benchmark — reflected an audience that wasn't just seeing the content but actively responding to it with likes, shares, saves, and comments.",
       points: [
-        "2.4M organic impressions in 30 days.",
-        "5.8% engagement rate (3× benchmark).",
-        "18% increase in website traffic from social.",
+        "Generated 2.4 million organic impressions within the first 30 days — entirely without paid promotion.",
+        "Achieved a 5.8% engagement rate, outperforming the industry benchmark by 3 times across all platforms.",
+        "Drove an 18% increase in website traffic directly attributed to social media activity within the campaign period.",
       ],
     },
   },
@@ -159,47 +165,49 @@ export const projectDetails = {
     location: "789 Innovation Park, TX 73301",
     title: "Intuitive Mobile UI That Users Actually Love",
     intro:
-      "We redesigned a fintech app from the ground up, reducing cognitive load and increasing daily active usage by 45%.",
+      "We redesigned a fintech app from the ground up, stripping away complexity and rebuilding every screen with a relentless focus on clarity, speed, and user confidence. Through extensive user research, behavioural analysis, and iterative prototyping, we identified and eliminated the friction points that were causing confusion and drop-off across key user journeys. Every interface decision — from simplified navigation flows to intuitive data visualisation — was made to reduce cognitive load and make complex financial actions feel effortless and intuitive. The results spoke for themselves: daily active usage surged by 45%",
+      introtwo:
+      "Turning ideas into tangible results is both an art and a science. At our agency, we believe that a vision is only as strong as the steps taken to realize it. how we transform creative concepts into impactful outcomes for our clients. Every successful project starts with a deep understanding of your goals, values, & audience. We take the time to listen, ask questions, and explore your ideas in detail. By identifying the core objectives & expectations, we ensure that the final result aligns perfectly with your vision This phase allows us to set a strong foundation for the entire project, avoiding guesswork and ensuring clarity",
     process: {
       title: "Our UI/UX Design Process",
       description:
-        "From empathy mapping to polished Figma handoff, we follow a rigorous, user-centred design process.",
+        "Our UI/UX design process is built on a foundation of genuine empathy and rigorous research — ensuring every design decision is rooted in real user needs rather than assumption or guesswork. From the very first empathy mapping session all the way through to a polished, developer-ready Figma handoff, we follow a structured, user-centred methodology that leaves nothing to chance.",
       steps: [
         {
           title: "Empathy & Research",
           description:
-            "User interviews, heuristic evaluation, and competitive benchmarking.",
+            "We begin by getting as close to the user as possible — conducting in-depth interviews, observational research, and heuristic evaluations to understand not just what users do, but why they do it and where current experiences are letting them down. This is combined with thorough competitive benchmarking to identify industry standards, emerging patterns, and the whitespace where our design can genuinely stand out.",
         },
         {
           title: "Information Architecture",
           description:
-            "Card sorting and tree testing to validate navigation structures.",
+            "We use proven techniques like card sorting and tree testing to design and rigorously validate navigation structures before any visual design begins — ensuring that users can always find what they need quickly and intuitively. Getting the architecture right at this stage eliminates confusion downstream and creates a logical, frictionless foundation that the entire user experience is built upon.",
         },
         {
           title: "Wireframes & Prototypes",
           description:
-            "Rapid iteration with interactive prototypes tested on real users.",
+            "We move fast and iterate faster — translating validated structures into interactive wireframes and clickable prototypes that put real, testable experiences in front of actual users as early as possible. Every round of user testing surfaces new insights that sharpen the design, so by the time we reach visual design, every flow and interaction has already been battle-tested and refined.",
         },
         {
           title: "Visual Design & Handoff",
           description:
-            "Pixel-perfect Figma files with a fully documented design system.",
+            "We translate every validated interaction and flow into pixel-perfect, production-ready Figma files that leave zero ambiguity for the development team. Alongside the designs, we deliver a fully documented design system — covering components, spacing, typography, colour tokens, and interaction states — ensuring consistency, scalability, and a smooth, efficient handoff that accelerates build time.",
         },
       ],
     },
     solution: {
       title: "Our Solution",
       description:
-        "A clean, accessible design system with dark-mode support, micro-animations, and a simplified onboarding flow that cut drop-off by 60%.",
+        "We delivered a clean, accessible, and beautifully crafted design system that brought consistency, clarity, and delight to every corner of the product experience. Dark-mode support, purposeful micro-animations, and a completely reimagined onboarding flow worked together to create an app that felt intuitive from the very first interaction — reducing onboarding drop-off by an extraordinary 60% and setting a new standard for how the product welcomes and retains its users.",
     },
     results: {
       title: "Measurable Results",
       description:
-        "Post-redesign the app achieved a 4.8-star rating on the App Store and daily active users grew 45% month-over-month.",
+        "The redesign transformed not just the look of the product but the entire relationship between the app and its users — and the numbers reflected that shift immediately after launch. A 4.8-star rating on the App Store signalled that users weren't just tolerating the experience but genuinely loving it, with reviews consistently praising its ease of use and visual polish. Daily active users grew by 45% month-over-month as word spread and retention improved dramatically. And onboarding drop-off plummeted by 60%.",
       points: [
-        "4.8★ App Store rating post-launch.",
-        "45% growth in daily active users.",
-        "60% reduction in onboarding drop-off.",
+        "Earned a 4.8-star rating on the App Store post-launch, with users consistently praising the app's simplicity, speed, and visual polish.",
+        "Grew daily active users by 45% month-over-month, driven by dramatically improved retention and a far more engaging in-app experience.",
+        "Cut onboarding drop-off by 60%, converting significantly more new users into active, committed regulars from their very first session.",
       ],
     },
   },
@@ -210,47 +218,49 @@ export const projectDetails = {
     location: "321 Search St, WA 98101",
     title: "Data-Driven SEO That Dominates Search Rankings",
     intro:
-      "We built a technical and content SEO strategy that took the client from page 3 to position 1 for their top 20 keywords.",
+      "We built a comprehensive technical and content SEO strategy that systematically diagnosed every barrier preventing the client from ranking where their business deserved to be seen. Our team conducted a deep-dive audit covering site architecture, crawlability, Core Web Vitals, and content gaps — then executed a precise, priority-driven roadmap to fix what was holding them back. Alongside the technical groundwork, we developed a high-quality, search-intent-driven content strategy that established the client as a trusted authority in their niche and earned powerful backlinks from credible sources. Within months.",
+      introtwo:
+      "Turning ideas into tangible results is both an art and a science. At our agency, we believe that a vision is only as strong as the steps taken to realize it. how we transform creative concepts into impactful outcomes for our clients. Every successful project starts with a deep understanding of your goals, values, & audience. We take the time to listen, ask questions, and explore your ideas in detail. By identifying the core objectives & expectations, we ensure that the final result aligns perfectly with your vision This phase allows us to set a strong foundation for the entire project, avoiding guesswork and ensuring clarity",
     process: {
       title: "Our SEO Implementation Process",
       description:
-        "Technical audits, keyword mapping, content production, and authoritative link building.",
+        "Our SEO implementation process is a fully integrated, end-to-end approach that addresses every layer of search performance — from the technical foundations that search engines rely on, to the content that earns trust and the authoritative backlinks that signal credibility. Technical audits, precise keyword mapping, high-quality content production, and strategic link building work together as a unified system designed to deliver compounding, long-term organic growth.",
       steps: [
         {
           title: "Technical Audit",
           description:
-            "Crawling the full site for Core Web Vitals issues, broken links, and indexability problems.",
+            "We begin with a comprehensive crawl of the entire site, leaving no page unexamined — systematically identifying Core Web Vitals issues, crawl errors, broken links, duplicate content, indexability problems, and structural inefficiencies that are quietly suppressing rankings. Every finding is prioritised by impact and translated into a clear, actionable remediation plan that gives the development team everything they need to execute fixes efficiently and correctly.",
         },
         {
           title: "Keyword Strategy",
           description:
-            "Mapping intent-driven keywords to existing and new content.",
+            "We go far beyond basic keyword research — conducting a deep analysis of search intent, topic clusters, and content gaps to map the right intent-driven keywords to both existing pages and strategically planned new content. Every keyword is chosen not just for volume but for its relevance, commercial value, and realistic ranking opportunity, ensuring that every piece of content we optimise or create is positioned to attract the right audience at the right moment in their journey.",
         },
         {
           title: "On-Page Optimisation",
           description:
-            "Rewriting meta data, headers, and body copy for relevance and readability.",
+            "We meticulously rewrite and refine every critical on-page element — from title tags and meta descriptions to header structures and body copy — ensuring each page clearly communicates its relevance to both search engines and real human readers. Our optimisations strike the careful balance between technical precision and natural, engaging readability, so pages rank strongly without ever feeling forced, keyword-stuffed, or disconnected from the user's actual needs.",
         },
         {
           title: "Link Building",
           description:
-            "Earning high-DA backlinks through digital PR and content partnerships.",
+            "We take a quality-over-quantity approach to link acquisition — earning high domain authority backlinks through strategic digital PR campaigns, genuine content partnerships, and thought leadership placements that naturally attract links from credible, relevant sources. Every link we build strengthens the site's overall authority, sends powerful trust signals to search engines, and contributes to a backlink profile that is sustainable, defensible, and built to last.",
         },
       ],
     },
     solution: {
       title: "Our Solution",
       description:
-        "A 6-month SEO roadmap combining technical fixes, topical authority content clusters, and a proactive link-acquisition programme.",
+        "We delivered a comprehensive, structured 6-month SEO roadmap that tackled the client's search visibility challenges from every angle simultaneously — addressing the technical debt that was holding the site back, building out topical authority through tightly structured content clusters, and running a proactive link-acquisition programme to steadily grow domain credibility. Each phase of the roadmap was carefully sequenced to build on the last, creating a compounding effect that accelerated results as the months progressed.",
     },
     results: {
       title: "Measurable Results",
       description:
-        "Organic traffic grew 210% in 6 months; 18 of 20 target keywords now rank on page 1.",
+        "The results of the 6-month programme were transformative, delivering the kind of organic growth that fundamentally changed the client's relationship with search as a business channel. Organic traffic surged by 210% — more than tripling the volume of search-driven visitors landing on the site every month and dramatically expanding the top-of-funnel pipeline. Eighteen out of twenty target keywords now rank on page one of Google, putting the client in direct competition with — and in many cases ahead of — established industry players who had dominated those.",
       points: [
-        "210% organic traffic growth in 6 months.",
-        "18/20 target keywords on page 1.",
-        "Domain Rating improved from 24 to 47.",
+        "Grew organic traffic by 210% over 6 months, more than tripling the volume of search-driven visitors and significantly expanding the client's.",
+        "Achieved page 1 rankings for 18 out of 20 target keywords, placing the client in direct competition with and ahead of long-established industry players.",
+        "Improved Domain Rating from 24 to 47, building a strong, authoritative backlink profile that will continue to compound in value.",
       ],
     },
   },
@@ -261,7 +271,9 @@ export const projectDetails = {
     location: "654 Strategy Ave, IL 60601",
     title: "Strategic Consulting That Transforms Business Trajectory",
     intro:
-      "We partnered with a mid-market manufacturer to identify growth levers, streamline operations, and enter two new markets within 12 months.",
+      "We partnered with a mid-market manufacturer to conduct a thorough diagnostic of their business — uncovering hidden growth levers, operational inefficiencies, and untapped market opportunities that had been limiting their full potential. Through a combination of process re-engineering, supply chain optimisation, and cost structure analysis, we streamlined core operations to free up the resources and bandwidth needed to scale with confidence. Armed with in-depth market research and a carefully crafted go-to-market strategy, we guided the client through a structured and risk-managed entry into two brand new markets simultaneously. ",
+      introtwo:
+      "Turning ideas into tangible results is both an art and a science. At our agency, we believe that a vision is only as strong as the steps taken to realize it. how we transform creative concepts into impactful outcomes for our clients. Every successful project starts with a deep understanding of your goals, values, & audience. We take the time to listen, ask questions, and explore your ideas in detail. By identifying the core objectives & expectations, we ensure that the final result aligns perfectly with your vision This phase allows us to set a strong foundation for the entire project, avoiding guesswork and ensuring clarity",
     process: {
       title: "Our Consulting Engagement Process",
       description:
@@ -312,7 +324,9 @@ export const projectDetails = {
     location: "987 Capital Row, NY 10005",
     title: "Comprehensive Financial Planning for Lasting Wealth",
     intro:
-      "We designed a holistic financial planning framework that helped high-net-worth individuals protect and grow their wealth across market cycles.",
+      "We designed a holistic financial planning framework that helped high-net-worth individuals protect and grow their wealth across market cycles. Our approach combined rigorous risk assessment, tax-efficient structuring, and diversified asset allocation — tailored to each client's long-term goals and liquidity needs. By integrating estate planning, investment strategy, and downside protection into a single cohesive model, we enabled clients to navigate volatility with confidence while consistently building generational wealth.",
+      introtwo:
+      "Turning ideas into tangible results is both an art and a science. At our agency, we believe that a vision is only as strong as the steps taken to realize it. how we transform creative concepts into impactful outcomes for our clients. Every successful project starts with a deep understanding of your goals, values, & audience. We take the time to listen, ask questions, and explore your ideas in detail. By identifying the core objectives & expectations, we ensure that the final result aligns perfectly with your vision This phase allows us to set a strong foundation for the entire project, avoiding guesswork and ensuring clarity",
     process: {
       title: "Our Financial Planning Process",
       description:

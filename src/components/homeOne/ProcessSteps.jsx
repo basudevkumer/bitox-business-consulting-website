@@ -104,7 +104,6 @@ const ProcessSteps = () => {
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
         </div>

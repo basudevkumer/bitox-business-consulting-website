@@ -28,7 +28,7 @@ function OurClients() {
       </div>
 
       {/* Cards grid — full width */}
-      <div className="w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap:3 lg:gap-5">
+      <div className="w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-[12px] xl:gap-[20px]">
         {CLIENTS.map((client) => (
           <div key={client.id} className="flex flex-col">
             {/* Image box */}

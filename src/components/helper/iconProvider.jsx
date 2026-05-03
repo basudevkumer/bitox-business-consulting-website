@@ -6,6 +6,7 @@ import { RxTriangleLeft } from "react-icons/rx";
 import { GiPlainSquare } from "react-icons/gi";
 import { GoDotFill } from "react-icons/go";
 import { GiTargetShot } from "react-icons/gi";
+import { IoChevronForwardSharp } from "react-icons/io5";
 
 export const allIcons = {
   star: <IoStarSharp />,
@@ -16,4 +17,5 @@ export const allIcons = {
   square: <GiPlainSquare />,
   dot: <GoDotFill />,
   target: <GiTargetShot />,
+  chevronRight: <IoChevronForwardSharp />,
 };

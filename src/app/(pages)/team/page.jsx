@@ -9,7 +9,7 @@ const Team = () => {
     <>
       <InnerPageHero
         title="Meet Our Experienced Professionals"
-        titleWidth={"lg:!max-w-[650px]"}
+        titleWidth={" !w-[300px] sm:!w-auto lg:!max-w-[650px]"}
       />
       <TeamGrid/>
       <TeamWorkspace/>  

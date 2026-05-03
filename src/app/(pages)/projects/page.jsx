@@ -8,6 +8,7 @@ const Projects = () => {
         title="What We've Achieved Together"
         subtitle="A reputed consultant agency we've spent 13+ year's"
         hasOffset={true}
+        titleWidth={"w-[300px] sm:w-auto"}
       />
       <ProjectsPortfolioSection/>
     </>

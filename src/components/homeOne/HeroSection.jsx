@@ -10,7 +10,7 @@ const HeroSection = () => {
   const { heroBanner } = allImages;
 
   return (
-    <section className=" pt-[140px] lg:pt-[180px] pb-[120px] ">
+    <section className=" pt-[140px] lg:pt-[180px] pb-[90px] ">
       <Container size="2xl">
         {/* 2xl devices */}
         <div className="relative hidden 2xl:block">
@@ -138,7 +138,7 @@ const HeroSection = () => {
       </div>
       {/* for sm   */}
       <div className="px-3 md:hidden block">
-        <ul className="flex flex-wrap gap-8 justify-center">
+        <ul className="flex flex-wrap gap-5 justify-center">
           {heroSections.map((items, index) => (
             <li
               key={index}

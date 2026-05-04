@@ -12,8 +12,8 @@ const HeroSection = () => {
   return (
     <section className=" pt-[140px] lg:pt-[180px] pb-[120px] ">
       <Container size="2xl">
-        {/* lg devices */}
-        <div className="relative hidden lg:block">
+        {/* 2xl devices */}
+        <div className="relative hidden 2xl:block">
           <h1 className="font-heading headingOne  uppercase tracking-tight ">
             <span className="block font-extrabold ">
               <span className="flex items-center">
@@ -21,6 +21,34 @@ const HeroSection = () => {
               </span>
             </span>
             <span className="block font-medium pl-[520px]">Strategy</span>
+          </h1>
+          <div className="absolute top-[100%] translate-y-[-13.5%] left-0 ">
+            <HeroCard />
+          </div>
+        </div>
+        {/* xl devices */}
+        <div className="relative hidden xl:block 2xl:hidden">
+          <h1 className="font-heading headingOne  uppercase tracking-tight ">
+            <span className="block font-extrabold ">
+              <span className="flex items-center">
+                Business <RotatingBadge size="lg" />
+              </span>
+            </span>
+            <span className="block font-medium pl-[450px]">Strategy</span>
+          </h1>
+          <div className="absolute top-[100%] translate-y-[-13.5%] left-0 ">
+            <HeroCard />
+          </div>
+        </div>
+        {/* lg devices */}
+        <div className="relative hidden lg:block xl:hidden">
+          <h1 className="font-heading headingOne  uppercase tracking-tight ">
+            <span className="block font-extrabold ">
+              <span className="flex items-center">
+                Business <RotatingBadge size="lg" />
+              </span>
+            </span>
+            <span className="block font-medium pl-[360px]">Strategy</span>
           </h1>
           <div className="absolute top-[100%] translate-y-[-13.5%] left-0 ">
             <HeroCard />
@@ -84,8 +112,8 @@ const HeroSection = () => {
           ))}
         </Responsive.Flex>
       </div>
-      {/* for sm and md  */}
-      <div className="px-3 lg:hidden block">
+      {/* for md   */}
+      <div className="px-3 hidden md:block lg:hidden">
         <Responsive.Flex
           as="ul"
           justify="flex-start"
@@ -100,12 +128,26 @@ const HeroSection = () => {
               lg:py-[16px] lg:px-[77px]
               md:py-[13px] md:px-[30px]
               sm:py-[10px] sm:px-[15px]
+             
               "
             >
               {items.title}
             </li>
           ))}
         </Responsive.Flex>
+      </div>
+      {/* for sm   */}
+      <div className="px-3 md:hidden block">
+        <ul className="flex flex-wrap gap-8 justify-center">
+          {heroSections.map((items, index) => (
+            <li
+              key={index}
+              className="py-[19px]  text-center w-[250px] border border-[#0000001a] text-primary font-medium rounded-[6px]"
+            >
+              {items.title}
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );

@@ -5,19 +5,19 @@ import ButtonThree from "../ui/ButtonThree";
 import { PLANS } from "../helper/helpers";
 
 function PricingCard({ plan }) {
-const isLight = plan.variant === "light";
+  const isLight = plan.variant === "light";
   return (
     <div
-      className={`flex flex-col rounded-md p-5 lg:p-15 ${
+      className={`flex flex-col rounded-md p-5 lg:p-10 ${
         isLight ? "bg-[#f4f0ec] text-black" : "bg-[#e84b1a] text-white"
       }`}
     >
       {/* Plan Label */}
-      <p className="text-[20px] font-medium leading-7.5 mb-3">{plan.label}</p>
+      <p className="text-[20px] font-medium leading-[30px] mb-3">{plan.label}</p>
 
       {/* Price */}
       <div className="flex items-baseline gap-1 mb-1">
-        <span className="text-[40px] lg:text-[90px] font-extrabold leading-none">
+        <span className="text-[40px] md:text-[60px] lg:text-[90px] font-extrabold leading-none">
           {plan.price}
         </span>
         {plan.perMonth && (
@@ -34,31 +34,23 @@ const isLight = plan.variant === "light";
         xmlns="http://www.w3.org/2000/svg"
       >
         <line
-          x1="0"
-          y1="1"
-          x2="100%"
-          y2="1"
+          x1="0" y1="1" x2="100%" y2="1"
           stroke={isLight ? "#02090F" : "#ffffff"}
           strokeOpacity={isLight ? "0.2" : "0.3"}
           strokeDasharray="2 2"
         />
         <line
-          x1="0"
-          y1="5"
-          x2="100%"
-          y2="5"
+          x1="0" y1="5" x2="100%" y2="5"
           stroke={isLight ? "#02090F" : "#ffffff"}
           strokeOpacity={isLight ? "0.2" : "0.3"}
           strokeDasharray="2 2"
         />
       </svg>
+
       {/* Features */}
       <ul className="flex flex-col gap-3 mb-7">
         {plan.features.map(({ icon: Icon, text }) => (
-          <li
-            key={text}
-            className="flex items-center gap-3 text-sm font-medium"
-          >
+          <li key={text} className="flex items-center gap-3 text-sm font-medium">
             <Icon size={16} className="shrink-0" />
             {text}
           </li>
@@ -86,17 +78,18 @@ const isLight = plan.variant === "light";
     </div>
   );
 }
+
 export default function PricingSection() {
   return (
-    <section className="py-20">
+    <section className="py-12 md:py-20">
       <Container size="lg">
         {/* Header */}
         <div className="flex justify-center mb-4">
-          <span className="inline-flex items-center justify-center border border-black/10 rounded-sm py-1 px-3.75 text-xs font-bold uppercase tracking-widest">
+          <span className="inline-flex items-center justify-center border border-black/10 rounded-sm py-1 px-[15px] text-xs font-bold uppercase tracking-widest">
             Pricing Plan
           </span>
         </div>
-        <h2 className="text-center text-[20px] md:text-[38px] xl:text-[42px] font-bold underline underline-offset-4 max-w-2xl mx-auto mb-12 leading-snug">
+        <h2 className="text-center text-[20px] md:text-[38px] xl:text-[42px] font-bold underline underline-offset-4 max-w-2xl mx-auto mb-8 md:mb-12 leading-snug">
           Our transparent offer ensures clear, fair, and trusted solutions for
           clients
         </h2>

@@ -1,49 +1,45 @@
 "use client";
 
 import Image from "next/image";
-import { Grid } from "@/components/ui/Responsive";
 import Container from "@/components/ui/Container";
 import ButtonThree from "../ui/ButtonThree";
 export default function AboutSection() {
   return (
     <section className="w-full overflow-hidden bg-white">
       <Container size="2xl" className="px-0!">
-        <Grid cols="830px_1fr" gap="none" align="stretch">
-          {/* ── LEFT: Big Image */}
-          <div className="relative w-full overflow-hidden">
-            <div className="absolute inset-0">
-              <Image
-                src="/images/home2_aboutus/about1.png"
-                alt="Team collaboration"
-                fill
-                className="object-cover object-center"
-                priority
-              />
-            </div>
+        <div className="flex flex-col lg:grid lg:grid-cols-[minmax(0,830px)_1fr] min-h-[500px] lg:min-h-[650px] xl:min-h-[700px]">
+          {/* Left: Hero Image */}
+          <div className="relative w-full h-[300px] sm:h-[400px] md:h-[480px] lg:h-auto lg:min-h-[600px]">
+            <Image
+              src="/images/home2_aboutus/about1.png"
+              alt="Team collaboration"
+              fill
+              priority
+              className="object-cover object-center"
+              sizes="(max-width: 1024px) 100vw, 830px"
+            />
           </div>
 
-          {/* ── RIGHT: Text Content */}
-          <div className="flex flex-col justify-center px-6 md:px-8 lg:px-10 py-12 gap-5">
-            {/* Eyebrow label */}
-            <div className="mb-7.5">
+          {/* Right: Text Content */}
+          <div className="flex flex-col justify-center px-5 sm:px-8 lg:px-10 xl:px-12 py-10 md:py-14 lg:py-16 gap-5">
+            {/* Eyebrow */}
+            <div className="mb-4 lg:mb-7.5">
               <span className="inline-flex items-center border border-black/10 rounded-sm py-1 px-3.75 text-xs font-bold uppercase tracking-widest">
                 about us
               </span>
             </div>
 
-            {/* h2, p, button — ekta div e */}
-            <div className="flex flex-col gap-5">
-              {/* Heading */}
+            {/* Heading, Body, CTA */}
+            <div className="flex flex-col gap-4 lg:gap-5">
               <h2
-                className="text-[20px] md:text-[38px] xl:text-[42px] font-bold underline underline-offset-4 max-w-[770px] text-primary"
+                className="text-2xl sm:text-3xl md:text-[34px] xl:text-[42px] font-bold underline underline-offset-4 max-w-[770px] text-primary leading-tight"
                 style={{ fontFamily: "'Creato Display', sans-serif" }}
               >
                 With 16+ years of experience, the team has a leader in digital
                 design and innovations
               </h2>
 
-              {/* Body text */}
-              <p className="para-lg text-tarnary leading-relaxed max-w-[663px]">
+              <p className="text-sm sm:text-base para-lg text-tarnary leading-relaxed max-w-[663px]">
                 Enterprise partnerships, built on clarity and craft, are the
                 foundation of sustainable growth and long term success. By
                 aligning strategic goals &amp; thoughtful executions we can
@@ -53,10 +49,7 @@ export default function AboutSection() {
                 respond effectively.
               </p>
 
-              {/* CTA Button */}
-              <div
-                className="self-start flex items-center gap-2 border border-primary text-primary text-base font-medium rounded-[90px] px-4 py-2 sm:px-7.5 sm:py-5 cursor-pointer hover:bg-white/90 transition-colors group"
-              >
+              <div className="self-start flex items-center gap-2 border border-primary text-primary text-sm sm:text-base font-medium rounded-[90px] px-4 py-2 sm:px-7.5 sm:py-4 cursor-pointer hover:bg-white/90 transition-colors group">
                 <ButtonThree
                   frontText="Get started now"
                   backText="Let's Talk."
@@ -69,7 +62,13 @@ export default function AboutSection() {
                   paddingRight={0}
                 />
                 <span className="inline-block transition-transform group-hover:translate-x-1">
-                  <svg width="9" height="12" viewBox="0 0 9 12" fill="none">
+                  <svg
+                    width="9"
+                    height="12"
+                    viewBox="0 0 9 12"
+                    fill="none"
+                    aria-hidden="true"
+                  >
                     <path
                       d="M0.77735 0.0848229C0.445073 -0.136695 0 0.1015 0 0.500848V10.6323C0 11.0317 0.445073 11.2699 0.77735 11.0484L8.37596 5.98261C8.67283 5.7847 8.67283 5.34848 8.37596 5.15056L0.77735 0.0848229Z"
                       fill="#02090F"
@@ -79,19 +78,29 @@ export default function AboutSection() {
               </div>
             </div>
 
-            {/* Small image */}
-            <div className="mt-5 lg:mt-10 flex">
-              <div className="ml-auto relative w-40 h-27.5 md:w-[425px] md:h-[227px] shrink-0 overflow-hidden rounded-sm shadow-md">
+            {/* Bottom Thumbnail */}
+            {/* Bottom Thumbnail */}
+            <div className="mt-6 lg:mt-10 flex">
+              <div
+                className="ml-auto relative 
+                w-full h-[180px] 
+                sm:w-[420px] sm:h-[220px] 
+                md:w-[520px] md:h-[280px] 
+                lg:w-[340px] lg:h-[200px] 
+                xl:w-[425px] xl:h-[227px] 
+                shrink-0 overflow-hidden rounded-sm shadow-md"
+              >
                 <Image
                   src="/images/home2_aboutus/about2.png"
                   alt="Team at work"
                   fill
                   className="object-cover object-center"
+                  sizes="(max-width: 640px) 100vw, (max-width: 768px) 420px, (max-width: 1024px) 520px, 425px"
                 />
               </div>
             </div>
           </div>
-        </Grid>
+        </div>
       </Container>
     </section>
   );

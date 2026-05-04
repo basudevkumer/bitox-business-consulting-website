@@ -66,36 +66,21 @@ const CoreFeatures = () => {
             </span>
           </div>
         </div>
-
-        {/* ── Top divider ── */}
-        <hr className="border-t border-primary/10" />
-
-        {/* ── Feature columns ── */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 py-10">
+        <div className="border-y border-black/10 py-10">
+          {/* ── Feature columns ── */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[20px] lg:gap-0">
           {features.map((feature, i) => (
             <div
               key={feature.number}
-              className={[
-                "flex flex-col gap-0",
-                // right border on all except last
-                i < features.length - 1 ? "" : "",
-                // left padding on all except first
-                i > 0 ? "pl-8" : "",
-              ]
-                .filter(Boolean)
-                .join(" ")}
             >
-              {/* Number */}
               <p className="text-[18px] font-bold text-primary mb-2.5">
                 {feature.number}
               </p>
-
               {/* Arrow + Title */}
               <Flex gap="xs" align="center" className="mb-3.5">
                 <ArrowIcon />
                 <span
                   className="text-[18px] font-bold text-primary"
-                  style={{ fontFamily: "'Creato Display', sans-serif" }}
                 >
                   {feature.title}
                 </span>
@@ -108,9 +93,7 @@ const CoreFeatures = () => {
             </div>
           ))}
         </div>
-
-        {/* ── Bottom divider ── */}
-        <hr className="border-t border-primary/10" />
+        </div>
       </Container>
     </section>
   );

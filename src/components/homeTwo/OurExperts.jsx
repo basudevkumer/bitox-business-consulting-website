@@ -23,7 +23,7 @@ export default function OurExperts() {
             <p className="inline-flex items-center border border-black/10 rounded-sm py-1 px-3.75 text-xs font-bold uppercase tracking-widest mb-2">
               Meet our experts
             </p>
-            <h2 className="text-[20px] md:text-[38px] xl:text-[42px] font-bold leading-8 lg:leading-14.5 underline text-primary underline-offset-4">
+            <h2 className="text-[20px] md:text-[38px] xl:text-[42px] font-bold leading-8 md:leading-11 lg:leading-14.5 underline text-primary underline-offset-4">
               Global business experts on stage worldwide today live
             </h2>
           </div>
@@ -106,10 +106,10 @@ export default function OurExperts() {
         </div>
 
         {/* ── Expert Cards Grid */}
-        <Grid cols={{ base: 1, md: 3 }} gap={30}>
+        <Grid cols={{ base: 1, sm:2, md: 3 }} gap={30}>
           {allImages.home2OurExperts.map((expert, index) => (
             <div key={expert.id} className="bg-white">
-              <div className="relative w-full aspect-3/4">
+              <div className="relative w-full aspect-[3/4]">
                 <Image
                   src={expert.img}
                   alt={experts[index]?.name ?? "Expert"}

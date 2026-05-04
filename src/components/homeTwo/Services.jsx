@@ -9,11 +9,11 @@ import { services } from "../helper/helpers";
 
 // Image alda export
 export const ServiceCardImage = ({ service, index }) => (
-  <div className="w-full md:w-1/2 shrink-0">
+  <div className="w-full md:w-1/2 shrink-0 overflow-hidden md:rounded-tl-md md:rounded-bl-md">
     <Image
       src={allImages.home2Section[index].img}
       alt={service.title}
-      className="w-full h-65 sm:h-85 md:h-[465px] object-cover md:rounded-tl-md md:rounded-bl-md transition-transform duration-300 transform-gpu"
+      className="w-full h-65 sm:h-85 md:h-[465px] object-cover transition-transform duration-700 ease-in-out hover:scale-110"
     />
   </div>
 );

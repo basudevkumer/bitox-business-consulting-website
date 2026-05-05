@@ -6,17 +6,24 @@ import { Stack } from "../ui/Responsive";
 import allImages from "../helper/imageProvider";
 import Image from "next/image";
 import { services } from "../helper/helpers";
+import Link from "next/link";
 
 // Image alda export
-export const ServiceCardImage = ({ service, index }) => (
-  <div className="w-full md:w-1/2 shrink-0 overflow-hidden md:rounded-tl-md md:rounded-bl-md">
-    <Image
-      src={allImages.home2Section[index].img}
-      alt={service.title}
-      className="w-full h-65 sm:h-85 md:h-[465px] object-cover transition-transform duration-700 ease-in-out hover:scale-110"
-    />
-  </div>
-);
+export const ServiceCardImage = ({ service, index }) => {
+   
+  console.log(index);
+  
+
+  return (
+    <div className="w-full md:w-1/2 shrink-0">
+      <Image
+        src={allImages.home2Section[index]?.img}
+        alt={service.title}
+        className="w-full h-65 sm:h-85 md:h-[465px] object-cover md:rounded-tl-md md:rounded-bl-md transition-transform duration-300 transform-gpu"
+      />
+    </div>
+  );
+};
 
 // Content alda export
 export const ServiceCardContent = ({ service }) => {
@@ -88,7 +95,10 @@ const Services = ({ targetValue = 0, lastValue = 3 }) => {
       <Container size="lg">
         <Stack gap="none">
           {services.slice(targetValue, lastValue).map((service, index) => (
-            <ServiceCard key={index} service={service} index={index} />
+            <Link key={index} href={`/services/${service?.slug}`}>
+              {" "}
+              <ServiceCard  service={service} index={service.imgId} />
+            </Link>
           ))}
         </Stack>
       </Container>

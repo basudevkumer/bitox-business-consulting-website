@@ -4,17 +4,21 @@ import Container from "@/components/ui/Container";
 import Responsive from "@/components/ui/Responsive";
 import React from "react";
 
-const ServiceDescription = () => {
-  const { triangleLeft, triangleRight, dot,target } = allIcons;
+const ServiceDescription = ({ serviceITems }) => {
+  const { triangleLeft, triangleRight, dot, target } = allIcons;
   return (
     <section>
       <Container size="lg">
         <div className="space-y-[30px] ">
           <h5 className="headingFive text-primary font-bold underline">
-            Our Financial Planning Process
+            {serviceITems?.processTitle
+              ? serviceITems?.processTitle
+              : " Our Financial Planning Process"}
           </h5>
           <p className="text-tarnary font-normal para-lg ">
-            Our financial planning process is designed to help individuals and
+            {serviceITems?.processDescription
+              ? serviceITems?.processDescription
+              : `Our financial planning process is designed to help individuals and
             businesses achieve long-term financial stability and growth. We
             begin by understanding your current financial position, goals, and
             risk tolerance. Based on this analysis, our experts develop a
@@ -27,7 +31,7 @@ const ServiceDescription = () => {
             management, retirement planning, tax efficiency strategies, and risk
             management solutions. Our goal is to create a well-balanced
             financial roadmap that supports both your short-term priorities and
-            long-term ambitions.
+            long-term ambitions.`}
           </p>
         </div>
         <div className="mt-[60px] hidden lg:block">
@@ -67,38 +71,80 @@ const ServiceDescription = () => {
           </div>
 
           <div className="h-[342px]  flex  gap-[20px] relative z-10 xl:gap-[60px]">
-            {servicesDetailProcessSteps.map((step) => (
-              <div
-                key={step.id}
-                className="  group bg-bg-secondaryTwo h-fit  max-w-[355px] px-[38px] py-[30px] even:self-end space-y-[20px] rounded-[10px]"
-              >
-                <h3 className="text-center para-TwoXl font-bold text-primary">
-                  {step.title}
-                </h3>
-                <p className="text-center text-tarnary font-normal para-lg">
-                  {step.description}
-                </p>
-              </div>
-            ))}
+            {serviceITems?.steps
+              ? serviceITems?.steps?.map((step) => (
+                  <div
+                    key={step.step}
+                    className="  group bg-bg-secondaryTwo h-fit  max-w-[355px] px-[38px] py-[30px] even:self-end space-y-[20px] rounded-[10px]"
+                  >
+                    <h3 className="text-center para-TwoXl font-bold text-primary">
+                      {step.title}
+                    </h3>
+                    <p className="text-center text-tarnary font-normal para-lg">
+                      {step.description}
+                    </p>
+                  </div>
+                ))
+              : servicesDetailProcessSteps.map((step) => (
+                  <div
+                    key={step.id}
+                    className="  group bg-bg-secondaryTwo h-fit  max-w-[355px] px-[38px] py-[30px] even:self-end space-y-[20px] rounded-[10px]"
+                  >
+                    <h3 className="text-center para-TwoXl font-bold text-primary">
+                      {step.title}
+                    </h3>
+                    <p className="text-center text-tarnary font-normal para-lg">
+                      {step.description}
+                    </p>
+                  </div>
+                ))}
           </div>
         </div>
+
         <div className="mt-[30px] md:mt-[50px] block  lg:hidden">
           <div className="">
-            <Responsive.Grid cols={{base:1, sm:2}} >
-              {servicesDetailProcessSteps.map((step) => (
-                <div
-                  key={step.id}
-                  className="  group bg-bg-secondaryTwo h-fit  max-w-[355px] px-[38px] py-[30px] even:self-end space-y-[15px] rounded-[10px]"
-                >
-                  <p className="flex gap-3 items-center text-base font-medium text-primary "> <span className="!text-xl text-secondary">{target} </span> {step.step}</p>
-                  <h3 className=" para-TwoXl font-bold text-primary">
-                    {step.title}
-                  </h3>
-                  <p className=" text-tarnary font-normal para-lg">
-                    {step.description}
-                  </p>
-                </div>
-              ))}
+            <Responsive.Grid cols={{ base: 1, sm: 2 }}>
+              {serviceITems?.steps
+                ? serviceITems?.steps?.map((step) => (
+                    <div
+                      key={step?.step}
+                      className="  group bg-bg-secondaryTwo h-fit  max-w-[355px] px-[38px] py-[30px] even:self-end space-y-[15px] rounded-[10px]"
+                    >
+                      <p className="flex gap-3 items-center text-base font-medium text-primary ">
+                        {" "}
+                        <span className="!text-xl text-secondary">
+                          {target}{" "}
+                        </span>{" "}
+                        {step?.step}
+                      </p>
+                      <h3 className=" para-TwoXl font-bold text-primary">
+                        {step?.title}
+                      </h3>
+                      <p className=" text-tarnary font-normal para-lg">
+                        {step?.description}
+                      </p>
+                    </div>
+                  ))
+                : servicesDetailProcessSteps.map((step) => (
+                    <div
+                      key={step.id}
+                      className="  group bg-bg-secondaryTwo h-fit  max-w-[355px] px-[38px] py-[30px] even:self-end space-y-[15px] rounded-[10px]"
+                    >
+                      <p className="flex gap-3 items-center text-base font-medium text-primary ">
+                        {" "}
+                        <span className="!text-xl text-secondary">
+                          {target}{" "}
+                        </span>{" "}
+                        {step.step}
+                      </p>
+                      <h3 className=" para-TwoXl font-bold text-primary">
+                        {step.title}
+                      </h3>
+                      <p className=" text-tarnary font-normal para-lg">
+                        {step.description}
+                      </p>
+                    </div>
+                  ))}
             </Responsive.Grid>
           </div>
         </div>

@@ -1,9 +1,8 @@
-"use client";
-
 import React from "react";
 import Container from "../ui/Container";
 import { ServiceCardImage, ServiceCardContent } from "../homeTwo/Services";
 import { services } from "../helper/helpers";
+import Link from "next/link";
 
 const ServiceShowcase = () => {
   return (
@@ -24,13 +23,12 @@ const ServiceShowcase = () => {
         {/*proti image and content alada gap and reuse */}
         <div>
           {services.slice(0, 4).map((service, index) => (
-            <div
-              key={index}
-              className="flex flex-col md:flex-row w-full pb-[30px]"
-            >
-              <ServiceCardImage service={service} index={index} />
-              <ServiceCardContent service={service} />
-            </div>
+            <Link key={index} href={`/services/${service.slug}`}>
+              <div className="flex flex-col md:flex-row w-full pb-[30px]">
+                <ServiceCardImage service={service} index={index} />
+                <ServiceCardContent service={service} />
+              </div>
+            </Link>
           ))}
         </div>
       </Container>

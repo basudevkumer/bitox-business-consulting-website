@@ -188,7 +188,9 @@ export function MobileNavItem({
           onClick={() => onToggle(link.label)}
           className={`flex items-center justify-between w-full py-3.5 border-b border-primary/10 transition-colors duration-200 ${activeClass}`}
         >
-          <span className="text-base font-medium font-heading">{link.label}</span>
+          <span className="text-base font-medium font-heading">
+            {link.label}
+          </span>
           <ChevronDown
             size={16}
             className={`transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
@@ -336,8 +338,6 @@ export const features = [
   },
 ];
 
-
-
 //===============================
 // Contact Info Cards
 //===============================
@@ -354,25 +354,17 @@ export const CONTACT_INPUTS = [
 export const CONTACT_INFO = [
   {
     title: "Address",
-    content: [
-      "Valentin, Street Road 24, New York, USA - 67452",
-    ],
+    content: ["Valentin, Street Road 24, New York, USA - 67452"],
   },
   {
     title: "Phone / Message",
-    content: [
-      "supportdomin@example.com",
-      "(251) 854-6308",
-    ],
+    content: ["supportdomin@example.com", "(251) 854-6308"],
   },
   {
     title: "Working Hours",
-    content: [
-      "Monday to Friday 09:00 to 18:30 Saturday 15:30",
-    ],
+    content: ["Monday to Friday 09:00 to 18:30 Saturday 15:30"],
   },
 ];
-
 
 //===============================
 // HomeTwo — Footer Data
@@ -592,7 +584,10 @@ export const clipStyles = {
 //=================================
 export const services = [
   {
+    id: 1,
+    slug: "business-consultancy",
     number: "01",
+    imgId:0,
     category: "Consultancy",
     title: "Business Consultancy",
     description:
@@ -600,7 +595,10 @@ export const services = [
     features: ["Integrity & Support", "Data Entry", "Growth forecasting"],
   },
   {
+    id: 2,
+    slug: "financial-planning",
     number: "02",
+    imgId:1,
     category: "Planning",
     title: "Financial Planning",
     description:
@@ -612,7 +610,10 @@ export const services = [
     ],
   },
   {
+    id: 3,
+    slug: "vat-tax-consultancy",
     number: "03",
+    imgId:2,
     category: "Tax & Vat",
     title: "Vat & Tax Consultancy",
     description:
@@ -620,11 +621,16 @@ export const services = [
     features: ["Integrity & Support", "Data Entry", "Growth forecasting"],
   },
   {
+    id: 4,
+    slug: "competitive-analysis",
     number: "04",
-    category: " Market Analysis",
+    imgId:3,
+    category: "Market Analysis",
     title: "Competitive Analysis",
     description:
       "Developing smarts, data-driven strategies & practical business plans that turn ideas into profitable scalable outcomes worldwide.",
     features: ["Integrity & Support", "Data Entry", "Growth forecasting"],
   },
 ];
+
+

@@ -26,10 +26,13 @@ const CoreFeatures = () => {
     <section className="py-[80px] bg-bg-secondaryOne">
       <Container size="lg">
         {/* ── Top row: badge + heading + button ── */}
-        <div className="flex flex-col sm:flex-row items-center sm:items-end justify-between gap-6 mb-10">
+        <div className="flex flex-col sm:flex-row items-center sm:justify-between gap-6 mb-10">
           {/* Left: badge and h2 */}
-          <Stack gap="sm" className="max-w-[674px] items-center sm:items-start">
-            <span className="inline-flex items-center border border-black/15 rounded-[4px] py-1 px-[14px] text-[11px] font-bold uppercase tracking-[0.12em] text-primary w-fit">
+          <Stack
+            gap="sm"
+            className="max-w-[674px] items-center sm:items-start w-full"
+          >
+            <span className="inline-flex items-center border border-black/15 rounded-[4px] py-1 px-[14px] text-[11px] font-bold uppercase text-primary w-fit mx-auto sm:mx-0">
               Core Features
             </span>
             <h2
@@ -41,10 +44,7 @@ const CoreFeatures = () => {
           </Stack>
 
           {/* Right: Discover more button */}
-          <div
-            className="self-end mb-1.5 inline-flex items-center gap-2.5 border border-primary text-primary text-sm font-medium rounded-[90px] px-7 py-3.5 cursor-pointer hover:bg-black/5 transition-colors shrink-0 group"
-            onClick={() => console.log("clicked")}
-          >
+          <div className="self-center sm:self-end mb-1.5 sm:mb-1.5 inline-flex items-center gap-2.5 border border-primary text-primary text-sm font-medium rounded-[90px] px-7 py-3.5 cursor-pointer hover:bg-black/5 transition-colors shrink-0 group">
             <ButtonThree
               frontText="Get started now"
               backText="Let's Talk."
@@ -66,51 +66,30 @@ const CoreFeatures = () => {
             </span>
           </div>
         </div>
+        <div className="border-y border-black/10 py-10">
+          {/* ── Feature columns ── */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[20px] lg:gap-0">
+            {features.map((feature, i) => (
+              <div key={feature.number}>
+                <p className="text-[18px] font-bold text-primary mb-2.5">
+                  {feature.number}
+                </p>
+                {/* Arrow + Title */}
+                <Flex gap="xs" align="center" className="mb-3.5">
+                  <ArrowIcon />
+                  <span className="text-[18px] font-bold text-primary">
+                    {feature.title}
+                  </span>
+                </Flex>
 
-        {/* ── Top divider ── */}
-        <hr className="border-t border-primary/10" />
-
-        {/* ── Feature columns ── */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 py-10">
-          {features.map((feature, i) => (
-            <div
-              key={feature.number}
-              className={[
-                "flex flex-col gap-0",
-                // right border on all except last
-                i < features.length - 1 ? "" : "",
-                // left padding on all except first
-                i > 0 ? "pl-8" : "",
-              ]
-                .filter(Boolean)
-                .join(" ")}
-            >
-              {/* Number */}
-              <p className="text-[18px] font-bold text-primary mb-2.5">
-                {feature.number}
-              </p>
-
-              {/* Arrow + Title */}
-              <Flex gap="xs" align="center" className="mb-3.5">
-                <ArrowIcon />
-                <span
-                  className="text-[18px] font-bold text-primary"
-                  style={{ fontFamily: "'Creato Display', sans-serif" }}
-                >
-                  {feature.title}
-                </span>
-              </Flex>
-
-              {/* Description */}
-              <p className="text-[13px] pr-5 leading-[1.6] text-primary/75">
-                {feature.description}
-              </p>
-            </div>
-          ))}
+                {/* Description */}
+                <p className="text-[13px] pr-5 leading-[1.6] text-primary/75">
+                  {feature.description}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
-
-        {/* ── Bottom divider ── */}
-        <hr className="border-t border-primary/10" />
       </Container>
     </section>
   );

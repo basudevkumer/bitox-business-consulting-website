@@ -66,18 +66,17 @@ const Herotwo = () => {
         {/* Est. year — top right */}
         <span
           className="
-        absolute top-[16px] text-white leading-[90px] tracking-tight
-        sm:top-[30px] right-[16px] sm:right-[82px] 
-        text-[25px]
-        md:text-[50px]
-        xl:text-[90px]
-        "
+            absolute top-[16px] sm:top-[30px]
+            right-[16px] sm:right-[82px]
+            text-white leading-none tracking-tight
+            text-[18px] sm:text-[22px] md:text-[38px] lg:text-[60px] xl:text-[90px]
+          "
         >
           (Est. 2010)
         </span>
 
-        {/* Services list — hidden on mobile */}
-        <div className="hidden sm:block absolute top-[30%] xl:top-[40%] xl:-translate-y-[70%] right-15 lg:right-20 xl:right-[150px] text-left space-y-[6px]">
+        {/* Services list — only md and above */}
+        <div className="absolute top-[32%] xl:top-[38%] right-[90px] lg:right-[100px] xl:right-[150px] text-left space-y-[6px]">
           {SERVICES.map((service, i) => (
             <p
               key={i}
@@ -90,9 +89,13 @@ const Herotwo = () => {
 
         {/* CONSULTANT — top left */}
         <h1
-          className="absolute left-4 sm:left-[75px] font-bold text-white uppercase leading-none tracking-tighter"
+          className="
+            absolute
+            left-4 sm:left-[75px]
+            font-bold text-white uppercase leading-none tracking-tighter
+          "
           style={{
-            fontSize: "clamp(36px, 10.5vw, 200px)",
+            fontSize: "clamp(36px, 8.5vw, 200px)",
             top: "clamp(40px, 8vw, 160px)",
           }}
         >
@@ -101,10 +104,15 @@ const Herotwo = () => {
 
         {/* AGENCY_ — bottom right */}
         <div
-          className="absolute right-4 sm:right-[75px] font-bold text-white uppercase leading-none tracking-tighter items-baseline flex gap-2 lg:gap-3"
+          className="
+            absolute
+            right-4 sm:right-[75px]
+            font-bold text-white uppercase leading-none tracking-tighter
+            flex items-baseline gap-2 lg:gap-3
+          "
           style={{
-            fontSize: "clamp(36px, 10.5vw, 200px)",
-            bottom: "clamp(20px, 50vw, 200px)",
+            fontSize: "clamp(36px, 8.5vw, 200px)",
+            bottom: "clamp(100px, 18vw, 200px)",
           }}
         >
           <span>AGENCY</span>
@@ -121,17 +129,18 @@ const Herotwo = () => {
         {/* Tagline + CTA — bottom left */}
         <div
           className="absolute left-4 sm:left-[75px] flex flex-col gap-2 sm:gap-4"
-          style={{ bottom: "clamp(16px, 40%, 100px)" }}
+          style={{ bottom: "clamp(16px, 5vw, 100px)" }}
         >
-          <p className="text-white font-bold text-[clamp(12px,1.8vw,60px)] leading-snug max-w-[280px] sm:max-w-[685px]">
+          <p
+            className="text-white font-bold leading-snug max-w-[220px] xs:max-w-[280px] sm:max-w-[360px] md:max-w-[500px] lg:max-w-[685px]"
+            style={{ fontSize: "clamp(12px, 2.2vw, 60px)" }}
+          >
             Transforming your vision
             <br />
             into measurable success
           </p>
-          <div
-            className="self-start flex items-center gap-2 bg-bg-secondaryOne text-primary text-base font-medium rounded-[90px] px-4 py-2 sm:px-7.5 sm:py-5 cursor-pointer hover:bg-white/90 transition-colors group"
-            onClick={() => console.log("clicked")}
-          >
+
+          <div className="self-start flex items-center gap-2 bg-bg-secondaryOne text-primary font-medium rounded-[90px] px-4 py-2 sm:px-7 sm:py-4 cursor-pointer hover:bg-white/90 transition-colors group">
             <ButtonThree
               frontText="Get started now"
               backText="Let's Talk."

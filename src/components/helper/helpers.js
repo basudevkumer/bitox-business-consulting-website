@@ -587,6 +587,7 @@ export const services = [
     id: 1,
     slug: "business-consultancy",
     number: "01",
+    imgId:0,
     category: "Consultancy",
     title: "Business Consultancy",
     description:
@@ -597,6 +598,7 @@ export const services = [
     id: 2,
     slug: "financial-planning",
     number: "02",
+    imgId:1,
     category: "Planning",
     title: "Financial Planning",
     description:
@@ -611,6 +613,7 @@ export const services = [
     id: 3,
     slug: "vat-tax-consultancy",
     number: "03",
+    imgId:2,
     category: "Tax & Vat",
     title: "Vat & Tax Consultancy",
     description:
@@ -621,6 +624,7 @@ export const services = [
     id: 4,
     slug: "competitive-analysis",
     number: "04",
+    imgId:3,
     category: "Market Analysis",
     title: "Competitive Analysis",
     description:

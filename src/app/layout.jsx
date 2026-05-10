@@ -1,6 +1,5 @@
 import { Space_Grotesk, DM_Sans, Bebas_Neue } from "next/font/google";
 import "./globals.css";
-import SmoothScroll from "@/components/providers/SmoothScroll";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-heading",
@@ -33,9 +32,7 @@ export default function RootLayout({ children }) {
       className={`${spaceGrotesk.variable} ${dmSans.variable} ${bebasNeue.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <SmoothScroll>
           {children}
-        </SmoothScroll>
       </body>
     </html>
   );

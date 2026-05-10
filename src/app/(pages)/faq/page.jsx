@@ -1,12 +1,11 @@
-import FAQSection from '@/components/ui/FAQSection'
-import React from 'react'
+import FaqSection from "@/components/faqSection/FaqSection";
 
 function page() {
   return (
     <>
-    <FAQSection/>
+      <FaqSection />
     </>
-  )
+  );
 }
 
-export default page
+export default page;

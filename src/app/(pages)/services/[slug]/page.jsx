@@ -1,4 +1,5 @@
 import { servicesDetails } from "@/components/helper/serviceDetailsHelpers";
+import ServiceDelFaq from "@/components/servicesComp/service-details/ServiceDelFaq";
 import ServiceDescription from "@/components/servicesComp/service-details/ServiceDescription";
 import ServiceImage from "@/components/servicesComp/service-details/ServiceImage";
 import ServiceIntroSection from "@/components/servicesComp/service-details/ServiceIntroSection";
@@ -21,6 +22,7 @@ const ServicesDetails = async ({ params }) => {
       <ServiceIntroSection  serviceItems={eachServiceDetailItems}/>
       <ServiceDescription  serviceITems={eachServiceDetailItems}/>
       <ServiceImage />
+      <ServiceDelFaq/>
     </>
   );
 };

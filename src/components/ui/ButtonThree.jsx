@@ -5,28 +5,30 @@ import { useState } from "react";
 const ButtonThree = ({
   frontText,
   backText,
-  paddingTop = 15,       // top padding in px, default 15
-  paddingBottom = 15,    // bottom padding in px, default 15
-  paddingLeft = 25,      // left side padding in px, default 25
-  paddingRight = 25,     // right side padding in px, default 25
-  backgroundColor = "#02090F",  // button background color, default dark
-  textColor = "#FFFFFF",        // text color, default white
-  fontSize = 16,         // font size in px, default 16
-  fontWeight = "bold",   // font weight, default bold
-  lineHeight = 20,       // line height in px, default 20
-  borderRadius = 6,      // border radius in px, default 6
-  borderWidth,           // border width in px — if not provided, no border
-  borderColor,           // border color — if borderWidth given, bg becomes transparent automatically
-  onClick,               // click handler, optional
+  paddingTop = 15,
+  paddingBottom = 15,
+  paddingLeft = 25,
+  paddingRight = 25,
+  backgroundColor = "#02090F",
+  textColor = "#FFFFFF",
+  fontSize = 16,
+  fontWeight = "bold",
+  lineHeight = 20,
+  borderRadius = 6,
+  borderWidth,
+  borderColor,
+  onClick,
+  externalHovered,  // 👈 নতুন prop
 }) => {
-  const [hovered, setHovered] = useState(false);
+  const [internalHovered, setInternalHovered] = useState(false);
+
+  // externalHovered দেওয়া থাকলে সেটা use করবে, না থাকলে নিজের state
+  const hovered = externalHovered !== undefined ? externalHovered : internalHovered;
 
   const resolvedBackText = backText ?? frontText;
   const sizerText =
     frontText.length >= resolvedBackText.length ? frontText : resolvedBackText;
 
-  // if borderWidth is given → transparent bg, show border
-  // if no borderWidth → use backgroundColor, no border
   const hasBorder = !!borderWidth;
   const resolvedBg = hasBorder ? "transparent" : backgroundColor;
   const resolvedBorder = hasBorder
@@ -57,7 +59,7 @@ const ButtonThree = ({
       color: textColor,
       position: "absolute",
       whiteSpace: "nowrap",
-      transition: "transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s",
+      transition: "transform 0.1s ease, opacity 0.1s ease",
       userSelect: "none",
     },
     front: {
@@ -81,8 +83,8 @@ const ButtonThree = ({
   return (
     <button
       style={style.wrapper}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
+      onMouseEnter={() => setInternalHovered(true)}   // internal state alda
+      onMouseLeave={() => setInternalHovered(false)}
       onClick={onClick}
     >
       <span style={style.sizer}>{sizerText}</span>
@@ -93,39 +95,3 @@ const ButtonThree = ({
 };
 
 export default ButtonThree;
-
-
-// ---------- USAGE ----------
-//
-// No border — bg color shows:
-// <ButtonThree frontText="Learn about us" backgroundColor="#02090F" textColor="#FFFFFF" />
-//
-// With border — bg becomes transparent automatically:
-// <ButtonThree frontText="Contact Us" borderWidth={1} borderColor="#02090F" textColor="#02090F" />
-//
-// With hover text:
-// <ButtonThree frontText="Learn about us" backText="Let's Talk." />
-//
-// Pill shaped with border:
-// <ButtonThree frontText="Get Started" borderWidth={2} borderColor="#FF5733" textColor="#FF5733" borderRadius={50} />
-//
-// All props together:
-// <ButtonThree
-//   frontText="Learn about us"
-//   backText="Let's Talk."
-//   paddingTop={15}
-//   paddingBottom={15}
-//   paddingLeft={30}
-//   paddingRight={30}
-//   backgroundColor="#02090F"
-//   textColor="#FFFFFF"
-//   fontSize={16}
-//   fontWeight="bold"
-//   lineHeight={20}
-//   borderRadius={6}
-//   borderWidth={1}
-//   borderColor="#FFFFFF"
-//   onClick={() => console.log("clicked!")}
-// />
-//
-// ---------------------------

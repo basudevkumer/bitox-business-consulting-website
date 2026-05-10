@@ -21,7 +21,7 @@ function useNavbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const closeTimer = useRef(null);
-
+  const [isHovered, setIsHovered] = useState(false);
   useEffect(() => {
     setMobileOpen(false);
     setOpenDropdown(null);
@@ -71,6 +71,8 @@ function useNavbar() {
     toggleMobileDropdown,
     toggleMobileMenu,
     closeMobileMenu,
+    isHovered,
+    setIsHovered,
   };
 }
 
@@ -88,6 +90,8 @@ export default function NavbarOne() {
     toggleMobileDropdown,
     toggleMobileMenu,
     closeMobileMenu,
+    isHovered,
+    setIsHovered
   } = useNavbar();
 
   return (
@@ -129,7 +133,9 @@ export default function NavbarOne() {
           </button>
           <Link
             href="/contact"
-            className="px-6.25 py-3.75 bg-primary text-white text-sm font-medium rounded-md hover:bg-secondary transition-colors duration-300"
+            className="px-6.25 py-3.75 bg-primary text-white text-sm font-medium rounded-md transition-colors duration-300"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
           >
             <ButtonThree
               frontText="Let's Talk."
@@ -140,6 +146,7 @@ export default function NavbarOne() {
               paddingBottom={0}
               paddingLeft={0}
               paddingRight={0}
+              externalHovered={isHovered}
             />
           </Link>
         </div>

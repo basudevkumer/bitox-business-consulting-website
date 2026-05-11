@@ -3,8 +3,57 @@ import contact_logo from "../../../public/images/contact/contact_logo.png";
 import Image from "next/image";
 import ButtonThree from "../ui/ButtonThree";
 import { ClockIcon, MapPinIcon, PhoneIcon } from "lucide-react";
+import { useContactForm } from "../hooks/UseContactForm";
+
+const FieldError = ({ message }) =>
+  message ? (
+    <p className="mt-1.5 text-xs text-red-500 font-medium">{message}</p>
+  ) : null;
 
 const ContactForm = () => {
+  const {
+    values,
+    errors,
+    touched,
+    submitted,
+    handleChange,
+    handleBlur,
+    handleSubmit,
+    inputClass,
+  } = useContactForm();
+
+  if (submitted) {
+    return (
+      <div className="bg-bg-secondaryOne">
+        <div className="bg-[#f0ede6] min-h-screen py-10 lg:py-30 px-4 md:px-6 flex items-center justify-center">
+          <div className="text-center">
+            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg
+                className="w-8 h-8 text-green-600"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+            </div>
+            <h2 className="text-2xl font-bold text-primary mb-2">
+              Message Sent!
+            </h2>
+            <p className="text-tarnary">
+              Thank you for reaching out. We'll get back to you soon.
+            </p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="bg-bg-secondaryOne">
       <div className="bg-[#f0ede6] min-h-screen py-10 lg:py-30 px-4 md:px-6">
@@ -13,73 +62,113 @@ const ContactForm = () => {
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 items-start">
             {/* Headline */}
             <div className="w-full lg:max-w-97.75 lg:w-full lg:shrink-0">
-              <h1
-                className="
-                text-[26px] font-bold leading-9 underline text-primary
-                md:text-[34px] lg:text-[43px]
-                md:leading-12 lg:leading-14.5 "
-              >
+              <h1 className="text-[26px] font-bold leading-9 underline text-primary md:text-[34px] lg:text-[43px] md:leading-12 lg:leading-14.5">
                 Reach out for inquiries, collaborations, or just to say hello.
                 We're eager to connect!
               </h1>
             </div>
 
             {/* Form Card */}
-            <form className="w-full lg:max-w-266.75 bg-white rounded-2xl p-6 md:p-10 lg:p-15">
-              <div className="
-                  grid grid-cols-1 gap-5 mb-5
-                  md:grid-cols-2 md:gap-6 md:mb-6
-                  lg:gap-7.5 lg:mb-7.5">
+            <div className="w-full lg:max-w-266.75 bg-white rounded-2xl p-6 md:p-10 lg:p-15">
+              {/* Row 1 */}
+              <div className="grid grid-cols-1 gap-5 mb-5 md:grid-cols-2 md:gap-6 md:mb-6 lg:gap-7.5 lg:mb-7.5">
+                <div>
+                  <input
+                    type="text"
+                    name="firstName"
+                    placeholder="First Name*"
+                    value={values.firstName}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    className={inputClass("firstName")}
+                  />
+                  <FieldError
+                    message={touched.firstName ? errors.firstName : undefined}
+                  />
+                </div>
+                <div>
+                  <input
+                    type="text"
+                    name="lastName"
+                    placeholder="Last Name*"
+                    value={values.lastName}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    className={inputClass("lastName")}
+                  />
+                  <FieldError
+                    message={touched.lastName ? errors.lastName : undefined}
+                  />
+                </div>
+              </div>
+
+              {/* Row 2 */}
+              <div className="grid grid-cols-1 gap-5 mb-5 md:grid-cols-2 md:gap-6 md:mb-6 lg:gap-7.5 lg:mb-7.5">
+                <div>
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Your Email ID*"
+                    value={values.email}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    className={inputClass("email")}
+                  />
+                  <FieldError
+                    message={touched.email ? errors.email : undefined}
+                  />
+                </div>
+                <div>
+                  <input
+                    type="tel"
+                    name="phone"
+                    placeholder="Phone Number"
+                    value={values.phone}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    className={inputClass("phone")}
+                  />
+                </div>
+              </div>
+
+              {/* Row 3 */}
+              <div className="mb-5 md:mb-6 lg:mb-7.5">
                 <input
-                  type="text"
-                  placeholder="First Name*"
-                  className="
-                  bg-[#F5F5F5] rounded-md px-5 py-4 text-base
-                  lg:px-6.25 lg:py-5 text-tarnary outline-none
-                  placeholder:text-gray-400 w-full"
+                  type="password"
+                  name="password"
+                  placeholder="Password*"
+                  value={values.password}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  className={inputClass("password")}
                 />
-                <input
-                  type="text"
-                  placeholder="Last Name*"
-                  className="
-                  bg-[#F5F5F5] rounded-md px-5 py-4
-                  lg:px-6.25 lg:py-5 text-base text-tarnary outline-none
-                  placeholder:text-gray-400 w-full"
+                <FieldError
+                  message={touched.password ? errors.password : undefined}
                 />
               </div>
 
-              <div className="
-                  grid grid-cols-1 gap-5 mb-5
-                  md:grid-cols-2 md:gap-6 md:mb-6
-                  lg:gap-7.5 lg:mb-7.5">
-                <input
-                  type="email"
-                  placeholder="Your Email ID"
-                  className="
-                  bg-[#F5F5F5] rounded-md px-5 py-4 text-base
-                  lg:px-6.25 lg:py-5 text-tarnary outline-none
-                  placeholder:text-gray-400 w-full"
+              {/* Row 4 */}
+              <div className="mb-5 md:mb-6 lg:mb-7.5">
+                <textarea
+                  name="message"
+                  placeholder="Write your message*"
+                  rows={5}
+                  value={values.message}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  className={["resize-none", inputClass("message")].join(" ")}
                 />
-                <input
-                  type="tel"
-                  placeholder="Phone Number"
-                  className="bg-[#F5F5F5] rounded-md px-5 py-4
-                  lg:px-6.25 lg:py-5 text-base text-tarnary
-                  outline-none placeholder:text-gray-400 w-full"
+                <FieldError
+                  message={touched.message ? errors.message : undefined}
                 />
               </div>
 
-              <textarea
-                placeholder="Write your message"
-                rows={5}
-                className="bg-[#F5F5F5] rounded-md px-5 py-4
-                text-base text-tarnary resize-none
-                outline-none placeholder:text-gray-400 w-full
-                mb-5 md:mb-6 lg:mb-7.5 lg:px-6.25 lg:py-5"
-              />
-
+              {/* Submit */}
               <div className="flex justify-center">
-                <div className="self-start flex items-center gap-2 text-white text-base font-medium rounded-[90px] px-4 py-2 sm:px-7.5 sm:py-5 cursor-pointer bg-secondary transition-colors group">
+                <div
+                  onClick={handleSubmit}
+                  className="self-start flex items-center gap-2 text-white text-base font-medium rounded-[90px] px-4 py-2 sm:px-7.5 sm:py-5 cursor-pointer bg-secondary transition-colors group"
+                >
                   <ButtonThree
                     frontText="Submit message"
                     backText="Let's Talk."
@@ -101,12 +190,11 @@ const ContactForm = () => {
                   </span>
                 </div>
               </div>
-            </form>
+            </div>
           </div>
 
           {/* Bottom Section */}
           <div className="flex flex-col lg:flex-row items-start gap-8">
-            {/* Logo */}
             <div className="shrink-0">
               <Image
                 src={contact_logo}
@@ -114,10 +202,7 @@ const ContactForm = () => {
                 className="w-45 md:w-65 lg:w-97.75"
               />
             </div>
-
-            {/* Info Cards */}
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4 md:gap-5 lg:gap-6 flex-1 w-full">
-              {/* Address */}
               <div className="bg-white rounded-xl p-6 lg:p-8 shadow-sm border border-gray-100">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
@@ -129,8 +214,6 @@ const ContactForm = () => {
                   Valentin, Street Road 24, New York, USA – 67452
                 </p>
               </div>
-
-              {/* Phone / Message */}
               <div className="bg-white rounded-xl p-6 lg:p-8 shadow-sm border border-gray-100">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
@@ -147,8 +230,6 @@ const ContactForm = () => {
                   <p className="para-lg text-tarnary">(255) 864-6308</p>
                 </div>
               </div>
-
-              {/* Working Hours */}
               <div className="bg-white rounded-xl p-6 lg:p-8 shadow-sm border border-gray-100">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
@@ -171,9 +252,7 @@ const ContactForm = () => {
       </div>
 
       {/* Map */}
-      <div className="w-full max-w-400 h-75 rounded-md overflow-hidden mx-auto mb-16
-      md:h-125 md:mb-20 md:px-6
-      lg:h-172.5 lg:mb-30 px-4 lg:px-0">
+      <div className="w-full max-w-400 h-75 rounded-md overflow-hidden mx-auto mb-16 md:h-125 md:mb-20 md:px-6 lg:h-172.5 lg:mb-30 px-4 lg:px-0">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14608.036955468959!2d90.36556226218187!3d23.747049949764218!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8b33cffc3fb%3A0x4a826f475fd312af!2sDhanmondi%2C%20Dhaka%201205!5e0!3m2!1sen!2sbd!4v1777483156468!5m2!1sen!2sbd"
           width="100%"

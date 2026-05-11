@@ -1,40 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 
-/**
- * CountUpStat — Reusable animated count-up component
- *
- * Props:
- *  - value         {string|number}  — "68+", "98%", "4.9", "$1M", 42
- *  - label         {string}         — e.g. "Completed Projects"
- *  - description   {string}         — optional sub-text
- *  - duration      {number}         — animation ms (default 1800)
- *  - className     {string}         — wrapper div classes
- *  - statTextClass {string}         — big number classes (overrides default)
- *  - labelClass    {string}         — label classes (overrides default)
- *  - descClass     {string}         — description classes (overrides default)
- *  - hideLabel     {boolean}        — hide label (default false)
- *
- * Usage:
- *  // AboutSection (default style)
- *  <CountUpStat value="68+" label="Completed Projects" description="..." />
- *
- *  // Testimonials left panel (white on orange)
- *  <CountUpStat
- *    value="99%"
- *    label="Satisfaction Rate"
- *    statTextClass="headingSix font-bold text-bg-secondaryTwo"
- *    labelClass="text-sm pt-1 font-medium text-bg-secondaryTwo"
- *  />
- *
- *  // TestimonialCard bottom stats
- *  <CountUpStat
- *    value="85%"
- *    label="Process"
- *    statTextClass="headingSix font-bold text-primary"
- *    labelClass="text-base pt-1 font-medium text-primary"
- *  />
- */
 const CountUpStat = ({
   value,
   label,
@@ -50,18 +16,14 @@ const CountUpStat = ({
   const [started, setStarted] = useState(false);
   const ref = useRef(null);
 
-  // Parse prefix / number / suffix  e.g. "$4.9x" → "$", 4.9, "x"
   const raw = String(value);
   const match = raw.match(/^([^0-9.]*)([0-9.]+)([^0-9.]*)$/);
   const prefix = match ? match[1] : "";
   const numericTarget = match ? parseFloat(match[2]) : 0;
   const suffix = match ? match[3] : "";
   const isFloat = String(numericTarget).includes(".");
-  const decimals = isFloat
-    ? (String(numericTarget).split(".")[1]?.length ?? 1)
-    : 0;
+  const decimals = isFloat ? (String(numericTarget).split(".")[1]?.length ?? 1) : 0;
 
-  // Intersection Observer — fire once when element enters viewport
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
@@ -75,7 +37,6 @@ const CountUpStat = ({
     return () => observer.disconnect();
   }, [started]);
 
-  // rAF count-up — ease-out quart
   useEffect(() => {
     if (!started) return;
     let startTime = null;
@@ -84,13 +45,11 @@ const CountUpStat = ({
       const progress = Math.min((timestamp - startTime) / duration, 1);
       const eased = 1 - Math.pow(1 - progress, 4);
       const next = eased * numericTarget;
-      setCurrent(
-        isFloat ? parseFloat(next.toFixed(decimals)) : Math.round(next)
-      );
+      setCurrent(isFloat ? parseFloat(next.toFixed(decimals)) : Math.round(next));
       if (progress < 1) requestAnimationFrame(step);
     };
     requestAnimationFrame(step);
-  }, [started, numericTarget, duration, isFloat, decimals]);
+  }, [started]);
 
   const displayValue = isFloat ? current.toFixed(decimals) : current;
 

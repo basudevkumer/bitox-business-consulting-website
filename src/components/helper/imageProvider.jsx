@@ -2,7 +2,7 @@ import HeroImage from "../../../public/images/home01/hero/hero-card-icons.png";
 import FeatureRoundOne from "../../../public/images/home01/feature-round/feature-round1.png";
 import FeatureRoundTwo from "../../../public/images/home01/feature-round/feature-round2.png";
 import HeroBanner1 from "../../../public/images/home01/hero/home-section-banner.png";
-import HeroBanner2 from "../../../public/images/home01/hero/home-section-banner2.jpg";
+import HeroBanner2 from "../../../public/images/home01/hero/home-section-banner2.png";
 import HeroBanner3 from "../../../public/images/home01/hero/home-section-banner3.jpg";
 import AboutSectionOne from "../../../public/images/home01/about-section/home-about1.png";
 import AboutSectionTwo from "../../../public/images/home01/about-section/home-about2.png";
@@ -68,9 +68,9 @@ import ServivesDetailsBannaer from "../../../public/images/service/services-deta
 const allImages = {
   heroIocns: HeroImage,
   heroBanner: [
-    { id: 1, img: HeroBanner1 },
-    { id: 2, img: HeroBanner2 },
-    { id: 3, img: HeroBanner3 },
+    { id: 0, img: HeroBanner1 },
+    { id: 1, img: HeroBanner2 },
+    { id: 2, img: HeroBanner3 },
   ],
   footerLogo: FooterLogo,
   contact_logo: contact_logo,

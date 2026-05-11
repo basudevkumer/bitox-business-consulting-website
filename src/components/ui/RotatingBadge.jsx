@@ -1,6 +1,3 @@
-
-
-
 import React from "react";
 
 const RotatingBadge = ({ size = "lg" }) => {
@@ -13,7 +10,7 @@ const RotatingBadge = ({ size = "lg" }) => {
       fontSize: 5.5,
       inner: 40,
       plusSize: "18px",
-      text: "BEST SOLUTION BEST SOLUTION BEST SOLUTION",
+      text: "BEST SOLUTION • BEST SOLUTION • BEST SOLUTION • BEST SOLUTION •",
     },
     md: {
       outer: 110,
@@ -23,7 +20,7 @@ const RotatingBadge = ({ size = "lg" }) => {
       fontSize: 6.5,
       inner: 55,
       plusSize: "24px",
-      text: "BEST SOLUTION BEST SOLUTION BEST SOLUTION",
+      text: "BEST SOLUTION • BEST SOLUTION • BEST SOLUTION • BEST SOLUTION •",
     },
     lg: {
       outer: 146,
@@ -33,63 +30,125 @@ const RotatingBadge = ({ size = "lg" }) => {
       fontSize: 7.5,
       inner: 73,
       plusSize: "30px",
-      text: "BEST SOLUTION BEST SOLUTION BEST SOLUTION",
+      text: "BEST SOLUTION • BEST SOLUTION • BEST SOLUTION • BEST SOLUTION •",
     },
   };
 
   const c = config[size];
-  const pathId = `textCircle-${size}`;
+
+  // unique id — multiple instance for reduce conflict 
+  const pathId = `textCircle-${size}-${Math.random().toString(36).slice(2, 7)}`;
+
   const circumference = +(2 * Math.PI * c.pathR).toFixed(2);
+
+  const wrapperStyle =
+    size === "lg"
+      ? {
+          width: "clamp(90px, 10vw, 146px)",
+          height: "clamp(90px, 10vw, 146px)",
+        }
+      : { width: `${c.outer}px`, height: `${c.outer}px` };
+
+  const innerStyle =
+    size === "lg"
+      ? {
+          width: "clamp(45px, 5vw, 73px)",
+          height: "clamp(45px, 5vw, 73px)",
+        }
+      : { width: `${c.inner}px`, height: `${c.inner}px` };
+
+  const plusStyle =
+    size === "lg"
+      ? { fontSize: "clamp(16px, 1.8vw, 30px)" }
+      : { fontSize: c.plusSize };
+
+  // arc path — Safari & Firefox - reliable
+  const arcPath = [
+    `M ${c.cx}, ${c.cx}`,
+    `m -${c.pathR}, 0`,
+    `a ${c.pathR},${c.pathR} 0 1,1 ${c.pathR * 2},0`,
+    `a ${c.pathR},${c.pathR} 0 1,1 -${c.pathR * 2},0`,
+  ].join(" ");
 
   return (
     <div
       className="relative flex items-center justify-center"
-      style={{ width: c.outer, height: c.outer }}
+      style={wrapperStyle}
+      aria-hidden="true"
     >
-      {/* Rotating outer ring */}
       <svg
-        className="animate-[spin_12s_linear_infinite]"
+        className="w-full h-full"
         width={c.outer}
         height={c.outer}
         viewBox={`0 0 ${c.outer} ${c.outer}`}
         xmlns="http://www.w3.org/2000/svg"
+        xmlnsXlink="http://www.w3.org/1999/xlink"
+        style={{
+          // CSS animation 
+          animation: "rotateBadge 12s linear infinite",
+          display: "block", 
+        }}
       >
+        {/* background circle */}
         <circle cx={c.cx} cy={c.cx} r={c.r} fill="#1a1a1a" />
+
         <defs>
-          <path
-            id={pathId}
-            d={`M${c.cx},${c.cx} m-${c.pathR},0 a${c.pathR},${c.pathR} 0 1,1 ${c.pathR * 2},0 a${c.pathR},${c.pathR} 0 1,1 -${c.pathR * 2},0`}
-          />
+          <path id={pathId} d={arcPath} />
         </defs>
+
         <text
-          fontFamily="Arial Black, sans-serif"
-          fontSize={c.fontSize}
-          fontWeight="600"
           fill="white"
+          fontWeight="600"
+          fontSize={c.fontSize}
+          // cross-browser font stack
+          fontFamily="'Arial Black', 'Arial Bold', Arial, sans-serif"
+          letterSpacing="0.5"
         >
           <textPath
+            // href modern + xlinkHref legacy Safari/older browser
             href={`#${pathId}`}
+            xlinkHref={`#${pathId}`}
             startOffset="0%"
-            textLength={circumference}
-            lengthAdjust="spacing"
+        
           >
             {c.text}
           </textPath>
         </text>
       </svg>
 
-      {/* Static inner circle */}
+   
       <div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#F4F3F0] flex justify-center items-center shadow-md z-10"
-        style={{ width: c.inner, height: c.inner }}
+        className="absolute rounded-full bg-[#F4F3F0] flex items-center justify-center shadow-md z-10"
+        style={{
+          ...innerStyle,
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+         
+        }}
       >
         <span
-          className="text-[#1a1a1a] font-bold leading-none"
-          style={{ fontSize: c.plusSize }}
+          style={{
+            ...plusStyle,
+            color: "#1a1a1a",
+            fontWeight: "700",
+            lineHeight: "1",
+            userSelect: "none",
+            WebkitUserSelect: "none",
+          }}
+          className="pr-[5px]"
         >
           +
         </span>
       </div>
+
+      {/* keyframes */}
+      <style>{`
+        @keyframes rotateBadge {
+          from { transform: rotate(0deg); }
+          to   { transform: rotate(360deg); }
+        }
+      `}</style>
     </div>
   );
 };

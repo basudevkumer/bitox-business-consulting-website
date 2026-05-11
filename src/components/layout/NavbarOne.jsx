@@ -111,7 +111,7 @@ export default function NavbarOne() {
             priority
           />
         </Link>
-        <nav className="flex items-center gap-8" aria-label="Main navigation">
+        <nav className="flex items-center  gap-[clamp(1rem,2vw,2rem)]" aria-label="Main navigation">
           {NAV_LINKS.map((link) => (
             <DesktopNavItem
               key={link.label}
@@ -188,7 +188,7 @@ export default function NavbarOne() {
       {/* ── Mobile Backdrop */}
       <div
         onClick={closeMobileMenu}
-        className={`fixed inset-0 z-40 bg-black/20 backdrop-blur-sm lg:hidden transition-opacity duration-300 ${
+        className={`fixed inset-0 z-40 bg-black/20 backdrop-blur-sm lg:hidden transition-opacity duration-300  ${
           mobileOpen
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"

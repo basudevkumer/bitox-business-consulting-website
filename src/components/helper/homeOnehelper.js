@@ -225,8 +225,8 @@ export const blogData = [
 // ===============================================
 // BlogCardPage - BlogCardPage Section Array Object
 // ===============================================
-// এই allBlogData টা homeOnehelper.js এর একদম নিচে add করো
-// blogData তে কোনো change নেই
+// ai allBlogData ta homeOnehelper.js er ekdom nice add kora
+// blogData te kono change nei
 
 export const allBlogData = [
   {

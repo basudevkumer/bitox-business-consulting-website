@@ -78,7 +78,12 @@ const HeroSection = () => {
         </div>
       </Container>
       <div className=" mt-[50px] lg:mt-[90px] mb-[20px] px-3">
-        <Image src={heroBanner} alt="herobanner -images" className="w-full" />
+        <Image
+          src={heroBanner}
+          alt="herobanner-images"
+          className="w-full"
+          priority
+        />
       </div>
       {/* for lg */}
       <div className="px-3 hidden lg:block">

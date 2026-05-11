@@ -45,7 +45,7 @@ const AboutSectionHO = () => {
                     key={i}
                     label={skill.label}
                     value={skill.value}
-                    duration={1200 + i * 150} // slight stagger per bar
+                    duration={1200 + i * 150}
                   />
                 ))}
               </div>

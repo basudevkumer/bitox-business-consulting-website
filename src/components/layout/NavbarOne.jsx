@@ -46,7 +46,9 @@ function useNavbar() {
 
   // ← close search on Escape
   useEffect(() => {
-    const onKey = (e) => { if (e.key === "Escape") setSearchOpen(false); };
+    const onKey = (e) => {
+      if (e.key === "Escape") setSearchOpen(false);
+    };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, []);
@@ -86,9 +88,9 @@ function useNavbar() {
     closeMobileMenu,
     isHovered,
     setIsHovered,
-    searchOpen,   // ← NEW
-    openSearch,   // ← NEW
-    closeSearch,  // ← NEW
+    searchOpen, // ← NEW
+    openSearch, // ← NEW
+    closeSearch, // ← NEW
   };
 }
 
@@ -139,7 +141,10 @@ export default function NavbarOne() {
             priority
           />
         </Link>
-        <nav className="flex items-center  gap-[clamp(1rem,2vw,2rem)]" aria-label="Main navigation">
+        <nav
+          className="flex items-center  gap-[clamp(1rem,2vw,2rem)]"
+          aria-label="Main navigation"
+        >
           {NAV_LINKS.map((link) => (
             <DesktopNavItem
               key={link.label}
@@ -284,11 +289,11 @@ export default function NavbarOne() {
               ref={searchInputRef}
               type="text"
               placeholder="Search here.."
-              className="flex-1 h-[52px] px-6 text-base text-white outline-none bg-transparent placeholder:text-white/40"
+              className="flex-1 min-w-0 h-[52px] px-4 sm:px-6 text-base text-white outline-none bg-transparent placeholder:text-white/40"
             />
-            <button className="flex items-center gap-2 h-[52px] px-7 bg-primary text-white text-base font-medium rounded-full transition-opacity hover:opacity-90 cursor-pointer flex-shrink-0">
+            <button className="flex items-center gap-2 h-[52px] px-4 sm:px-7 bg-primary text-white text-sm sm:text-base font-medium rounded-full transition-opacity hover:opacity-90 cursor-pointer flex-shrink-0 whitespace-nowrap">
               <Search size={18} />
-              Search
+              <span className="hidden sm:inline">Search</span>
             </button>
           </div>
         </div>

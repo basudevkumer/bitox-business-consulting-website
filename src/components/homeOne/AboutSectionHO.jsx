@@ -5,7 +5,8 @@ import Image from "next/image";
 import allImages from "../helper/imageProvider";
 import ButtonTwo from "../ui/ButtonTwo";
 import { aboutSectionskills, aboutStats } from "../helper/homeOnehelper";
-import StatSectionHo from "../shared/StatSectionHo";
+import AnimatedProgressBar from "../ui/AnimatedProgressBar";
+import CountUpStat from "../ui/CountUpStat";
 
 const AboutSectionHO = () => {
   const { aboutsection } = allImages;
@@ -13,16 +14,19 @@ const AboutSectionHO = () => {
   return (
     <section className="bg-secondary py-[60px]">
       <Container size="lg">
-        <div className=" p-[20px] md:p-[35px]  bg-bg-secondaryTwo rounded-[6px]">
-          <Responsive.Grid gap="none" cols={{ base: 1, lg: 2 }} >
-            <div className="relative rounded-[6px] mb-8 lg:mb-0  !h-[200px] md:!h-[500px] lg:!h-[675px] overflow-hidden lg:mr-[35px]">
+        <div className="p-[20px] md:p-[35px] bg-bg-secondaryTwo rounded-[6px]">
+          <Responsive.Grid gap="none" cols={{ base: 1, lg: 2 }}>
+            {/* Left Image */}
+            <div className="relative rounded-[6px] mb-8 lg:mb-0 !h-[200px] md:!h-[500px] lg:!h-[675px] overflow-hidden lg:mr-[35px]">
               <Image
                 src={aboutsection[0].img}
                 alt="about-section"
-                className="object-cover "
+                className="object-cover"
                 fill
               />
             </div>
+
+            {/* Right: heading + skills */}
             <div className="lg:border-l border-[#0000001a] lg:pl-[60px]">
               <h4 className="headingFour font-bold text-primary">
                 Achieve goals and coach fast with strategic clarity and focus.
@@ -34,42 +38,26 @@ const AboutSectionHO = () => {
               </p>
               <ButtonTwo frontText={"Get in touch"} />
 
+              {/* Animated Progress Bars */}
               <div className="mt-[60px]">
                 {aboutSectionskills.map((skill, i) => (
-                  <div key={i} className="mb-[30px]">
-                    {/* Label + Percentage */}
-                    <div className="flex items-center justify-between mb-[10px] ">
-                      <label className="text-base font-medium text-primary">
-                        {skill.label}
-                      </label>
-                      <span className="text-base font-medium text-primary">
-                        {skill.value}%
-                      </span>
-                    </div>
-
-                    {/* Progress Bar */}
-                    <input
-                      type="range"
-                      min="0"
-                      max="100"
-                      value={skill.value}
-                      readOnly
-                      style={{
-                        background: `linear-gradient(to right, #111827 ${skill.value}%, #e5e7eb ${skill.value}%)`,
-                      }}
-                      className="w-full h-[4px] appearance-none cursor-default rounded-full [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-0 [&::-webkit-slider-thumb]:h-0"
-                    />
-                  </div>
+                  <AnimatedProgressBar
+                    key={i}
+                    label={skill.label}
+                    value={skill.value}
+                    duration={1200 + i * 150} // slight stagger per bar
+                  />
                 ))}
               </div>
             </div>
           </Responsive.Grid>
+
           <Responsive.Grid
             gap="none"
             cols={{ base: 1, lg: 2 }}
             align={"flex-start"}
           >
-            <div className="lg:border-r border-[#0000001a] lg:pr-[35px] h-full  ">
+            <div className="lg:border-r border-[#0000001a] lg:pr-[35px] h-full">
               <h4 className="headingFour font-bold text-primary mt-[60px]">
                 Creating one of the fastest way to grow your business
                 successfully
@@ -79,18 +67,29 @@ const AboutSectionHO = () => {
                 complex challenges into clear action plans through structured
                 guidance, analysis and targeted coaching,
               </p>
-              
+
               <div className="my-[60px] h-[2px] w-full bg-[#0000001a]"></div>
 
-              <div>
-                <StatSectionHo stats={aboutStats} />
+              {/* Count-Up Stats */}
+              <div className="grid grid-cols-2 gap-[30px]">
+                {aboutStats.map((stat, i) => (
+                  <CountUpStat
+                    key={i}
+                    value={stat.value}
+                    label={stat.label}
+                    description={stat.description}
+                    duration={1800}
+                  />
+                ))}
               </div>
             </div>
-            <div className="relative rounded-[6px]  mt-8 lg:mt-0 md:!h-[500px] !h-[200px] lg:!h-[675px] overflow-hidden lg: lg:ml-[60px]">
+
+            {/* Right Image */}
+            <div className="relative rounded-[6px] mt-8 lg:mt-0 md:!h-[500px] !h-[200px] lg:!h-[675px] overflow-hidden lg:ml-[60px]">
               <Image
                 src={aboutsection[1].img}
                 alt="about-section"
-                className="object-cover "
+                className="object-cover"
                 fill
               />
             </div>

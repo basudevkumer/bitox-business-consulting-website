@@ -1,6 +1,7 @@
 import React from "react";
 import allImages from "../helper/imageProvider";
 import Image from "next/image";
+import CountUpStat from "./CountUpStat";
 
 const TestimonialCard = ({
   image,
@@ -15,18 +16,18 @@ const TestimonialCard = ({
   const { quote } = allImages;
 
   return (
-    <div className="   border border-[#0000001a] bg-bg-secondaryTwo">
+    <div className="border border-[#0000001a] bg-bg-secondaryTwo">
       <div className="p-[30px]">
         <Image src={quote} width={52} height={42} alt="quote" />
-        <p className="pt-[30px] pb-[40px] text-primary font-bold para-xl  underline underline-offset-2">
+        <p className="pt-[30px] pb-[40px] text-primary font-bold para-xl underline underline-offset-2">
           {quotes}
         </p>
-        <div className=" flex  mb-[128px] items-center gap-[15px]">
+        <div className="flex mb-[128px] items-center gap-[15px]">
           <Image
             src={image}
             height={66}
             width={66}
-            alt="tesmonial-card"
+            alt="testimonial-card"
             className="!h-[66px] !w-[66px]"
           />
           <div>
@@ -35,24 +36,23 @@ const TestimonialCard = ({
           </div>
         </div>
       </div>
-      <div className="border-y  border-[#0000001a]">
-        <div className=" p-[30px]  flex gap-x-[20px]  sm:gap-x-0 sm:justify-between ">
-          <div className="  ">
-            <h6 className="headingSix font-bold text-primary">{tashNumOne}</h6>
-            <p className="text-base pt-1   font-medium text-primary">
-              {tashLabelOne}
-            </p>
-          </div>
-          <div className="text-end sm:text-start">
-            <div>
-              <h6 className="headingSix font-bold text-primary">
-                {tashNumTwo}
-              </h6>
-              <p className="text-base pt-1   font-medium text-primary">
-                {tashLabelTwo}
-              </p>
-            </div>
-          </div>
+
+      {/* ✅ Bottom stats using CountUpStat */}
+      <div className="border-y border-[#0000001a]">
+        <div className="p-[30px] flex gap-x-[20px] sm:gap-x-0 sm:justify-between">
+          <CountUpStat
+            value={tashNumOne}
+            label={tashLabelOne}
+            statTextClass="headingSix font-bold text-primary"
+            labelClass="text-base pt-1 font-medium text-primary"
+          />
+          <CountUpStat
+            value={tashNumTwo}
+            label={tashLabelTwo}
+            statTextClass="headingSix font-bold text-primary"
+            labelClass="text-base pt-1 font-medium text-primary"
+            className="text-end sm:text-start"
+          />
         </div>
       </div>
     </div>

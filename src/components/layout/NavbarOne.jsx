@@ -20,12 +20,15 @@ function useNavbar() {
   const [openMobileDropdown, setOpenMobileDropdown] = useState(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false); // ← NEW
   const closeTimer = useRef(null);
   const [isHovered, setIsHovered] = useState(false);
+
   useEffect(() => {
     setMobileOpen(false);
     setOpenDropdown(null);
     setOpenMobileDropdown(null);
+    setSearchOpen(false); // ← close on route change
   }, [pathname]);
 
   useEffect(() => {
@@ -40,6 +43,13 @@ function useNavbar() {
       document.body.style.overflow = "";
     };
   }, [mobileOpen]);
+
+  // ← close search on Escape
+  useEffect(() => {
+    const onKey = (e) => { if (e.key === "Escape") setSearchOpen(false); };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
 
   const handleMouseEnter = useCallback((label) => {
     if (closeTimer.current) clearTimeout(closeTimer.current);
@@ -60,6 +70,9 @@ function useNavbar() {
   );
   const closeMobileMenu = useCallback(() => setMobileOpen(false), []);
 
+  const openSearch = useCallback(() => setSearchOpen(true), []);
+  const closeSearch = useCallback(() => setSearchOpen(false), []);
+
   return {
     pathname,
     scrolled,
@@ -73,6 +86,9 @@ function useNavbar() {
     closeMobileMenu,
     isHovered,
     setIsHovered,
+    searchOpen,   // ← NEW
+    openSearch,   // ← NEW
+    closeSearch,  // ← NEW
   };
 }
 
@@ -91,8 +107,20 @@ export default function NavbarOne() {
     toggleMobileMenu,
     closeMobileMenu,
     isHovered,
-    setIsHovered
+    setIsHovered,
+    searchOpen,
+    openSearch,
+    closeSearch,
   } = useNavbar();
+
+  const searchInputRef = useRef(null);
+
+  // auto-focus input when overlay opens
+  useEffect(() => {
+    if (searchOpen) {
+      setTimeout(() => searchInputRef.current?.focus(), 50);
+    }
+  }, [searchOpen]);
 
   return (
     <>
@@ -125,7 +153,9 @@ export default function NavbarOne() {
           ))}
         </nav>
         <div className="flex items-center gap-4">
+          {/* ← onClick added */}
           <button
+            onClick={openSearch}
             aria-label="Search"
             className="text-primary hover:text-secondary border border-black/10 rounded-md py-[14px] px-[15px] transition-colors duration-200 cursor-pointer"
           >
@@ -169,7 +199,9 @@ export default function NavbarOne() {
         </Link>
 
         <div className="flex items-center gap-3">
+          {/* ← onClick added */}
           <button
+            onClick={openSearch}
             aria-label="Search"
             className="text-primary border border-black/10 rounded-md py-3.25 px-3.25 transition-colors duration-200 cursor-pointer"
           >
@@ -223,6 +255,43 @@ export default function NavbarOne() {
             Let&apos;s Talk.
           </Link>
         </nav>
+      </div>
+
+      {/* ── Search Overlay */}
+      <div
+        className={`fixed inset-0 z-60 transition-opacity duration-300 ${
+          searchOpen
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none"
+        }`}
+      >
+        {/* dark backdrop */}
+        <div onClick={closeSearch} className="absolute inset-0 bg-black/60" />
+
+        {/* X button — top-right corner */}
+        <button
+          onClick={closeSearch}
+          aria-label="Close search"
+          className="absolute top-6 right-6 w-11 h-11 flex items-center justify-center bg-primary text-white rounded-full hover:opacity-90 transition-opacity cursor-pointer z-10"
+        >
+          <X size={20} />
+        </button>
+
+        {/* search bar — perfectly centered */}
+        <div className="absolute inset-0 flex items-center justify-center px-4">
+          <div className="w-full max-w-[820px] flex items-center bg-white/[0.07] border border-white/10 rounded-full p-1.5">
+            <input
+              ref={searchInputRef}
+              type="text"
+              placeholder="Search here.."
+              className="flex-1 h-[52px] px-6 text-base text-white outline-none bg-transparent placeholder:text-white/40"
+            />
+            <button className="flex items-center gap-2 h-[52px] px-7 bg-primary text-white text-base font-medium rounded-full transition-opacity hover:opacity-90 cursor-pointer flex-shrink-0">
+              <Search size={18} />
+              Search
+            </button>
+          </div>
+        </div>
       </div>
     </>
   );

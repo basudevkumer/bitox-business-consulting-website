@@ -93,7 +93,7 @@ export function DropdownMenu({
           key={child.href}
           href={child.href}
           onClick={onClose}
-          className={`block px-5 py-2.5 text-[16px] transition-colors duration-200 ${
+          className={`block px-5 py-2.5 text-[16px] transition-colors  duration-200 ${
             isActiveLink(child.href, pathname)
               ? "text-secondary font-medium bg-secondary/5"
               : "text-primary hover:text-secondary hover:bg-secondary/5"
@@ -132,7 +132,7 @@ export function DesktopNavItem({
         onMouseLeave={onLeave}
       >
         <button
-          className={`flex items-center gap-1 text-[16px] font-bold transition-colors duration-200 cursor-pointer ${activeClass}`}
+          className={`flex items-center gap-1 text-[16px] font-bold transition-colors duration-200 cursor-pointer   ${activeClass}`}
         >
           {link.label}
           <ChevronDown
@@ -157,13 +157,14 @@ export function DesktopNavItem({
     <div className={heightClass}>
       <Link
         href={link.href}
-        className={`text-[16px] font-bold transition-colors duration-200 ${activeClass}`}
+        className={`text-[16px] font-bold transition-colors duration-200 whitespace-nowrap ${activeClass}`}
       >
         {link.label}
       </Link>
     </div>
   );
 }
+
 
 export function MobileNavItem({
   link,

@@ -38,7 +38,7 @@ const AboutSectionHO = () => {
               </p>
               <ButtonTwo frontText={"Get in touch"} />
 
-              {/* ✅ Animated Progress Bars */}
+              {/* Animated Progress Bars */}
               <div className="mt-[60px]">
                 {aboutSectionskills.map((skill, i) => (
                   <AnimatedProgressBar
@@ -70,7 +70,7 @@ const AboutSectionHO = () => {
 
               <div className="my-[60px] h-[2px] w-full bg-[#0000001a]"></div>
 
-              {/* ✅ Count-Up Stats */}
+              {/* Count-Up Stats */}
               <div className="grid grid-cols-2 gap-[30px]">
                 {aboutStats.map((stat, i) => (
                   <CountUpStat

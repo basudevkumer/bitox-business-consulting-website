@@ -74,7 +74,7 @@ const HeroSection = () => {
               className="rounded-[6px] object-cover"
               fill
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 1880px"
-              priority={true}
+              priority={index === 0}
               quality={75}
             />
             <div

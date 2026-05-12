@@ -8,7 +8,7 @@ const HeroCard = () => {
 
   return (
     <div>
- {/* 2xl */}
+      {/* 2xl */}
       <div className="max-w-[430px] p-[35px] bg-bg-secondaryTwo rounded-[6px] hidden  2xl:block">
         <h4 className="headingFour font-bold ">
           Building the right foundation of your business
@@ -19,12 +19,14 @@ const HeroCard = () => {
           approach, always.
         </p>
         <button className=" w-[100%]  relative">
-          <Link
-            href={"/"}
-            className=" inline-block py-4 px-[25px] bg-primary text-start text-bg-secondaryTwo w-[100%] rounded-[6px]"
+           <a
+            href="https://youtu.be/l6shgiK9Z-k?si=fMjmxKVUJythzBZ5"
+            target="_blank"
+            rel="noopener noreferrer"
+            className=" inline-block py-4 px-[25px] bg-primary text-start text-bg-secondaryTwo w-[100%]   rounded-[6px]"
           >
             Get consultation{" "}
-          </Link>
+          </a>
           <Image
             src={heroIocns}
             width={50}
@@ -46,12 +48,14 @@ const HeroCard = () => {
           approach, always.
         </p>
         <button className=" w-[100%]  relative">
-          <Link
-            href={"/"}
-            className=" inline-block py-4 px-[25px] bg-primary text-start text-bg-secondaryTwo w-[100%] rounded-[6px]"
+           <a
+            href="https://youtu.be/l6shgiK9Z-k?si=fMjmxKVUJythzBZ5"
+            target="_blank"
+            rel="noopener noreferrer"
+            className=" inline-block py-4 px-[25px] bg-primary text-start text-bg-secondaryTwo w-[100%]   rounded-[6px]"
           >
             Get consultation{" "}
-          </Link>
+          </a>
           <Image
             src={heroIocns}
             width={50}
@@ -73,12 +77,14 @@ const HeroCard = () => {
           approach, always.
         </p>
         <button className=" w-[100%]  relative">
-          <Link
-            href={"/"}
-            className=" inline-block py-4 px-[25px] bg-primary text-start text-bg-secondaryTwo w-[100%] rounded-[6px]"
+          <a
+            href="https://youtu.be/l6shgiK9Z-k?si=fMjmxKVUJythzBZ5"
+            target="_blank"
+            rel="noopener noreferrer"
+            className=" inline-block py-4 px-[25px] bg-primary text-start text-bg-secondaryTwo w-[100%]   rounded-[6px]"
           >
             Get consultation{" "}
-          </Link>
+          </a>
           <Image
             src={heroIocns}
             width={50}
@@ -99,12 +105,14 @@ const HeroCard = () => {
           approach, always.
         </p>
         <button className=" w-[100%]  relative">
-          <Link
-            href={"/"}
-            className=" inline-block py-4 px-[25px] bg-primary text-start text-bg-secondaryTwo w-[100%] rounded-[6px]"
+          <a
+            href="https://youtu.be/l6shgiK9Z-k?si=fMjmxKVUJythzBZ5"
+            target="_blank"
+            rel="noopener noreferrer"
+            className=" inline-block py-4 px-[25px] bg-primary text-start text-bg-secondaryTwo w-[100%]   rounded-[6px]"
           >
             Get consultation{" "}
-          </Link>
+          </a>
           <Image
             src={heroIocns}
             width={50}

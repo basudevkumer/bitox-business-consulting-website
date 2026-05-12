@@ -1,6 +1,11 @@
-import React from "react";
+"use client";
+
+import React, { useId } from "react";
 
 const RotatingBadge = ({ size = "lg" }) => {
+  const uid = useId();
+  const pathId = `textCircle-${size}-${uid.replace(/:/g, "")}`;
+
   const config = {
     sm: {
       outer: 80,
@@ -36,25 +41,14 @@ const RotatingBadge = ({ size = "lg" }) => {
 
   const c = config[size];
 
-  // unique id — multiple instance for reduce conflict 
-  const pathId = `textCircle-${size}-${Math.random().toString(36).slice(2, 7)}`;
-
-  const circumference = +(2 * Math.PI * c.pathR).toFixed(2);
-
   const wrapperStyle =
     size === "lg"
-      ? {
-          width: "clamp(90px, 10vw, 146px)",
-          height: "clamp(90px, 10vw, 146px)",
-        }
+      ? { width: "clamp(90px, 10vw, 146px)", height: "clamp(90px, 10vw, 146px)" }
       : { width: `${c.outer}px`, height: `${c.outer}px` };
 
   const innerStyle =
     size === "lg"
-      ? {
-          width: "clamp(45px, 5vw, 73px)",
-          height: "clamp(45px, 5vw, 73px)",
-        }
+      ? { width: "clamp(45px, 5vw, 73px)", height: "clamp(45px, 5vw, 73px)" }
       : { width: `${c.inner}px`, height: `${c.inner}px` };
 
   const plusStyle =
@@ -62,7 +56,6 @@ const RotatingBadge = ({ size = "lg" }) => {
       ? { fontSize: "clamp(16px, 1.8vw, 30px)" }
       : { fontSize: c.plusSize };
 
-  // arc path — Safari & Firefox - reliable
   const arcPath = [
     `M ${c.cx}, ${c.cx}`,
     `m -${c.pathR}, 0`,
@@ -83,13 +76,8 @@ const RotatingBadge = ({ size = "lg" }) => {
         viewBox={`0 0 ${c.outer} ${c.outer}`}
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
-        style={{
-          // CSS animation 
-          animation: "rotateBadge 12s linear infinite",
-          display: "block", 
-        }}
+        style={{ animation: "rotateBadge 12s linear infinite", display: "block" }}
       >
-        {/* background circle */}
         <circle cx={c.cx} cy={c.cx} r={c.r} fill="#1a1a1a" />
 
         <defs>
@@ -100,23 +88,19 @@ const RotatingBadge = ({ size = "lg" }) => {
           fill="white"
           fontWeight="600"
           fontSize={c.fontSize}
-          // cross-browser font stack
           fontFamily="'Arial Black', 'Arial Bold', Arial, sans-serif"
           letterSpacing="0.5"
         >
           <textPath
-            // href modern + xlinkHref legacy Safari/older browser
             href={`#${pathId}`}
             xlinkHref={`#${pathId}`}
             startOffset="0%"
-        
           >
             {c.text}
           </textPath>
         </text>
       </svg>
 
-   
       <div
         className="absolute rounded-full bg-[#F4F3F0] flex items-center justify-center shadow-md z-10"
         style={{
@@ -124,7 +108,6 @@ const RotatingBadge = ({ size = "lg" }) => {
           top: "50%",
           left: "50%",
           transform: "translate(-50%, -50%)",
-         
         }}
       >
         <span
@@ -142,7 +125,6 @@ const RotatingBadge = ({ size = "lg" }) => {
         </span>
       </div>
 
-      {/* keyframes */}
       <style>{`
         @keyframes rotateBadge {
           from { transform: rotate(0deg); }

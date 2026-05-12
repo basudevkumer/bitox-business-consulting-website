@@ -1,3 +1,5 @@
+"use client";
+
 import RotatingBadge from "../ui/RotatingBadge";
 import Container from "../ui/Container";
 import HeroCard from "../ui/HeroCard";
@@ -5,54 +7,29 @@ import Image from "next/image";
 import allImages from "../helper/imageProvider";
 import Responsive from "../ui/Responsive";
 import { heroSections } from "../helper/homeOnehelper";
+import { useState } from "react";
 
 const HeroSection = () => {
+  //for manage state and images
   const { heroBanner } = allImages;
+
+  const [bannerID, setBannarID] = useState(0);
 
   return (
     <section className=" pt-[140px] lg:pt-[180px] pb-[90px] ">
       <Container size="2xl">
-        {/* 2xl devices */}
-        <div className="relative hidden 2xl:block">
-          <h1 className="font-heading headingOne  uppercase tracking-tight ">
-            <span className="block font-extrabold ">
+        {/* lg, xl, 2xl */}
+        <div className="relative hidden lg:block">
+          <h1 className="font-heading headingOne uppercase tracking-tight">
+            <span className="block font-extrabold">
               <span className="flex items-center">
                 Business <RotatingBadge size="lg" />
               </span>
             </span>
-            <span className="block font-medium pl-[520px]">Strategy</span>
-          </h1>
-          <div className="absolute top-[100%] translate-y-[-13.5%] left-0 ">
-            <HeroCard />
-          </div>
-        </div>
-        {/* xl devices */}
-        <div className="relative hidden xl:block 2xl:hidden">
-          <h1 className="font-heading headingOne  uppercase tracking-tight ">
-            <span className="block font-extrabold ">
-              <span className="flex items-center">
-                Business <RotatingBadge size="lg" />
-              </span>
+            <span className="block font-medium lg:pl-[360px] xl:pl-[470px] 2xl:pl-[520px]">
+              Strategy
             </span>
-            <span className="block font-medium pl-[450px]">Strategy</span>
           </h1>
-          <div className="absolute top-[100%] translate-y-[-13.5%] left-0 ">
-            <HeroCard />
-          </div>
-        </div>
-        {/* lg devices */}
-        <div className="relative hidden lg:block xl:hidden">
-          <h1 className="font-heading headingOne  uppercase tracking-tight ">
-            <span className="block font-extrabold ">
-              <span className="flex items-center">
-                Business <RotatingBadge size="lg" />
-              </span>
-            </span>
-            <span className="block font-medium pl-[360px]">Strategy</span>
-          </h1>
-          <div className="absolute top-[100%] translate-y-[-13.5%] left-0 ">
-            <HeroCard />
-          </div>
         </div>
         {/* sm devices */}
         <div className="relative lg:hidden md:hidden block">
@@ -77,13 +54,42 @@ const HeroSection = () => {
           </div>
         </div>
       </Container>
-      <div className=" mt-[50px] lg:mt-[90px] mb-[20px] px-3">
-        <Image
-          src={heroBanner}
-          alt="herobanner-images"
-          className="w-full"
-          priority
-        />
+      <div className="mt-[50px] lg:mt-[90px] mb-[20px] px-3 max-w-[1880px] h-[320px] sm:h-[400px] md:h-[500px] lg:h-[580px] xl:h-[600px] 2xl:h-[650px] relative mx-2">
+        <div className="absolute inset-0 animate-fadeIn z-0" key={bannerID}>
+          <Image
+            src={heroBanner[bannerID].img}
+            alt="herobanner-images"
+            className="rounded-[6px] object-cover !transition-all duration-700 ease-in-out   z-0"
+            fill
+            priority
+          />
+          <div className="absolute inset-0 bg-[#02090f30] "></div>
+        </div>
+
+        {/* for lg */}
+        <div className="absolute top-[-155px] xl:top-[-176px] left-[6%] translate-x-[-2.5%] hidden lg:block  z-10">
+          <HeroCard />
+        </div>
+
+        <div className="absolute bottom-[15px] right-[15px] sm:bottom-[20px] sm:right-[20px] md:bottom-[25px] md:right-[25px] lg:bottom-[30px] lg:right-[30px] xl:bottom-[35px] xl:right-[35px] z-[20] flex gap-x-2 sm:gap-x-3 md:gap-x-4 xl:gap-x-5">
+          {heroBanner.map((items) => {
+            return (
+              <li
+                key={items.id}
+                className="rounded-[6px] inline-block overflow-hidden border border-bg-secondaryTwo cursor-pointer"
+                onClick={() => setBannarID(items.id)}
+              >
+                <Image
+                  height={153}
+                  width={153}
+                  className="object-cover hover:scale-[1.1] transition duration-400 ease-in-out  !h-[80px] !w-[80px] sm:!h-[100px] sm:!w-[100px] md:!h-[120px] md:!w-[120px] lg:!h-[135px] lg:!w-[135px] xl:!h-[150px] xl:!w-[153px]"
+                  src={items.img}
+                  alt={items.img}
+                />
+              </li>
+            );
+          })}
+        </div>
       </div>
       {/* for lg */}
       <div className="px-3 hidden lg:block">

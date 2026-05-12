@@ -10,10 +10,10 @@ html {
   --color-bg-secondaryOne: #faf7ef;
   --color-bg-secondaryTwo: #ffffff;
   --color-bg-secondaryThree: #02090f;
-  --color-bg-secondaryFore: #F1F1F1;
+  --color-bg-secondaryFore: #f1f1f1;
   --font-heading: var(--font-heading);
   --font-paragraph: var(--font-paragraph);
-   --font-display: var(--font-display);
+  --font-display: var(--font-display);
 
   /* for custom responsive break point */
   --breakpoint-laptop: 1180px;
@@ -98,10 +98,13 @@ html {
 /* for animation */
 
 @keyframes marquee {
-  0% { transform: translateX(0%); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
-
 
 .animate-marquee {
   display: flex;
@@ -114,7 +117,19 @@ html {
 }
 
 .cc {
-  color: #02090f27;
+  color: #02090f30;
 }
 
+/* home one herobannar's animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0.3;
+  }
+  to {
+    opacity: 1;
+  }
+}
 
+.animate-fadeIn {
+  animation: fadeIn 0.7s ease-in-out;
+}

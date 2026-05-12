@@ -70,11 +70,11 @@ const HeroSection = () => {
           >
             <Image
               src={banner.img}
-              alt={banner.alt || `Hero banner ${index + 1}`} // meaningful alt
+              alt={banner.alt || `Hero banner ${index + 1}`}
               className="rounded-[6px] object-cover"
               fill
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 1880px"
-              priority={index === 0}
+              priority={true}
               quality={75}
             />
             <div

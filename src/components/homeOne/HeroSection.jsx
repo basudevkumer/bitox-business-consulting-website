@@ -7,13 +7,31 @@ import Image from "next/image";
 import allImages from "../helper/imageProvider";
 import Responsive from "../ui/Responsive";
 import { heroSections } from "../helper/homeOnehelper";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const HeroSection = () => {
   //for manage state and images
   const { heroBanner } = allImages;
 
   const [bannerID, setBannarID] = useState(0);
+  const intervalRef = useRef(null);
+
+  const startAutoPlay = () => {
+    intervalRef.current = setInterval(() => {
+      setBannarID((prev) => (prev + 1) % heroBanner.length);
+    }, 5000);
+  };
+
+  useEffect(() => {
+    startAutoPlay();
+    return () => clearInterval(intervalRef.current); // unmount এ cleanup
+  }, []);
+
+  const handleBannerClick = (id) => {
+    setBannarID(id);
+    clearInterval(intervalRef.current);
+    startAutoPlay();
+  };
 
   return (
     <section className=" pt-[140px] lg:pt-[180px] pb-[90px] ">
@@ -77,7 +95,7 @@ const HeroSection = () => {
               <li
                 key={items.id}
                 className="rounded-[6px] inline-block overflow-hidden border border-bg-secondaryTwo cursor-pointer"
-                onClick={() => setBannarID(items.id)}
+                onClick={() => handleBannerClick(items.id)}
               >
                 <Image
                   height={153}

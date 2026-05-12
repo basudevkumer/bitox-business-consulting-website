@@ -10,28 +10,63 @@ import { heroSections } from "../helper/homeOnehelper";
 import { useEffect, useRef, useState } from "react";
 
 const HeroSection = () => {
-  //for manage state and images
-  const { heroBanner } = allImages;
+ const { heroBanner } = allImages;
 
-  const [bannerID, setBannarID] = useState(0);
-  const intervalRef = useRef(null);
+const [currentID, setCurrentID] = useState(0);
+const [nextID, setNextID] = useState(null);
+const [fading, setFading] = useState(false);
+const intervalRef = useRef(null);
+const fadingRef = useRef(false);
 
-  const startAutoPlay = () => {
-    intervalRef.current = setInterval(() => {
-      setBannarID((prev) => (prev + 1) % heroBanner.length);
-    }, 5000);
-  };
+// Preload all images on mount
+useEffect(() => {
+  heroBanner.slice(1).forEach((banner) => {
+    const img = new window.Image();
+    img.src = banner.img;
+  });
+}, []);
 
-  useEffect(() => {
-    startAutoPlay();
-    return () => clearInterval(intervalRef.current); // unmount এ cleanup
-  }, []);
+const changeBanner = (newID) => {
+  if (fadingRef.current || newID === currentID) return;
 
-  const handleBannerClick = (id) => {
-    setBannarID(id);
-    clearInterval(intervalRef.current);
-    startAutoPlay();
-  };
+  fadingRef.current = true;
+  setNextID(newID);
+  setFading(false);
+
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      setFading(true);
+    });
+  });
+
+  setTimeout(() => {
+    setCurrentID(newID);
+    setNextID(null);
+    setFading(false);
+    fadingRef.current = false;
+  }, 800);
+};
+
+const startAutoPlay = () => {
+  intervalRef.current = setInterval(() => {
+    setCurrentID((prev) => {
+      const next = (prev + 1) % heroBanner.length;
+      changeBanner(next);
+      return prev;
+    });
+  }, 5000);
+};
+
+useEffect(() => {
+  startAutoPlay();
+  return () => clearInterval(intervalRef.current);
+}, []);
+
+const handleBannerClick = (id) => {
+  changeBanner(id);
+  clearInterval(intervalRef.current);
+  startAutoPlay();
+};
 
   return (
     <section className=" pt-[140px] lg:pt-[180px] pb-[90px] ">
@@ -73,16 +108,36 @@ const HeroSection = () => {
         </div>
       </Container>
       <div className="mt-[50px] lg:mt-[90px] mb-[20px] px-3 max-w-[1880px] h-[320px] sm:h-[400px] md:h-[500px] lg:h-[580px] xl:h-[600px] 2xl:h-[650px] relative mx-2">
-        <div className="absolute inset-0 animate-fadeIn z-0" key={bannerID}>
-          <Image
-            src={heroBanner[bannerID].img}
-            alt="herobanner-images"
-            className="rounded-[6px] object-cover !transition-all duration-700 ease-in-out   z-0"
-            fill
-            priority
-          />
-          <div className="absolute inset-0 bg-[#02090f30] "></div>
-        </div>
+        <div className="absolute inset-0 z-0">
+
+  {/* Current image */}
+  <Image
+    src={heroBanner[currentID].img}
+    alt="herobanner-images"
+    className="rounded-[6px] object-cover"
+    fill
+    priority={currentID === 0}
+  />
+
+  {/* Next image - cross fade */}
+  {nextID !== null && (
+    <div
+      className={`absolute inset-0 z-10 transition-opacity duration-700 ease-in-out ${
+        fading ? "opacity-100" : "opacity-0"
+      }`}
+    >
+      <Image
+        src={heroBanner[nextID].img}
+        alt="herobanner-images"
+        className="rounded-[6px] object-cover"
+        fill
+        priority={false}
+      />
+    </div>
+  )}
+
+  <div className="absolute inset-0 bg-[#02090f30] z-20" />
+</div>
 
         {/* for lg */}
         <div className="absolute top-[-155px] xl:top-[-176px] left-[6%] translate-x-[-2.5%] hidden lg:block  z-10">

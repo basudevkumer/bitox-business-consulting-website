@@ -141,3 +141,20 @@ html {
 .animate-wave {
   animation: wave 3.4s ease-out infinite;
 }
+@keyframes wave2 {
+  0%   { transform: scale(1);   opacity: 0.7; }
+  100% { transform: scale(4); opacity: 0;   }
+}
+
+.animate-wave2 {
+  animation: wave 3.4s ease-out infinite;
+}
+
+@keyframes wave2sm {
+  0%   { transform: scale(1);   opacity: 0.7; }
+  100% { transform: scale(1.5); opacity: 0;   }
+}
+
+.animate-wave2sm {
+  animation: wave2sm 3.4s ease-out infinite;
+}

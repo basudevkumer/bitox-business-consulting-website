@@ -366,15 +366,15 @@ const BlogDetailsPage = ({ blog }) => {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
               {blog.relatedPosts.map((post, i) => (
-                <Link key={i} href={`/blog/${post.slug}`}>
-                  <BlogCard
-                    batchName={post.batchName}
-                    description={post.description}
-                    dateText={post.dateText}
-                    image={post.image}
-                    itmeText={post.itmeText}
-                  />
-                </Link>
+                <BlogCard
+                  key={i}
+                  batchName={post.batchName}
+                  description={post.description}
+                  dateText={post.dateText}
+                  image={post.image}
+                  itmeText={post.itmeText}
+                  slug={post.slug}
+                />
               ))}
             </div>
           </Container>

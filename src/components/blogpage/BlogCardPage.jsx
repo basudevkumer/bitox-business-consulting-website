@@ -1,10 +1,14 @@
 "use client";
 
-import Link from "next/link";
 import Container from "../ui/Container";
 import BlogCard from "../ui/BlogCard";
 import Responsive from "../ui/Responsive";
-import { allBlogData, arrowBtn, pageBtn, pages } from "../helper/blogpagehelper";
+import {
+  allBlogData,
+  arrowBtn,
+  pageBtn,
+  pages,
+} from "../helper/blogpagehelper";
 import { MdArrowForwardIos } from "react-icons/md";
 const BlogCardPage = () => {
   return (
@@ -23,16 +27,16 @@ const BlogCardPage = () => {
         {/* ── 6ta Card Grid ── */}
         <div className="py-15">
           <Responsive.Grid cols={{ base: 1, lg: 3 }} gap="lg">
-            {allBlogData.map((item, index) => (
-              <Link key={index} href={`/blog/${item.slug}`}>
-                <BlogCard
-                  batchName={item.batchName}
-                  description={item.description}
-                  dateText={item.dateText}
-                  image={item.image}
-                  itmeText={item.itmeText}
-                />
-              </Link>
+            {allBlogData.map((item) => (
+              <BlogCard
+                batchName={item.batchName}
+                description={item.description}
+                dateText={item.dateText}
+                image={item.image}
+                itmeText={item.itmeText}
+                slug={item.slug}
+                key={item.id}
+              />
             ))}
           </Responsive.Grid>
         </div>

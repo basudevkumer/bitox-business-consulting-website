@@ -1,13 +1,13 @@
 "use client";
 import { useState } from "react";
 
-// ─── Regex ────────────────────────────────────────────────────────────────────
+// ─── Regex
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const PASSWORD_REGEX =
   /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]).{8,}$/;
 
-// ─── Validate ─────────────────────────────────────────────────────────────────
+// ─── Validate
 
 function validate(values) {
   const errors = {};
@@ -33,7 +33,7 @@ function validate(values) {
   return errors;
 }
 
-// ─── Hook ─────────────────────────────────────────────────────────────────────
+// ─── Hook
 
 export function useContactForm() {
   const [values, setValues] = useState({

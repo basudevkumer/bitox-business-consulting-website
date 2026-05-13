@@ -16,7 +16,7 @@ import imageProvider from "@/components/helper/imageProvider";
 
 export function isActiveLink(href, pathname) {
   if (href === "/") return pathname === "/";
-  return pathname.startsWith(href);
+  return  pathname === href;
 }
 
 export function hasActiveChild(children, pathname) {
@@ -116,9 +116,9 @@ export function DesktopNavItem({
   height = "auto",
 }) {
   const isActive = link.children
-    ? hasActiveChild(link.children, pathname)
+    ? false
     : isActiveLink(link.href, pathname);
-
+// hasActiveChild(link.children, pathname)
   const activeClass = isActive
     ? "text-secondary"
     : "text-primary hover:text-secondary";
@@ -173,9 +173,9 @@ export function MobileNavItem({
   pathname,
 }) {
   const isActive = link.children
-    ? hasActiveChild(link.children, pathname)
+    ? false
     : isActiveLink(link.href, pathname);
-
+// 
   const activeClass = isActive
     ? "text-secondary"
     : "text-primary hover:text-secondary";

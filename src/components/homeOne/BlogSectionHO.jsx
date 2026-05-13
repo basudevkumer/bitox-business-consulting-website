@@ -28,9 +28,11 @@ const BlogSectionHO = () => {
           </Responsive.Grid>
         </div>
         <div className=" mt-[20px] md:mt-[30px] lg::mt-[60px]">
-          <button className="w-full cursor-pointer text-center py-5  text-primary font-medium text-base border border-[#0000001a] rounded-[6px]">
-            See all case studies
-          </button>
+          <Link href={"/blog"}>
+            <button className="w-full cursor-pointer text-center py-5  text-primary font-medium text-base border border-[#0000001a] rounded-[6px]">
+              See all case studies
+            </button>
+          </Link>
         </div>
       </Container>
     </section>

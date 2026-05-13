@@ -7,6 +7,7 @@ import ButtonTwo from "../ui/ButtonTwo";
 import { aboutSectionskills, aboutStats } from "../helper/homeOnehelper";
 import AnimatedProgressBar from "../ui/AnimatedProgressBar";
 import CountUpStat from "../ui/CountUpStat";
+import Link from "next/link";
 
 const AboutSectionHO = () => {
   const { aboutsection } = allImages;
@@ -36,7 +37,7 @@ const AboutSectionHO = () => {
                 complex challenges into clear action plans through structured
                 guidance, analysis and targeted coaching,{" "}
               </p>
-              
+
               <Link href={"/about"} className="inline-block">
                 {" "}
                 <ButtonTwo frontText={"Get in touch"} />

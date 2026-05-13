@@ -1,11 +1,17 @@
+"use client";
+
 import { allIcons } from "@/components/helper/iconProvider";
 import { servicesDetailProcessSteps } from "@/components/helper/serviceDetailsHelpers";
 import Container from "@/components/ui/Container";
 import Responsive from "@/components/ui/Responsive";
-import React from "react";
+import React, { useState } from "react";
 
 const ServiceDescription = ({ serviceITems }) => {
+  // for icons
   const { triangleLeft, triangleRight, dot, target } = allIcons;
+  // manage state
+  const [hoveredId, setHoveredId] = useState(null);
+
   return (
     <section>
       <Container size="lg">
@@ -48,13 +54,15 @@ const ServiceDescription = ({ serviceITems }) => {
               {servicesDetailProcessSteps.map((s) => {
                 return (
                   <div
-                    className="flex flex-col items-center gap-[10px] relative"
+                    className="flex flex-col items-center gap-[10px] relative  "
                     key={s.id}
                   >
                     <p className="text-base font-medium text-primary">
                       {s.step}
                     </p>
-                    <span className=" group-hover:text-secondary w-[30px] h-[30px] rounded-full bg-bg-secondaryTwo flex items-center  justify-center text-xl text-primary shadow-lg">
+                    <span
+                      className={`group-hover:text-secondary w-[30px] h-[30px] rounded-full bg-bg-secondaryTwo flex items-center  justify-center text-xl text-primary shadow-lg transition-all duration-300 ${hoveredId === s.id ? "bg-secondary !text-bg-secondaryTwo" : ""}`}
+                    >
                       {dot}
                     </span>
                     <span
@@ -70,12 +78,14 @@ const ServiceDescription = ({ serviceITems }) => {
             </div>
           </div>
 
-          <div className="h-[342px]  flex  gap-[20px] relative z-10 xl:gap-[60px]">
+          <div className="h-[342px]  flex  gap-[20px] relative z-10 xl:gap-[60px] ">
             {serviceITems?.steps
               ? serviceITems?.steps?.map((step) => (
                   <div
                     key={step.step}
                     className="  group bg-bg-secondaryTwo h-fit  max-w-[355px] px-[38px] py-[30px] even:self-end space-y-[20px] rounded-[10px]"
+                    onMouseEnter={() => setHoveredId(step.id)}
+                    onMouseLeave={() => setHoveredId(null)}
                   >
                     <h3 className="text-center para-TwoXl font-bold text-primary">
                       {step.title}
@@ -88,7 +98,9 @@ const ServiceDescription = ({ serviceITems }) => {
               : servicesDetailProcessSteps.map((step) => (
                   <div
                     key={step.id}
-                    className="  group bg-bg-secondaryTwo h-fit  max-w-[355px] px-[38px] py-[30px] even:self-end space-y-[20px] rounded-[10px]"
+                    className="  group bg-bg-secondaryTwo  h-fit  max-w-[355px] px-[38px] py-[30px] even:self-end space-y-[20px] rounded-[10px]"
+                    onMouseEnter={() => setHoveredId(step.id)}
+                    onMouseLeave={() => setHoveredId(null)}
                   >
                     <h3 className="text-center para-TwoXl font-bold text-primary">
                       {step.title}

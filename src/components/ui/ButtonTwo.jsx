@@ -7,6 +7,7 @@ const ButtonTwo = ({
   backText = "Let's Talk.",
   paddingLeft = 25,   // left side padding in px, default 25
   paddingRight = 25,  // right side padding in px, default 25
+  className
 }) => {
   const [hovered, setHovered] = useState(false);
  
@@ -62,6 +63,7 @@ const ButtonTwo = ({
   return (
     <button
       style={style.wrapper}
+      className={`${className}`}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >

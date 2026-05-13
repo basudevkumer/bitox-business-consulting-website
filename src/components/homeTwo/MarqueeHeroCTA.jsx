@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import {
   ArrowIcon,
   MARQUEE_REPEAT_COUNT,
@@ -16,17 +17,19 @@ function CTAButton({ frontText, backText, textColor = "#02090F", onClick }) {
       className="inline-flex items-center gap-2.5 cursor-pointer group"
       onClick={onClick}
     >
-      <ButtonThree
-        frontText={frontText}
-        backText={backText}
-        backgroundColor="transparent"
-        textColor={textColor}
-        fontSize={14}
-        paddingTop={0}
-        paddingBottom={0}
-        paddingLeft={0}
-        paddingRight={0}
-      />
+      <Link href={"/pricing"}>
+        <ButtonThree
+          frontText={frontText}
+          backText={backText}
+          backgroundColor="transparent"
+          textColor={textColor}
+          fontSize={14}
+          paddingTop={0}
+          paddingBottom={0}
+          paddingLeft={0}
+          paddingRight={0}
+        />
+      </Link>
       <span className="inline-block transition-transform group-hover:translate-x-1">
         <ArrowIcon color={textColor === "#ffffff" ? "#ffffff" : "#02090F"} />
       </span>

@@ -75,14 +75,14 @@ export function DropdownMenu({
   pathname,
   style = "rounded",
 }) {
-  const base = `absolute top-full left-0 w-52 bg-white py-2 z-50 transition-all duration-200 ${
+  const base = `absolute top-full left-0 w-52 bg-white  py-2 z-50 transition-all duration-200 ${
     isOpen
       ? "opacity-100 translate-y-0 pointer-events-auto"
       : "opacity-0 -translate-y-2 pointer-events-none"
   }`;
 
   const styles = {
-    rounded: "mt-3 rounded-xl shadow-xl border border-black/5",
+    rounded: "mt-[23.5px] rounded-xl shadow-xl border-t border-secondary",
     flat: "mt-0 shadow-xl border-t-2 border-secondary",
   };
 

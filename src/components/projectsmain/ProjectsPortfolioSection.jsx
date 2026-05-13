@@ -73,7 +73,7 @@ const ProjectsPage = () => {
             </Responsive.Grid>
           )}
         </div>
-        <Link href={"/"}>
+        <Link href={"/projects"}>
           <button className="w-full cursor-pointer text-center py-5 text-primary font-medium text-base border border-[#0000001a] rounded-md">
             See all case studies
           </button>

@@ -1,6 +1,3 @@
-// src/app/(pages)/projects/page.jsx
-
-import InnerPageHero from "@/components/ui/InnerPageHero";
 import Container from "@/components/ui/Container";
 import ProjectCard from "@/components/ui/ProjectCard";
 import Responsive from "@/components/ui/Responsive";
@@ -22,7 +19,7 @@ const ProjectsPage = () => {
         <h2 className="headingTwo max-w-[950px] text-primary font-bold text-center mx-auto">
           Real Challenges. Real Solutions. Real Impact.
         </h2>
-        <div className="py-15 space-y-7.5">
+        <div className="pt-15 space-y-7.5">
           {/* Row 1 — 2-col (homeOne er same 2 ta image) */}
           <Responsive.Grid cols={{ base: 1, lg: 2 }} gap="lg">
             {projectImages[0].map((item, index) => (
@@ -73,11 +70,6 @@ const ProjectsPage = () => {
             </Responsive.Grid>
           )}
         </div>
-        <Link href={"/projects"}>
-          <button className="w-full cursor-pointer text-center py-5 text-primary font-medium text-base border border-[#0000001a] rounded-md">
-            See all case studies
-          </button>
-        </Link>
       </Container>
     </section>
   );

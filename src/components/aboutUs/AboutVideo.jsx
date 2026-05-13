@@ -3,6 +3,9 @@ import allImages from "../helper/imageProvider";
 import Image from "next/image";
 import Button from "../ui/Button";
 import { allIcons } from "../helper/iconProvider";
+import ButtonThree from "../ui/ButtonThree";
+import ButtonTwo from "../ui/ButtonTwo";
+import Link from "next/link";
 
 const AboutVideo = () => {
   const { aboutUsVideo } = allImages;
@@ -92,11 +95,14 @@ const AboutVideo = () => {
             strategic goals & thoughtful execution can create meaningful
             collaborations that drives innovation
           </p>
-          <Button
-            label={"Get started now"}
-            textColor={"primary"}
-            showIcon={true}
-          />
+
+          <Link href={"/team"}>
+            <Button
+              label={"Get started now"}
+              textColor={"primary"}
+              showIcon={true}
+            />
+          </Link>
         </div>
       </div>
     </section>

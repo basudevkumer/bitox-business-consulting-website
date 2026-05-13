@@ -4,6 +4,7 @@ import Container from "../ui/Container";
 import { Stack, Flex } from "../ui/Responsive";
 import ButtonThree from "../ui/ButtonThree";
 import { features } from "../helper/helpers";
+import Link from "next/link";
 
 const ArrowIcon = () => (
   <span className="inline-flex items-center shrink-0">
@@ -45,17 +46,19 @@ const CoreFeatures = () => {
 
           {/* Right: Discover more button */}
           <div className="self-center sm:self-end mb-1.5 sm:mb-1.5 inline-flex items-center gap-2.5 border border-primary text-primary text-sm font-medium rounded-[90px] px-7 py-3.5 cursor-pointer hover:bg-black/5 transition-colors shrink-0 group">
-            <ButtonThree
-              frontText="Get started now"
-              backText="Let's Talk."
-              backgroundColor="transparent"
-              textColor="#02090F"
-              fontSize={14}
-              paddingTop={0}
-              paddingBottom={0}
-              paddingLeft={0}
-              paddingRight={0}
-            />
+            <Link href={"/services"}>
+              <ButtonThree
+                frontText="Get started now"
+                backText="Let's Talk."
+                backgroundColor="transparent"
+                textColor="#02090F"
+                fontSize={14}
+                paddingTop={0}
+                paddingBottom={0}
+                paddingLeft={0}
+                paddingRight={0}
+              />
+            </Link>
             <span className="inline-block transition-transform group-hover:translate-x-1">
               <svg width="9" height="12" viewBox="0 0 9 12" fill="none">
                 <path

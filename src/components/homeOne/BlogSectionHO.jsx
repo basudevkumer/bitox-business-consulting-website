@@ -3,6 +3,7 @@ import Container from "../ui/Container";
 import BlogCard from "../ui/BlogCard";
 import Responsive from "../ui/Responsive";
 import { blogData } from "../helper/homeOnehelper";
+import Link from "next/link";
 
 const BlogSectionHO = () => {
   return (

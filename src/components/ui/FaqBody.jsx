@@ -7,6 +7,7 @@ import { useState } from "react";
 import AccordionItem from "../ui/AccordionItem";
 import ButtonTwo from "../ui/ButtonTwo";
 import Image from "next/image";
+import Link from "next/link";
 
 const FaqBody = () => {
   const { bottomImg } = allImages.FaqSection;
@@ -65,7 +66,7 @@ const FaqBody = () => {
                 require custom integrations, our team can tailor Makro to your
                 needs.
               </p>
-              <ButtonTwo frontText="Get in touch" backText="Get in touch" />
+              <Link href={"/faq"}><ButtonTwo frontText="Get in touch" backText="Get in touch" /></Link>
             </div>
 
             {/* CTA illustration — hidden on mobile, shown sm+ */}

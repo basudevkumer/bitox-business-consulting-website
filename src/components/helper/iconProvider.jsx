@@ -8,6 +8,8 @@ import { GoDotFill } from "react-icons/go";
 import { GiTargetShot } from "react-icons/gi";
 import { IoChevronForwardSharp } from "react-icons/io5";
 import { FaChevronDown } from "react-icons/fa6";
+import { FaPlay } from "react-icons/fa";
+
 
 
 export const allIcons = {
@@ -20,5 +22,6 @@ export const allIcons = {
   dot: <GoDotFill />,
   target: <GiTargetShot />,
   chevronRight: <IoChevronForwardSharp />,
-  chebronDown :  <FaChevronDown/>
+  chebronDown :  <FaChevronDown/>,
+  play: <FaPlay/>
 };

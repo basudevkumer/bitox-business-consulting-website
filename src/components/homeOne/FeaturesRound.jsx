@@ -3,6 +3,7 @@ import Container from "../ui/Container";
 import allImages from "../helper/imageProvider";
 import Image from "next/image";
 import ButtonTwo from "../ui/ButtonTwo";
+import Link from "next/link";
 
 const FeaturesRound = () => {
   const { featureRound } = allImages;
@@ -23,7 +24,10 @@ const FeaturesRound = () => {
           strategy, growth.
         </h2>
         <div className="mt-[60px] flex justify-center">
-          <ButtonTwo frontText={"Learn about us"} />
+          <Link href={"/about"} className="inline-block">
+            {" "}
+            <ButtonTwo frontText={"Learn about us"} />
+          </Link>
         </div>
         <Image
           src={featureRound[0].img}

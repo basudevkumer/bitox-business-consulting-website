@@ -3,6 +3,7 @@ import Container from "../ui/Container";
 import ProjectCard from "../ui/ProjectCard";
 import Responsive from "../ui/Responsive";
 import allImages from "../helper/imageProvider";
+import Link from "next/link";
 
 const PortfolioSection = () => {
   const { projectImages } = allImages;
@@ -16,36 +17,40 @@ const PortfolioSection = () => {
           <Responsive.Grid cols={{ base: 1, lg: 2 }} gap="lg">
             {projectImages[0].map((items, index) => {
               return (
-                <ProjectCard
-                  image={items.img}
-                  key={index}
-                  mainClass={"w-full !h-[400px] md:!h-[510px]"}
-                  title={items.title}
-                  subtitleOne={items.subtitleOne}
-                  subtitleTwo={items.subtitleTwo}
-                />
+                <Link key={index} href={`/projects/${items.slug}`}>
+                  <ProjectCard
+                    image={items.img}
+                    mainClass={"w-full !h-[400px] md:!h-[510px]"}
+                    title={items.title}
+                    subtitleOne={items.subtitleOne}
+                    subtitleTwo={items.subtitleTwo}
+                  />
+                </Link>
               );
             })}
           </Responsive.Grid>
           <Responsive.Grid cols={{ base: 1, lg: 3 }} gap="lg">
             {projectImages[1].map((items, index) => {
               return (
-                <ProjectCard
-                  image={items.img}
-                  key={index}
-                  mainClass={"w-full !h-[400px] md:!h-[510px] "}
-                  title={items.title}
-                  subtitleOne={items.subtitleOne}
-                  subtitleTwo={items.subtitleTwo}
-                />
+                <Link key={index} href={`/projects/${items.slug}`}>
+                  <ProjectCard
+                    image={items.img}
+                    mainClass={"w-full !h-[400px] md:!h-[510px] "}
+                    title={items.title}
+                    subtitleOne={items.subtitleOne}
+                    subtitleTwo={items.subtitleTwo}
+                  />
+                </Link>
               );
             })}
           </Responsive.Grid>
         </div>
         <div>
-          <button className="w-full cursor-pointer text-center py-5  text-primary font-medium text-base border border-[#0000001a] rounded-[6px  ]">
-            See all case studies
-          </button>
+          <Link href={"/"}>
+            <button className="w-full cursor-pointer text-center py-5  text-primary font-medium text-base border border-[#0000001a] rounded-[6px  ]">
+              See all case studies
+            </button>
+          </Link>
         </div>
       </Container>
     </section>

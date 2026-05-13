@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Container from "@/components/ui/Container";
 import ButtonThree from "../ui/ButtonThree";
+import Link from "next/link";
 export default function AboutSection() {
   return (
     <section className="w-full overflow-hidden bg-white">
@@ -50,17 +51,19 @@ export default function AboutSection() {
               </p>
 
               <div className="self-start flex items-center gap-2 border border-primary text-primary text-sm sm:text-base font-medium rounded-[90px] px-4 py-2 sm:px-7.5 sm:py-4 cursor-pointer hover:bg-white/90 transition-colors group">
-                <ButtonThree
-                  frontText="Get started now"
-                  backText="Let's Talk."
-                  backgroundColor="transparent"
-                  textColor="#02090F"
-                  fontSize={14}
-                  paddingTop={0}
-                  paddingBottom={0}
-                  paddingLeft={0}
-                  paddingRight={0}
-                />
+                <Link href={"/about"} className="inline-block">
+                  <ButtonThree
+                    frontText="Get started now"
+                    backText="Let's Talk."
+                    backgroundColor="transparent"
+                    textColor="#02090F"
+                    fontSize={14}
+                    paddingTop={0}
+                    paddingBottom={0}
+                    paddingLeft={0}
+                    paddingRight={0}
+                  />
+                </Link>
                 <span className="inline-block transition-transform group-hover:translate-x-1">
                   <svg
                     width="9"

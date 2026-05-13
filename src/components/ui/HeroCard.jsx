@@ -19,19 +19,21 @@ const HeroCard = () => {
           your financial journey with expertise integrity and a personalized
           approach, always.
         </p>
-         <a
-          href="https://youtu.be/l6shgiK9Z-k?si=fMjmxKVUJythzBZ5"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block w-[100%]"
-        >
-          <div className="relative w-full">
+
+        <div className="relative w-full">
+          <Link href={"/contact"}>
             <ButtonTwo
               frontText={"Get consultation"}
-              backText="Watch Now."
+              backText={"Get consultation"}
               className={"!w-full !py-[18px] !justify-start !pr-[60px]"}
             />
-
+          </Link>
+          <a
+            href="https://youtu.be/l6shgiK9Z-k?si=fMjmxKVUJythzBZ5"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-[100%]"
+          >
             {/* Wave circle */}
             <div className="absolute top-0 right-[3.5px] h-full flex items-center justify-center">
               <div className="relative flex items-center justify-center w-[52px] h-[52px]">
@@ -57,8 +59,8 @@ const HeroCard = () => {
                 />
               </div>
             </div>
-          </div>
-        </a>
+          </a>
+        </div>
       </div>
 
       {/* xl */}
@@ -71,19 +73,21 @@ const HeroCard = () => {
           your financial journey with expertise integrity and a personalized
           approach, always.
         </p>
-         <a
-          href="https://youtu.be/l6shgiK9Z-k?si=fMjmxKVUJythzBZ5"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block w-[100%]"
-        >
-          <div className="relative w-full">
+
+        <div className="relative w-full">
+          <Link href={"/contact"}>
             <ButtonTwo
               frontText={"Get consultation"}
-              backText="Watch Now."
+              backText={"Get consultation"}
               className={"!w-full !py-[18px] !justify-start !pr-[60px]"}
             />
-
+          </Link>
+          <a
+            href="https://youtu.be/l6shgiK9Z-k?si=fMjmxKVUJythzBZ5"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-[100%]"
+          >
             {/* Wave circle */}
             <div className="absolute top-0 right-[3.5px] h-full flex items-center justify-center">
               <div className="relative flex items-center justify-center w-[52px] h-[52px]">
@@ -109,8 +113,8 @@ const HeroCard = () => {
                 />
               </div>
             </div>
-          </div>
-        </a>
+          </a>
+        </div>
       </div>
 
       {/* lg devices */}
@@ -123,19 +127,21 @@ const HeroCard = () => {
           your financial journey with expertise integrity and a personalized
           approach, always.
         </p>
-        <a
-          href="https://youtu.be/l6shgiK9Z-k?si=fMjmxKVUJythzBZ5"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block w-[100%]"
-        >
-          <div className="relative w-full">
+
+        <div className="relative w-full">
+          <Link href={"/contact"}>
             <ButtonTwo
               frontText={"Get consultation"}
-              backText="Watch Now."
+              backText={"Get consultation"}
               className={"!w-full !py-[18px] !justify-start !pr-[60px]"}
             />
-
+          </Link>
+          <a
+            href="https://youtu.be/l6shgiK9Z-k?si=fMjmxKVUJythzBZ5"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-[100%]"
+          >
             {/* Wave circle */}
             <div className="absolute top-0 right-[3.5px] h-full flex items-center justify-center">
               <div className="relative flex items-center justify-center w-[52px] h-[52px]">
@@ -161,9 +167,8 @@ const HeroCard = () => {
                 />
               </div>
             </div>
-          </div>
-        </a>
-       
+          </a>
+        </div>
       </div>
       {/* py-4 px-[25px] bg-primary text-start text-bg-secondaryTwo w-[100%]   rounded-[6px] */}
       {/* sm, md devices */}
@@ -176,19 +181,21 @@ const HeroCard = () => {
           your financial journey with expertise integrity and a personalized
           approach, always.
         </p>
-         <a
-          href="https://youtu.be/l6shgiK9Z-k?si=fMjmxKVUJythzBZ5"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block w-[100%]"
-        >
-          <div className="relative w-full">
+
+        <div className="relative w-full">
+          <Link href={"/contact"}>
             <ButtonTwo
               frontText={"Get consultation"}
-              backText="Watch Now."
+              backText={"Get consultation"}
               className={"!w-full !py-[18px] !justify-start !pr-[60px]"}
             />
-
+          </Link>
+          <a
+            href="https://youtu.be/l6shgiK9Z-k?si=fMjmxKVUJythzBZ5"
+            target="_blank"
+            rel="noopener noreferrer"
+            className=""
+          >
             {/* Wave circle */}
             <div className="absolute top-0 right-[3.5px] h-full flex items-center justify-center">
               <div className="relative flex items-center justify-center w-[52px] h-[52px]">
@@ -214,8 +221,8 @@ const HeroCard = () => {
                 />
               </div>
             </div>
-          </div>
-        </a>
+          </a>
+        </div>
       </div>
     </div>
   );

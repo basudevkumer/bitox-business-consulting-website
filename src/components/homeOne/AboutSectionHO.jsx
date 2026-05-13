@@ -36,7 +36,11 @@ const AboutSectionHO = () => {
                 complex challenges into clear action plans through structured
                 guidance, analysis and targeted coaching,{" "}
               </p>
-              <ButtonTwo frontText={"Get in touch"} />
+              
+              <Link href={"/about"} className="inline-block">
+                {" "}
+                <ButtonTwo frontText={"Get in touch"} />
+              </Link>
 
               {/* Animated Progress Bars */}
               <div className="mt-[60px]">

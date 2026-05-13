@@ -1,12 +1,8 @@
-
-
-
 import Container from "@/components/ui/Container";
 import ProjectCard from "@/components/ui/ProjectCard";
 import Responsive from "@/components/ui/Responsive";
 import allImages from "@/components/helper/imageProvider";
 import Link from "next/link";
-
 
 const ProjectsPage = () => {
   const { projectImages } = allImages;
@@ -74,7 +70,6 @@ const ProjectsPage = () => {
             </Responsive.Grid>
           )}
         </div>
-        
       </Container>
     </section>
   );

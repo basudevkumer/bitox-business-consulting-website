@@ -165,7 +165,6 @@ export function DesktopNavItem({
   );
 }
 
-
 export function MobileNavItem({
   link,
   openDropdown,
@@ -371,20 +370,22 @@ export const CONTACT_INFO = [
 // HomeTwo — Footer Data
 //===============================
 
+
+
 export const companyLinks = [
-  "Who We Are?",
-  "Our Services",
-  "Latest Blog",
-  "Meet Our Team",
-  "Contact Us",
+  { id: 0, label: "Who We Are?", slug: "/about" },
+  { id: 1, label: "Our Services", slug: "/services" },
+  { id: 2, label: "Latest Blog", slug: "/blog" },
+  { id: 3, label: "Meet Our Team", slug: "/team" },
+  { id: 4, label: "Contact Us", slug: "/contact" },
 ];
 
 export const serviceLinks = [
-  "Corporate Growth",
-  "Culture & Change",
-  "Finance Advisor",
-  "Digital Marketing",
-  "Consulting Network",
+  { id: 0, label: "Corporate Growth", slug: "/services" },
+  { id: 1, label: "Culture & Change", slug: "/services" },
+  { id: 2, label: "Finance Advisor", slug: "/services" },
+  { id: 3, label: "Digital Marketing", slug: "/services" },
+  { id: 4, label: "Consulting Network", slug: "/services" },
 ];
 
 export const legalLinks = ["Privacy Policy", "Terms and Conditions", "Support"];
@@ -588,7 +589,7 @@ export const services = [
     id: 1,
     slug: "business-consultancy",
     number: "01",
-    imgId:0,
+    imgId: 0,
     category: "Consultancy",
     title: "Business Consultancy",
     description:
@@ -599,7 +600,7 @@ export const services = [
     id: 2,
     slug: "financial-planning",
     number: "02",
-    imgId:1,
+    imgId: 1,
     category: "Planning",
     title: "Financial Planning",
     description:
@@ -614,7 +615,7 @@ export const services = [
     id: 3,
     slug: "vat-tax-consultancy",
     number: "03",
-    imgId:2,
+    imgId: 2,
     category: "Tax & Vat",
     title: "Vat & Tax Consultancy",
     description:
@@ -625,7 +626,7 @@ export const services = [
     id: 4,
     slug: "competitive-analysis",
     number: "04",
-    imgId:3,
+    imgId: 3,
     category: "Market Analysis",
     title: "Competitive Analysis",
     description:
@@ -633,5 +634,3 @@ export const services = [
     features: ["Integrity & Support", "Data Entry", "Growth forecasting"],
   },
 ];
-
-

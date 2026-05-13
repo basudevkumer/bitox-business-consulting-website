@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import {
   ArrowIcon,
   EmailIcon,
@@ -86,14 +87,14 @@ function FooterLinksColumn({ title, links }) {
     <Stack gap="sm">
       <p className="font-bold text-white headingSixAlter mb-2">{title}</p>
       {links.map((link) => (
-        <Flex key={link} gap="xs" align="center">
+        <Flex key={link.id} gap="xs" align="center">
           <span className="w-2 h-2 rounded-full bg-[#999999] shrink-0" />
-          <a
-            href="#"
+          <Link
+            href={link.slug}
             className="para-lg text-[#999999] hover:text-white transition-colors"
           >
-            {link}
-          </a>
+            {link.label}
+          </Link>
         </Flex>
       ))}
     </Stack>

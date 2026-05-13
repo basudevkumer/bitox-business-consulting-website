@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import allImages from "../helper/imageProvider";
+import ButtonTwo from "./ButtonTwo";
 
 const HeroCard = () => {
   const { heroIocns } = allImages;
@@ -18,23 +19,46 @@ const HeroCard = () => {
           your financial journey with expertise integrity and a personalized
           approach, always.
         </p>
-        <button className=" w-[100%]  relative">
-           <a
-            href="https://youtu.be/l6shgiK9Z-k?si=fMjmxKVUJythzBZ5"
-            target="_blank"
-            rel="noopener noreferrer"
-            className=" inline-block py-4 px-[25px] bg-primary text-start text-bg-secondaryTwo w-[100%]   rounded-[6px]"
-          >
-            Get consultation{" "}
-          </a>
-          <Image
-            src={heroIocns}
-            width={50}
-            height={50}
-            className="absolute top-1/2 -translate-y-1/2  right-[3.5px]"
-            alt="hero-card-images"
-          />
-        </button>
+         <a
+          href="https://youtu.be/l6shgiK9Z-k?si=fMjmxKVUJythzBZ5"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block w-[100%]"
+        >
+          <div className="relative w-full">
+            <ButtonTwo
+              frontText={"Get consultation"}
+              backText="Watch Now."
+              className={"!w-full !py-[18px] !justify-start !pr-[60px]"}
+            />
+
+            {/* Wave circle */}
+            <div className="absolute top-0 right-[3.5px] h-full flex items-center justify-center">
+              <div className="relative flex items-center justify-center w-[52px] h-[52px]">
+                <span
+                  className="absolute h-[50px] w-[50px] z-10 rounded-full bg-white/30 animate-wave"
+                  style={{ animationDelay: "0s" }}
+                />
+                <span
+                  className="absolute  h-[50px] w-[50px] z-10 rounded-full bg-white/30 animate-wave"
+                  style={{ animationDelay: "0.6s" }}
+                />
+                <span
+                  className="absolute  h-[50px] w-[50px] z-10 rounded-full bg-white/30 animate-wave"
+                  style={{ animationDelay: "1.2s" }}
+                />
+
+                <Image
+                  src={heroIocns}
+                  width={50}
+                  height={50}
+                  alt="hero-card-images "
+                  className="z-0"
+                />
+              </div>
+            </div>
+          </div>
+        </a>
       </div>
 
       {/* xl */}
@@ -47,23 +71,46 @@ const HeroCard = () => {
           your financial journey with expertise integrity and a personalized
           approach, always.
         </p>
-        <button className=" w-[100%]  relative">
-           <a
-            href="https://youtu.be/l6shgiK9Z-k?si=fMjmxKVUJythzBZ5"
-            target="_blank"
-            rel="noopener noreferrer"
-            className=" inline-block py-4 px-[25px] bg-primary text-start text-bg-secondaryTwo w-[100%]   rounded-[6px]"
-          >
-            Get consultation{" "}
-          </a>
-          <Image
-            src={heroIocns}
-            width={50}
-            height={50}
-            className="absolute top-1/2 -translate-y-1/2  right-[3.5px]"
-            alt="hero-card-images"
-          />
-        </button>
+         <a
+          href="https://youtu.be/l6shgiK9Z-k?si=fMjmxKVUJythzBZ5"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block w-[100%]"
+        >
+          <div className="relative w-full">
+            <ButtonTwo
+              frontText={"Get consultation"}
+              backText="Watch Now."
+              className={"!w-full !py-[18px] !justify-start !pr-[60px]"}
+            />
+
+            {/* Wave circle */}
+            <div className="absolute top-0 right-[3.5px] h-full flex items-center justify-center">
+              <div className="relative flex items-center justify-center w-[52px] h-[52px]">
+                <span
+                  className="absolute h-[50px] w-[50px] z-10 rounded-full bg-white/30 animate-wave"
+                  style={{ animationDelay: "0s" }}
+                />
+                <span
+                  className="absolute  h-[50px] w-[50px] z-10 rounded-full bg-white/30 animate-wave"
+                  style={{ animationDelay: "0.6s" }}
+                />
+                <span
+                  className="absolute  h-[50px] w-[50px] z-10 rounded-full bg-white/30 animate-wave"
+                  style={{ animationDelay: "1.2s" }}
+                />
+
+                <Image
+                  src={heroIocns}
+                  width={50}
+                  height={50}
+                  alt="hero-card-images "
+                  className="z-0"
+                />
+              </div>
+            </div>
+          </div>
+        </a>
       </div>
 
       {/* lg devices */}
@@ -76,24 +123,49 @@ const HeroCard = () => {
           your financial journey with expertise integrity and a personalized
           approach, always.
         </p>
-        <button className=" w-[100%]  relative">
-          <a
-            href="https://youtu.be/l6shgiK9Z-k?si=fMjmxKVUJythzBZ5"
-            target="_blank"
-            rel="noopener noreferrer"
-            className=" inline-block py-4 px-[25px] bg-primary text-start text-bg-secondaryTwo w-[100%]   rounded-[6px]"
-          >
-            Get consultation{" "}
-          </a>
-          <Image
-            src={heroIocns}
-            width={50}
-            height={50}
-            className="absolute top-1/2 -translate-y-1/2  right-[3.5px]"
-            alt="hero-card-images"
-          />
-        </button>
+        <a
+          href="https://youtu.be/l6shgiK9Z-k?si=fMjmxKVUJythzBZ5"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block w-[100%]"
+        >
+          <div className="relative w-full">
+            <ButtonTwo
+              frontText={"Get consultation"}
+              backText="Watch Now."
+              className={"!w-full !py-[18px] !justify-start !pr-[60px]"}
+            />
+
+            {/* Wave circle */}
+            <div className="absolute top-0 right-[3.5px] h-full flex items-center justify-center">
+              <div className="relative flex items-center justify-center w-[52px] h-[52px]">
+                <span
+                  className="absolute h-[50px] w-[50px] z-10 rounded-full bg-white/30 animate-wave"
+                  style={{ animationDelay: "0s" }}
+                />
+                <span
+                  className="absolute  h-[50px] w-[50px] z-10 rounded-full bg-white/30 animate-wave"
+                  style={{ animationDelay: "0.6s" }}
+                />
+                <span
+                  className="absolute  h-[50px] w-[50px] z-10 rounded-full bg-white/30 animate-wave"
+                  style={{ animationDelay: "1.2s" }}
+                />
+
+                <Image
+                  src={heroIocns}
+                  width={50}
+                  height={50}
+                  alt="hero-card-images "
+                  className="z-0"
+                />
+              </div>
+            </div>
+          </div>
+        </a>
+       
       </div>
+      {/* py-4 px-[25px] bg-primary text-start text-bg-secondaryTwo w-[100%]   rounded-[6px] */}
       {/* sm, md devices */}
       <div className="max-w-[470px] p-5 md:p-[35px] bg-bg-secondaryTwo rounded-[6px] block lg:hidden ">
         <h4 className="headingFour font-bold ">
@@ -104,23 +176,46 @@ const HeroCard = () => {
           your financial journey with expertise integrity and a personalized
           approach, always.
         </p>
-        <button className=" w-[100%]  relative">
-          <a
-            href="https://youtu.be/l6shgiK9Z-k?si=fMjmxKVUJythzBZ5"
-            target="_blank"
-            rel="noopener noreferrer"
-            className=" inline-block py-4 px-[25px] bg-primary text-start text-bg-secondaryTwo w-[100%]   rounded-[6px]"
-          >
-            Get consultation{" "}
-          </a>
-          <Image
-            src={heroIocns}
-            width={50}
-            height={50}
-            className="absolute top-1/2 -translate-y-1/2  right-[3.5px]"
-            alt="hero-card-images"
-          />
-        </button>
+         <a
+          href="https://youtu.be/l6shgiK9Z-k?si=fMjmxKVUJythzBZ5"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block w-[100%]"
+        >
+          <div className="relative w-full">
+            <ButtonTwo
+              frontText={"Get consultation"}
+              backText="Watch Now."
+              className={"!w-full !py-[18px] !justify-start !pr-[60px]"}
+            />
+
+            {/* Wave circle */}
+            <div className="absolute top-0 right-[3.5px] h-full flex items-center justify-center">
+              <div className="relative flex items-center justify-center w-[52px] h-[52px]">
+                <span
+                  className="absolute h-[50px] w-[50px] z-10 rounded-full bg-white/30 animate-wave"
+                  style={{ animationDelay: "0s" }}
+                />
+                <span
+                  className="absolute  h-[50px] w-[50px] z-10 rounded-full bg-white/30 animate-wave"
+                  style={{ animationDelay: "0.6s" }}
+                />
+                <span
+                  className="absolute  h-[50px] w-[50px] z-10 rounded-full bg-white/30 animate-wave"
+                  style={{ animationDelay: "1.2s" }}
+                />
+
+                <Image
+                  src={heroIocns}
+                  width={50}
+                  height={50}
+                  alt="hero-card-images "
+                  className="z-0"
+                />
+              </div>
+            </div>
+          </div>
+        </a>
       </div>
     </div>
   );

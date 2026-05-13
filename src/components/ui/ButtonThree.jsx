@@ -18,11 +18,11 @@ const ButtonThree = ({
   borderWidth,
   borderColor,
   onClick,
-  externalHovered,  // 👈 নতুন prop
+  externalHovered,  
 }) => {
   const [internalHovered, setInternalHovered] = useState(false);
 
-  // externalHovered দেওয়া থাকলে সেটা use করবে, না থাকলে নিজের state
+  
   const hovered = externalHovered !== undefined ? externalHovered : internalHovered;
 
   const resolvedBackText = backText ?? frontText;
@@ -83,7 +83,7 @@ const ButtonThree = ({
   return (
     <button
       style={style.wrapper}
-      onMouseEnter={() => setInternalHovered(true)}   // internal state alda
+      onMouseEnter={() => setInternalHovered(true)}   
       onMouseLeave={() => setInternalHovered(false)}
       onClick={onClick}
     >

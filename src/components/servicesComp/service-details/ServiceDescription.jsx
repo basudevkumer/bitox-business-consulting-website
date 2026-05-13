@@ -56,7 +56,6 @@ const ServiceDescription = ({ serviceITems }) => {
                   <div
                     className="flex flex-col items-center gap-[10px] relative  "
                     key={s.id}
-                    
                   >
                     <p className="text-base font-medium text-primary">
                       {s.step}

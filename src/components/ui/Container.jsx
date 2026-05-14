@@ -1,5 +1,3 @@
-    
-
 const sizeMap = {
   full: "max-w-full",
   "2xl": "max-w-[1920px]",

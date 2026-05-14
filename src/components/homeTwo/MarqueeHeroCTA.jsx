@@ -63,7 +63,6 @@ function HeroCTA() {
             frontText="Let's build together"
             backText="Let's Talk."
             textColor="#02090F"
-            onClick={() => console.log("clicked")}
           />
         </div>
       </Stack>

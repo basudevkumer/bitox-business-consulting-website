@@ -10,10 +10,6 @@ import Link from "next/link";
 
 // Image alda export
 export const ServiceCardImage = ({ service, index }) => {
-   
-  console.log(index);
-  
-
   return (
     <div className="w-full md:w-1/2 shrink-0">
       <Image
@@ -97,7 +93,7 @@ const Services = ({ targetValue = 0, lastValue = 3 }) => {
           {services.slice(targetValue, lastValue).map((service, index) => (
             <Link key={index} href={`/services/${service?.slug}`}>
               {" "}
-              <ServiceCard  service={service} index={service.imgId} />
+              <ServiceCard service={service} index={service.imgId} />
             </Link>
           ))}
         </Stack>

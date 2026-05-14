@@ -73,7 +73,6 @@ function ContactCard() {
             frontText="Send Message"
             backText="Let's Talk."
             textColor="#ffffff"
-            onClick={() => console.log("send message")}
           />
         </div>
       </Stack>
@@ -106,7 +105,7 @@ function NewsletterColumn() {
   return (
     <Stack gap="sm">
       <p className="font-bold text-white headingSixAlter mb-2">Newsletter</p>
-      <p className="para-lg text-[#999999] max-w-[384px]">
+      <p className="para-lg text-[#999999] max-w-[384px] ">
         Stay updated with design tips, creative strategy, and industry insights.
       </p>
       <div className="relative mt-2">
@@ -146,7 +145,6 @@ export default function FooterTwo() {
                 frontText="Call for an appointment"
                 backText="Let's Talk."
                 textColor="#ffffff"
-                onClick={() => console.log("appointment")}
               />
             </div>
           </div>
@@ -154,8 +152,9 @@ export default function FooterTwo() {
 
         {/* Footer Links + Newsletter */}
         <Container size="">
-          <div className="py-8 lg:py-16">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:pl-[460px] xl:pl-[480px]">
+          <div className="py-8 lg:py-16 ">
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-[minmax(0,35%)_1fr_1fr_1fr] gap-5 xl:pl-[25px] 2xl:pl-[100]">
+              <div className="hidden lg:block " />
               <FooterLinksColumn title="Company" links={companyLinks} />
               <FooterLinksColumn title="Service Link" links={serviceLinks} />
               <NewsletterColumn />

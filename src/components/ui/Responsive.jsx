@@ -1,4 +1,4 @@
- import { useId } from "react";
+import { useId } from "react";
 
 // ─── Design Tokens
 const tokens = {
@@ -33,26 +33,26 @@ function Grid({
   className = "",
   style = {},
 }) {
-  const uid        = useId().replace(/:/g, "");
-  const gapVal     = tokens.gap[gap]         ?? gap;
-  const paddingVal = tokens.padding[padding]  ?? padding;
+  const uid = useId().replace(/:/g, "");
+  const gapVal = tokens.gap[gap] ?? gap;
+  const paddingVal = tokens.padding[padding] ?? padding;
 
   // ── MODE 2: cols object → { base: 1, md: 2, lg: 3 }
   if (cols && typeof cols === "object") {
-    const id      = `rg-${uid}`;
+    const id = `rg-${uid}`;
     const baseCol = cols.base ?? 1;
-    const smCol   = cols.sm;
-    const mdCol   = cols.md;
-    const lgCol   = cols.lg;
-    const xlCol   = cols.xl;
-    const xxlCol  = cols["2xl"];
+    const smCol = cols.sm;
+    const mdCol = cols.md;
+    const lgCol = cols.lg;
+    const xlCol = cols.xl;
+    const xxlCol = cols["2xl"];
 
     const css = `
       #${id} { grid-template-columns: repeat(${baseCol}, 1fr); }
-      ${smCol  ? `@media(min-width:${bp.sm}px)   { #${id} { grid-template-columns: repeat(${smCol},  1fr); } }` : ""}
-      ${mdCol  ? `@media(min-width:${bp.md}px)   { #${id} { grid-template-columns: repeat(${mdCol},  1fr); } }` : ""}
-      ${lgCol  ? `@media(min-width:${bp.lg}px)   { #${id} { grid-template-columns: repeat(${lgCol},  1fr); } }` : ""}
-      ${xlCol  ? `@media(min-width:${bp.xl}px)   { #${id} { grid-template-columns: repeat(${xlCol},  1fr); } }` : ""}
+      ${smCol ? `@media(min-width:${bp.sm}px)   { #${id} { grid-template-columns: repeat(${smCol},  1fr); } }` : ""}
+      ${mdCol ? `@media(min-width:${bp.md}px)   { #${id} { grid-template-columns: repeat(${mdCol},  1fr); } }` : ""}
+      ${lgCol ? `@media(min-width:${bp.lg}px)   { #${id} { grid-template-columns: repeat(${lgCol},  1fr); } }` : ""}
+      ${xlCol ? `@media(min-width:${bp.xl}px)   { #${id} { grid-template-columns: repeat(${xlCol},  1fr); } }` : ""}
       ${xxlCol ? `@media(min-width:${bp["2xl"]}px) { #${id} { grid-template-columns: repeat(${xxlCol}, 1fr); } }` : ""}
     `;
 
@@ -79,7 +79,7 @@ function Grid({
   // ── MODE 3: custom string → "443px_1fr"
   if (cols && typeof cols === "string") {
     const templateColumns = cols.replaceAll("_", " ");
-    const id  = `rg-${uid}`;
+    const id = `rg-${uid}`;
     const css = `
       #${id} { grid-template-columns: 1fr; }
       @media(min-width:${bp.md}px) { #${id} { grid-template-columns: ${templateColumns}; } }
@@ -179,6 +179,6 @@ function Stack({
 }
 
 // ─── Compound export
-const   Responsive = { Grid, Flex, Stack };
+const Responsive = { Grid, Flex, Stack };
 export default Responsive;
 export { Grid, Flex, Stack };
